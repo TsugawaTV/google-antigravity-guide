@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark" style="overflow-x: clip;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  
+  <!-- 基本SEOメタタグ -->
+  <title>Google Antigravity 完全マスターズガイド | 2026年最新自律AIエージェント実践マニュアル</title>
+  <meta name="description" content="次世代自律AI「Google Antigravity 2.0」を使いこなすための完全実践ガイド。Gemini 3.7 Flash連携、/goal自律完走、Chrome MCPブラウザ検証、Dynamic Subagents、WordPressセキュリティ開発まで完全網羅。">
+  <meta name="keywords" content="Google Antigravity, Antigravity 2.0, Gemini 3.7 Flash, /goal, MCP, Chrome DevTools MCP, AIエージェント, 自律開発, プログラミング自動化">
+  <meta name="author" content="Google Antigravity 日本語コミュニティ">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tsugawa.tv/antigravity/">
+
+  <!-- OGP (SNSシェア / Open Graph) -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="Google Antigravity 完全マスターズガイド | 2026年最新仕様">
+  <meta property="og:description" content="Gemini 3.7 Flash連携、/goal自律完走、Chrome MCP、Dynamic Subagents、実戦プレイブックまで完全網羅した日本一詳しい実践マニュアル。">
+  <meta property="og:url" content="https://tsugawa.tv/antigravity/">
+  <meta property="og:site_name" content="Google Antigravity 日本語ドキュメントプロジェクト">
+  <meta property="og:image" content="https://tsugawa.tv/antigravity/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Antigravity 完全マスターズガイド">
+  <meta name="twitter:description" content="自律AIエージェント「Antigravity 2.0」の基本から高度なオーケストレーション、実戦プレイブックまで徹底解説。">
+  <meta name="twitter:image" content="https://tsugawa.tv/antigravity/ogp.jpg">
+
+  <!-- ファビコン ＆ モバイルテーマカラー -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="color-scheme" content="dark">
+
+  <!-- 構造化データ (Google検索エンジン用 JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Google Antigravity 完全マスターズガイド (2026年最新仕様)",
+    "description": "Google Antigravity 2.0のアーキテクチャから/goal自律完走、Chrome MCP、Dynamic Subagents、実践プレイブックまでを網羅した解説ドキュメント。",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Organization",
+      "name": "Google Antigravity 日本語コミュニティ"
+    },
+    "datePublished": "2026-08-21",
+    "dateModified": "2026-08-21"
+  }
+  </script>
+
+  <!-- Google Web Fonts (和文：Noto Sans JP + 欧文：Inter / Plus Jakarta Sans / JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN & 和欧混植フォント設定 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '"Noto Sans JP"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', '"Noto Sans JP"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'Consolas', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc8fc',
+              400: '#36abf8',
+              500: '#0c8fe9',
+              600: '#0270c7',
+              700: '#0359a1',
+              800: '#074c84',
+              900: '#0b3f6e',
+              950: '#072849',
+            },
+            accent: {
+              50: '#faf5ff',
+              500: '#a855f7',
+              600: '#9333ea',
+            },
+            darkbg: {
+              900: '#0b0f19',
+              800: '#111827',
+              700: '#1f2937',
+              600: '#374151',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Prism.js Syntax Highlighter (Tomorrow Night Theme) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+
+  <!-- Mermaid.js for Diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      securityLevel: 'loose',
+      fontFamily: 'Inter, "Noto Sans JP", sans-serif'
+    });
+  </script>
+
+  <style>
+    /* 画面の横揺れ防止 & スムーススクロール */
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* 日本語タイポグラフィの美しさ向上 */
+    h1, h2, h3, h4 {
+      text-wrap: balance;
+      letter-spacing: -0.01em;
+    }
+    p, li {
+      text-wrap: pretty;
+      line-height: 1.75;
+    }
+
+    /* スタイリッシュなスクロールバー */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(156, 163, 175, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(156, 163, 175, 0.65);
+    }
+
+    /* Prism.js コードブロック（モバイル対応・内部スクロール） */
+    pre[class*="language-"] {
+      border-radius: 0.75rem;
+      margin: 0;
+      background: #0f172a !important;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.875rem;
+    }
+    code[class*="language-"] {
+      font-family: 'JetBrains Mono', Consolas, monospace !important;
+      word-break: normal;
+      white-space: pre;
+    }
+
+    /* コールアウトカードの左アクセントバー */
+    .callout-note { border-left: 4px solid #3b82f6; }
+    .callout-tip { border-left: 4px solid #10b981; }
+    .callout-warning { border-left: 4px solid #f59e0b; }
+    .callout-caution { border-left: 4px solid #ef4444; }
+    .callout-important { border-left: 4px solid #8b5cf6; }
+
+    /* 目次（TOC）のアクティブハイライト */
+    .toc-link.active {
+      color: #38bdf8;
+      font-weight: 600;
+      border-left: 2px solid #38bdf8;
+      padding-left: 0.75rem;
+      background: rgba(56, 189, 248, 0.08);
+      border-radius: 0 0.375rem 0.375rem 0;
+    }
+
+    /* グラデーションテキスト */
+    .text-gradient {
+      background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-darkbg-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200 max-w-full relative">
+
+  <!-- ==================== HEADER NAVBAR ==================== -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 dark:bg-darkbg-900/90 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo + Mobile Menu Toggle -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <button id="mobileSidebarToggle" aria-label="目次メニューを開く" class="lg:hidden p-2 -ml-2 rounded-lg text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkbg-800 focus:outline-none transition">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+        <a href="#hero" class="flex items-center gap-2.5 group">
+          <img src="./logo.png" alt="Google Antigravity Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-xl shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+          <div>
+            <span class="font-heading font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+              Antigravity <span class="hidden sm:inline-block text-xs px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500 dark:bg-brand-400/20 dark:text-brand-300 font-mono font-medium border border-brand-500/20">🚀 Liftoff</span>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Quick Nav + Search + Theme Toggle -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        
+        <!-- Search Trigger Button -->
+        <button id="searchTriggerBtn" class="flex items-center gap-2 sm:gap-3 px-2.5 sm:px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-darkbg-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-darkbg-700 border border-slate-200 dark:border-slate-700 text-xs transition">
+          <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+          <span class="hidden md:inline">ドキュメントを検索...</span>
+          <span class="md:hidden">検索</span>
+          <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] bg-white dark:bg-darkbg-900 border border-slate-300 dark:border-slate-600 rounded text-slate-600 dark:text-slate-400 font-mono">Ctrl+K</kbd>
+        </button>
+
+        <!-- Navigation Links (Desktop only) -->
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#ch1" class="hover:text-brand-500 dark:hover:text-brand-400 transition">概要</a>
+          <a href="#ch3" class="hover:text-brand-500 dark:hover:text-brand-400 transition">コマンド</a>
+          <a href="#ch4" class="hover:text-brand-500 dark:hover:text-brand-400 transition">自律連携</a>
+          <a href="#ch5" class="hover:text-brand-500 dark:hover:text-brand-400 transition">Skills & SDK</a>
+          <a href="#ch6" class="hover:text-brand-500 dark:hover:text-brand-400 transition">プレイブック</a>
+        </nav>
+
+        <!-- GitHub Link & Star Buttons -->
+        <a href="https://github.com/TsugawaTV/google-antigravity-guide" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition border border-slate-700 shadow-sm" title="GitHub リポジトリ">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+        <a href="https://github.com/TsugawaTV/google-antigravity-guide" target="_blank" rel="noopener" class="hidden md:flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 dark:text-amber-400 border border-amber-500/20 text-xs font-semibold transition" title="Star on GitHub">
+          <i class="fa-solid fa-star text-xs"></i>
+          <span>Star</span>
+        </a>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button id="themeToggleBtn" class="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 transition" title="テーマ切り替え">
+          <i id="themeIcon" class="fa-solid fa-moon text-sm sm:text-base"></i>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SEARCH MODAL ==================== -->
+  <div id="searchModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-start justify-center pt-16 sm:pt-20 px-4">
+    <div class="bg-white dark:bg-darkbg-800 w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden transform transition-all">
+      <div class="p-3.5 sm:p-4 border-b border-slate-200 dark:border-slate-700 flex items-center gap-3">
+        <i class="fa-solid fa-magnifying-glass text-slate-400 text-base sm:text-lg"></i>
+        <input id="searchInput" type="text" placeholder="キーワード、コマンド（/goal, /schedule）を検索..." class="w-full bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-sm sm:text-base">
+        <button id="searchCloseBtn" class="text-xs px-2 py-1 bg-slate-100 dark:bg-darkbg-700 rounded text-slate-500 hover:text-slate-800 dark:hover:text-white">ESC</button>
+      </div>
+      <div id="searchResults" class="max-h-80 sm:max-h-96 overflow-y-auto p-3 divide-y divide-slate-100 dark:divide-slate-700/50">
+        <div class="p-4 text-center text-sm text-slate-400">検索キーワードを入力してください...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MOBILE SIDEBAR BACKDROP ==================== -->
+  <div id="sidebarBackdrop" class="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm hidden lg:hidden transition-opacity"></div>
+
+  <!-- ==================== MAIN WRAPPER ==================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex gap-8 w-full py-6 sm:py-8 min-w-0">
+    
+    <!-- ==================== SIDEBAR (TOC) ==================== -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 lg:z-30 w-72 lg:w-64 xl:w-72 h-full lg:h-[calc(100vh-5.5rem)] lg:sticky lg:top-20 lg:self-start shrink-0 overflow-y-auto p-6 lg:p-0 lg:pr-4 bg-white dark:bg-darkbg-900 lg:bg-transparent shadow-2xl lg:shadow-none transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out border-r lg:border-r-0 border-slate-200 dark:border-slate-800">
+      
+      <!-- Mobile Sidebar Close Header -->
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-slate-800 lg:hidden">
+        <span class="font-heading font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-book-open text-brand-500"></i> 目次ナビゲーション
+        </span>
+        <button id="closeSidebarBtn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkbg-800">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-5 pb-12">
+        
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2 font-mono">ドキュメント目次</div>
+          <ul class="space-y-1 text-sm">
+            <li>
+              <a href="#hero" class="toc-link block py-1.5 px-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-darkbg-800 transition">
+                <i class="fa-solid fa-house mr-2 text-xs opacity-70"></i>はじめに
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ch1 -->
+        <div>
+          <a href="#ch1" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第1章：概要とアーキテクチャ</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch1-1" class="toc-link block py-1 hover:text-brand-400">1.1 Agent-First 思想と根本的違い</a></li>
+            <li><a href="#ch1-2" class="toc-link block py-1 hover:text-brand-400">1.2 プロダクトラインナップと役割</a></li>
+            <li><a href="#ch1-3" class="toc-link block py-1 hover:text-brand-400">1.3 バックエンドモデルの選定指針</a></li>
+          </ul>
+        </div>
+
+        <!-- Ch2 -->
+        <div>
+          <a href="#ch2" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第2章：コア概念と成果物</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch2-1" class="toc-link block py-1 hover:text-brand-400">2.1 Artifacts システム</a></li>
+            <li><a href="#ch2-2" class="toc-link block py-1 hover:text-brand-400">2.2 レビュー駆動開発 (RDD)</a></li>
+            <li><a href="#ch2-3" class="toc-link block py-1 hover:text-brand-400">2.3 Local vs Worktree Mode</a></li>
+            <li><a href="#ch2-4" class="toc-link block py-1 hover:text-brand-400">2.4 Reasoning Effort 設定指針</a></li>
+          </ul>
+        </div>
+
+        <!-- Ch3 -->
+        <div>
+          <a href="#ch3" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第3章：スラッシュコマンド完全攻略</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch3-1" class="toc-link block py-1 hover:text-brand-400">3.1 /goal（自律完走指示）</a></li>
+            <li><a href="#ch3-2" class="toc-link block py-1 hover:text-brand-400">3.2 /grill-me（要件掘り下げ）</a></li>
+            <li><a href="#ch3-3" class="toc-link block py-1 hover:text-brand-400">3.3 /browser（Chrome UI自動化）</a></li>
+            <li><a href="#ch3-4" class="toc-link block py-1 hover:text-brand-400">3.4 /schedule（定期実行タスク）</a></li>
+            <li><a href="#ch3-5" class="toc-link block py-1 hover:text-brand-400">3.5 カスタムワークフロー自作法</a></li>
+          </ul>
+        </div>
+
+        <!-- Ch4 -->
+        <div>
+          <a href="#ch4" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第4章：高度なオーケストレーション</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch4-1" class="toc-link block py-1 hover:text-brand-400">4.1 Dynamic Subagents</a></li>
+            <li><a href="#ch4-2" class="toc-link block py-1 hover:text-brand-400">4.2 非同期タスク管理</a></li>
+            <li><a href="#ch4-3" class="toc-link block py-1 hover:text-brand-400">4.3 JSON Lifecycle Hooks</a></li>
+            <li><a href="#ch4-4" class="toc-link block py-1 hover:text-brand-400">4.4 セキュリティ・権限ポリシー</a></li>
+          </ul>
+        </div>
+
+        <!-- Ch5 -->
+        <div>
+          <a href="#ch5" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第5章：Skills・MCP・Plugins・SDK</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch5-1" class="toc-link block py-1 hover:text-brand-400">5.1 Agent Skills 仕様と作成法</a></li>
+            <li><a href="#ch5-2" class="toc-link block py-1 hover:text-brand-400">5.2 MCP サーバー連携設定</a></li>
+            <li><a href="#ch5-3" class="toc-link block py-1 hover:text-brand-400">5.3 Python SDK 実践コード例</a></li>
+            <li><a href="#ch5-4" class="toc-link block py-1 hover:text-brand-400">5.4 Google Plugins & Plugin Spec</a></li>
+          </ul>
+        </div>
+
+        <!-- Ch6 -->
+        <div>
+          <a href="#ch6" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第6章：実戦プレイブック</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch6-1" class="toc-link block py-1 hover:text-brand-400">6.1 フルスタックアプリのゼロ開発</a></li>
+            <li><a href="#ch6-2" class="toc-link block py-1 hover:text-brand-400">6.2 レガシーコード大規模刷新</a></li>
+            <li><a href="#ch6-3" class="toc-link block py-1 hover:text-brand-400">6.3 CI/CD・日次運用自動化</a></li>
+            <li><a href="#ch6-4" class="toc-link block py-1 hover:text-brand-400">6.4 Lighthouse 100点＆モダンWeb自律完走</a></li>
+            <li><a href="#ch6-5" class="toc-link block py-1 hover:text-brand-400">6.5 WordPress プラグイン完全開発</a></li>
+          </ul>
+        </div>
+
+        <!-- Ch7 -->
+        <div>
+          <a href="#ch7" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>第7章：プロンプト & トラブル対応</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch7-1" class="toc-link block py-1 hover:text-brand-400">7.1 迷走防止の制約条件プロンプト</a></li>
+            <li><a href="#ch7-2" class="toc-link block py-1 hover:text-brand-400">7.2 知識永続化（GEMINI.md / Rules）</a></li>
+            <li><a href="#ch7-3" class="toc-link block py-1 hover:text-brand-400">7.3 よくある失敗と対処一覧</a></li>
+          </ul>
+        </div>
+
+        <!-- Appendix -->
+        <div>
+          <a href="#appendix" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span>付録：チェックリスト & リンク集</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#appendix-checklist" class="toc-link block py-1 hover:text-brand-400">A.1 プロ向け実践チェックリスト</a></li>
+            <li><a href="#appendix-links" class="toc-link block py-1 hover:text-brand-400">A.2 公式・コミュニティ参考リンク集</a></li>
+            <li><a href="#appendix-shortcuts" class="toc-link block py-1 hover:text-brand-400">A.3 Windows 主要ショートカット一覧</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="flex-1 min-w-0 max-w-full lg:max-w-4xl pb-24 overflow-hidden">
+      
+      <!-- HERO BANNER -->
+      <section id="hero" class="mb-12 sm:mb-16 pt-2 sm:pt-4">
+        <div class="relative p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-brand-900/40 via-darkbg-800 to-slate-900 border border-slate-700/60 shadow-2xl overflow-hidden max-w-full">
+          <div class="absolute top-0 right-0 -mt-12 -mr-12 w-80 sm:w-96 h-80 sm:h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute bottom-0 left-1/3 -mb-12 w-64 sm:w-80 h-64 sm:h-80 bg-accent-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4">
+              <i class="fa-solid fa-bolt"></i> Google Advanced Agentic AI
+            </div>
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight mb-4 leading-tight break-words">
+              Google Antigravity<br><span class="text-gradient">完全マスターズ・マニュアル</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-2xl mb-6 sm:mb-8 leading-relaxed">
+              自律型AIペアプログラミング環境「Antigravity」のアーキテクチャ、IDE/CLI/Desktop/SDKの使い方、スラッシュコマンド、動的サブエージェント、MCP拡張、実戦プレイブックまでを網羅した公式級実践ガイド。
+            </p>
+
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <a href="#ch1" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
+                <span>第1章から読む</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#ch3" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-darkbg-700 hover:bg-darkbg-600 text-slate-200 border border-slate-600 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-terminal"></i>
+                <span>コマンド一覧へ</span>
+              </a>
+              <a href="#ch6" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-darkbg-700 hover:bg-darkbg-600 text-slate-200 border border-slate-600 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>実践プレイブック</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Open Source Community Callout -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900/30 via-slate-800 to-darkbg-800 border border-blue-500/30 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-lg shrink-0">
+              <i class="fa-solid fa-code-pull-request"></i>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                <span>💡 日本語のAntigravity情報をみんなで充実させましょう！</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                誤字修正、最新のTips、便利なプロンプト例など、どんな小さなプルリクエスト（PR）やIssueも大歓迎です。
+              </p>
+            </div>
+          </div>
+          <a href="https://github.com/TsugawaTV/google-antigravity-guide" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 text-xs font-semibold shrink-0 transition flex items-center gap-2 shadow-sm">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHubで改善提案する</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 1: OVERVIEW & ARCHITECTURE -->
+      <!-- ========================================== -->
+      <section id="ch1" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">1</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第1章：Antigravity 概要とアーキテクチャ</h2>
+        </div>
+
+        <!-- 1.1 -->
+        <div id="ch1-1" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-cube text-brand-400 text-sm"></i>
+            1.1 Agent-First 開発思想の革命（Cursor / Copilot との違い）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Google Antigravity は、従来の「コード補完型（Copilot）」や「サイドバー質問型（Cursor初期モデル）」とは一線を画す、<strong>「完全自律完走型（Agent-First）」</strong>のソフトウェアエンジニアリングプラットフォームです。
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            開発者が大まかなゴールや要件を渡すだけで、エージェントはコードベース全体の構造を自動探索し、実装計画を立案・提案した上で、ファイル編集、ビルド実行、テスト修正、さらにはヘッドレスブラウザでのUI検証まで自律的にループを回して完遂します。
+          </p>
+
+          <!-- Comparison Table with Horizontal Scroll Wrapper -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 mb-6 shadow-sm">
+            <table class="min-w-[600px] w-full text-left text-xs sm:text-sm">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 sm:p-3.5 font-semibold">比較項目</th>
+                  <th class="p-3 sm:p-3.5 font-semibold text-slate-400">従来のAI補完 (Copilot等)</th>
+                  <th class="p-3 sm:p-3.5 font-semibold text-slate-400">インタラクティブIDE (Cursor等)</th>
+                  <th class="p-3 sm:p-3.5 font-semibold text-brand-400 bg-brand-500/10">Google Antigravity</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 sm:p-3.5 font-medium text-slate-900 dark:text-white">主導権</td>
+                  <td class="p-3 sm:p-3.5">人間（1行ずつTab補完）</td>
+                  <td class="p-3 sm:p-3.5">人間（指示と承認の反復）</td>
+                  <td class="p-3 sm:p-3.5 font-semibold text-brand-400 bg-brand-500/5">エージェント（自律ループ + レビュー駆動）</td>
+                </tr>
+                <tr>
+                  <td class="p-3 sm:p-3.5 font-medium text-slate-900 dark:text-white">実行能力</td>
+                  <td class="p-3 sm:p-3.5">エディタ内補完のみ</td>
+                  <td class="p-3 sm:p-3.5">ファイル変更 + 単発コマンド実行</td>
+                  <td class="p-3 sm:p-3.5 font-semibold text-brand-400 bg-brand-500/5">全ツール協調（Subagents, Browser, MCP, Cron）</td>
+                </tr>
+                <tr>
+                  <td class="p-3 sm:p-3.5 font-medium text-slate-900 dark:text-white">検証プロセス</td>
+                  <td class="p-3 sm:p-3.5">人間が手動実行・検証</td>
+                  <td class="p-3 sm:p-3.5">ターミナル結果を人間が確認</td>
+                  <td class="p-3 sm:p-3.5 font-semibold text-brand-400 bg-brand-500/5">自律テスト実行・ブラウザ録画・自己修復</td>
+                </tr>
+                <tr>
+                  <td class="p-3 sm:p-3.5 font-medium text-slate-900 dark:text-white">コンテキスト管理</td>
+                  <td class="p-3 sm:p-3.5">開いているタブのみ</td>
+                  <td class="p-3 sm:p-3.5">RAG + @codebase 埋め込み</td>
+                  <td class="p-3 sm:p-3.5 font-semibold text-brand-400 bg-brand-500/5">Dynamic Subagents で長大調査を隔離・保護</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mermaid Diagram: Agent Execution Loop (Mobile Horizontal Scrollable) -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 max-w-full overflow-hidden">
+            <div class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-2">Antigravity 自律実行サイクル (Observe-Plan-Act-Verify)</div>
+            <div class="sm:hidden text-center text-[11px] text-slate-400 mb-2 font-mono">
+              <i class="fa-solid fa-arrows-left-right mr-1"></i> 指で横スクロールして拡大表示
+            </div>
+            <div class="overflow-x-auto max-w-full pb-2">
+              <div class="min-w-[550px]">
+                <div class="mermaid">
+graph LR
+    A[ユーザー指示 /goal] --> B[1. Observe<br>コード探索・Web調査]
+    B --> C[2. Plan<br>Implementation Plan立案]
+    C --> D[3. Act<br>ファイル作成・編集・コマンド]
+    D --> E[4. Verify<br>テスト実行・Browser検証]
+    E -->|失敗・エラー検知| D
+    E -->|完全パス| F[5. Walkthrough作成<br>ゴール達成完了]
+    style A fill:#1e293b,stroke:#64748b,color:#fff
+    style B fill:#0c4a6e,stroke:#0284c7,color:#fff
+    style C fill:#431407,stroke:#ea580c,color:#fff
+    style D fill:#14532d,stroke:#16a34a,color:#fff
+    style E fill:#3b0764,stroke:#9333ea,color:#fff
+    style F fill:#065f46,stroke:#10b981,color:#fff
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.2 -->
+        <div id="ch1-2" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-brand-400 text-sm"></i>
+            1.2 プロダクトラインナップの役割と使い分け
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            Antigravity は単一のツールではなく、開発者のワークスタイルに合わせて4つの形態（Surfaces）がシームレスに提供されています。すべての形態で同一の Agent Engine と Customization（Rules / Skills / MCP）が共有されます。
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <!-- App 2.0 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border-2 border-blue-500/40 dark:border-blue-500/30 shadow-md">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold text-base sm:text-lg shrink-0">
+                  <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Antigravity 2.0 (Desktop App)</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 font-bold font-mono">白ロゴ / 司令塔</span>
+                  </div>
+                  <span class="text-[11px] sm:text-xs text-slate-400 font-mono">Multi-Agent Control Center</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                独立したデスクトップアプリ。複数のプロジェクトやブランチを並行して管理し、Auxiliary Paneで複数サブエージェントやバックグラウンドタスク、ブラウザ検証の録画をリアルタイム監視可能。
+              </p>
+              <div class="text-[11px] sm:text-xs font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                <span>最適用途: プロジェクト全体の司令塔、複数エージェント並行作業、非同期タスク監視</span>
+              </div>
+            </div>
+
+            <!-- IDE -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border-2 border-purple-500/40 dark:border-purple-500/30 shadow-md">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-base sm:text-lg shrink-0">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Antigravity IDE</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 font-bold font-mono">黒ロゴ / エディタ</span>
+                  </div>
+                  <span class="text-[11px] sm:text-xs text-slate-400 font-mono">VS Code Based AI-First Editor</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                エディタネイティブの統合開発環境。<kbd class="px-1 bg-slate-200 dark:bg-darkbg-700 rounded">Ctrl+I</kbd> のインライン指示、次世代Tab補完（Supercomplete）、関数上部のCode Lensから直接エージェントを呼出可能。
+              </p>
+              <div class="text-[11px] sm:text-xs font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-1">
+                <span>最適用途: 日常的なコーディング、インラインリファクタリング、手動編集併用</span>
+              </div>
+            </div>
+
+            <!-- CLI -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-base sm:text-lg shrink-0">
+                  <i class="fa-solid fa-terminal"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Antigravity CLI (<code class="text-emerald-400">agy</code>)</h4>
+                  <span class="text-[11px] sm:text-xs text-slate-400 font-mono">Lightweight Terminal TUI & Headless</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                ターミナル上で超高速に起動するTUI。リモートSSH環境やヘッドレスCI/CD環境、Dockerコンテナ内でも動作し、OSキーリングまたはAPIキーでシームレスに認証可能。
+              </p>
+              <div class="text-[11px] sm:text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <span>最適用途: SSHサーバー、CI/CDパイプライン自動化、ターミナル愛好者</span>
+              </div>
+            </div>
+
+            <!-- SDK -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-base sm:text-lg shrink-0">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Google Antigravity SDK</h4>
+                  <span class="text-[11px] sm:text-xs text-slate-400 font-mono">Python Programmatic Library</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                <code class="font-mono text-amber-400">pip install google-antigravity</code> で導入。自作Pythonプログラムからエージェントを直接生成・制御し、独自のカスタムツールやパイプラインに組み込み可能。
+              </p>
+              <div class="text-[11px] sm:text-xs font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                <span>最適用途: 自社エージェント開発、自動テストスクリプト、バッチ処理組み込み</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Keep Both Workflow Callout -->
+          <div class="callout-tip p-3.5 sm:p-4 rounded-xl bg-indigo-500/10 text-indigo-900 dark:text-indigo-200 text-xs sm:text-sm mb-6 leading-relaxed">
+            <div class="font-bold flex items-center gap-2 mb-1">
+              <i class="fa-solid fa-arrows-split-up-and-left"></i> ベストプラクティス：「Keep Both（両方併用）」ワークフロー
+            </div>
+            公式およびエキスパート開発者は、<strong>白ロゴ（2.0 司令塔）</strong>と<strong>黒ロゴ（IDE）</strong>の併用を強く推奨しています。<br>
+            ・<strong>2.0 司令塔:</strong> バックグラウンドで複数の自律タスク（新機能実装・テスト作成・ドキュメント更新）を走らせ、進捗をリアルタイム監視。<br>
+            ・<strong>IDE:</strong> 司令塔が作成したブランチやファイルをリアルタイムで確認しながら、インライン補完で精密な調整を行う。
+          </div>
+
+          <!-- CLI Setup & Auth Guide Box -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 text-xs text-slate-300">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-download text-emerald-400"></i> agy CLI のインストールと認証方式
+            </h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 mb-1">macOS / Linux インストール:</div>
+                <pre class="p-2.5 rounded bg-darkbg-900 text-emerald-400 font-mono text-[11px] overflow-x-auto"><code>curl -fsSL https://antigravity.google/cli/install.sh | bash</code></pre>
+              </div>
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 mb-1">Windows PowerShell インストール:</div>
+                <pre class="p-2.5 rounded bg-darkbg-900 text-emerald-400 font-mono text-[11px] overflow-x-auto"><code>irm https://antigravity.google/cli/install.ps1 | iex</code></pre>
+              </div>
+            </div>
+
+            <div class="space-y-1.5 text-xs text-slate-400 mb-4">
+              <div><strong class="text-slate-200">・通常ログイン:</strong> <code class="font-mono text-slate-300">agy</code> 起動時にOSキーリング（Keychain / Windows Credential）を参照し、ブラウザでGoogleサインイン。</div>
+              <div><strong class="text-slate-200">・リモート SSH:</strong> OAuth URLがターミナルに表示され、ローカルブラウザで取得した認証コードをペースト。</div>
+              <div><strong class="text-slate-200">・CI / ヘッドレス運用:</strong> <code class="font-mono text-slate-300">~/.gemini/antigravity-cli/settings.json</code> で <code class="font-mono text-slate-300">{"modelProvider": "gemini"}</code> を指定し、環境変数 <code class="font-mono text-slate-300">export GEMINI_API_KEY="AIza..."</code> を設定して起動。</div>
+            </div>
+
+            <!-- CLI Commands & Flags Table -->
+            <div class="border-t border-slate-700 pt-3">
+              <div class="font-bold text-slate-200 text-xs mb-2 font-mono flex items-center gap-1.5">
+                <i class="fa-solid fa-rectangle-list text-emerald-400"></i> agy CLI 主要サブコマンド & フラグ一覧
+              </div>
+              <div class="overflow-x-auto max-w-full rounded-lg border border-slate-700/80">
+                <table class="min-w-[550px] w-full text-left text-[11px]">
+                  <thead class="bg-darkbg-900 text-slate-300 border-b border-slate-700">
+                    <tr>
+                      <th class="p-2 font-semibold font-mono">コマンド / 構文</th>
+                      <th class="p-2 font-semibold">機能概要</th>
+                      <th class="p-2 font-semibold">主なオプション・フラグ</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-700/60 text-slate-300 font-mono">
+                    <tr>
+                      <td class="p-2 text-emerald-400">agy</td>
+                      <td class="p-2 font-sans">インタラクティブTUIセッション起動</td>
+                      <td class="p-2 text-slate-400"><code>--model</code>, <code>--worktree</code></td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 text-emerald-400">agy "&lt;prompt&gt;"</td>
+                      <td class="p-2 font-sans">ワンショットでのタスク実行</td>
+                      <td class="p-2 text-slate-400"><code>--effort=high</code>, <code>-y</code></td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 text-emerald-400">agy goal "&lt;prompt&gt;"</td>
+                      <td class="p-2 font-sans">自律完走（/goal）モードで直接起動</td>
+                      <td class="p-2 text-slate-400"><code>--max-iterations=50</code></td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 text-emerald-400">agy run &lt;workflow.md&gt;</td>
+                      <td class="p-2 font-sans">定義済みワークフローを実行</td>
+                      <td class="p-2 text-slate-400"><code>--params key=val</code></td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 text-emerald-400">agy init</td>
+                      <td class="p-2 font-sans">プロジェクトに .agents/ 雛形を初期化</td>
+                      <td class="p-2 text-slate-400"><code>--minimal</code>, <code>--full</code></td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 text-emerald-400">agy server</td>
+                      <td class="p-2 font-sans">MCP / SDK連携用ローカルAPIサーバー起動</td>
+                      <td class="p-2 text-slate-400"><code>--port=8080</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.3 -->
+        <div id="ch1-3">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-microchip text-brand-400 text-sm"></i>
+            1.3 バックエンドモデルの選定指針 & 料金・レート制限
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Antigravity はタスクの複雑度、推論深度、予算、速度要件に応じて複数の次世代推論エンジンをシームレスに切り替えて利用できます。設定サイドバー（Settings > Global Settings > Model Selection）または Python SDK の `model` パラメータで指定可能です。
+          </p>
+
+          <!-- Pricing & Rate Limit Tier Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 mb-6 shadow-sm">
+            <table class="min-w-[620px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold">プラン / Tier</th>
+                  <th class="p-3 font-semibold">料金目安</th>
+                  <th class="p-3 font-semibold">利用可能モデル</th>
+                  <th class="p-3 font-semibold">レート制限 & クォータ更新頻度</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 font-bold text-brand-400">Individual (Preview)</td>
+                  <td class="p-3">無料（個人Googleアカウント）</td>
+                  <td class="p-3">Gemini 3.7 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6</td>
+                  <td class="p-3">標準クォータ（数時間ごとに自動リフレッシュ・個人開発に十分）</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-purple-400">Pro / Team</td>
+                  <td class="p-3">従量課金 / 月額定額</td>
+                  <td class="p-3">全モデル（Gemini 3.7/3.1, Claude 4.6, GPT-OSS）</td>
+                  <td class="p-3">クォータ枠大幅拡大・優先推論キュー・チーム共有Rules</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-indigo-400">Enterprise</td>
+                  <td class="p-3">要問い合わせ（法人契約）</td>
+                  <td class="p-3">全モデル + 専用ファインチューニング</td>
+                  <td class="p-3">無制限SLA保証・SSO/SAML・監査ログ・データ非学習保証</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="space-y-3 mb-6">
+            <!-- Gemini 3.7 Flash -->
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Gemini 3.7 Flash / 3.6 Flash / 3.5 Flash</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-semibold">Default / High Speed / Hybrid Reasoning</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300">
+                  Google最新世代のフラッグシップ。超低レイテンシの標準応答と動的思考（Thinking）を兼備。日常的な機能開発、コードベース高速探索、自動テスト・ブラウザ検証の高速ループで最高のパフォーマンスを発揮。
+                </p>
+              </div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">1M+ Token Context</div>
+            </div>
+
+            <!-- Gemini 3.1 Pro -->
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Gemini 3.1 Pro</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-mono font-semibold">Deep Architecture / Massive Context</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300">
+                  膨大なコンテキスト（2M+トークン）と深い論理的思考力を誇る重量級モデル。数万行規模のレガシーコード全面移行、マイクロサービス分散設計、難解なGit競合や循環参照の根本解決に必須。
+                </p>
+              </div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">2M+ Token Context</div>
+            </div>
+
+            <!-- Claude 3.7 Sonnet / Opus 4.6 -->
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Claude 3.7 Sonnet / Opus 4.6 (Thinking Mode)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-mono font-semibold">Extended Thinking / Strict Types</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300">
+                  高度なアルゴリズム導出、厳格な型推論（TypeScript/Rust/C++）、Extended Thinking によるエッジケース網羅に強みを持つモデル。アルゴリズム最適化や数学的ロジックの実装に抜群の安定感を発揮。
+                </p>
+              </div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">200K+ Thinking Window</div>
+            </div>
+
+            <!-- Nano Banana 2 & Local Models -->
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Nano Banana 2 & Local Models (Gemma / Ollama)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono font-semibold">Visual Asset Gen / 100% Offline</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300">
+                  <strong>Nano Banana 2:</strong> UIモックアップやアイコン、アーキテクチャ図の自動画像生成時にエージェントが内部呼出。<br>
+                  <strong>Local Models:</strong> 完全オフライン・最高機密コード保護・APIコストゼロのオンデバイス実行。
+                </p>
+              </div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">Zero Leak / Asset Gen</div>
+            </div>
+          </div>
+
+          <!-- Professional Model Escalation Rule -->
+          <div class="callout-note p-3.5 sm:p-4 rounded-xl bg-blue-500/10 text-blue-900 dark:text-blue-200 text-xs sm:text-sm leading-relaxed">
+            <div class="font-bold flex items-center gap-2 mb-1">
+              <i class="fa-solid fa-arrow-trend-up"></i> 実戦テクニック：プロの「モデル・エスカレーション則」
+            </div>
+            <strong>① 基本ループ:</strong> 通常の実装・リサーチ・テストは高速・低コストな <code>Gemini Flash</code> で足場を組んで反復。<br>
+            <strong>② 難所エスカレーション:</strong> 1タスクが3ファイル以上の複雑な修正に跨がる、または2回連続でテスト修正に失敗した段階で <code>Claude Sonnet / Opus 4.6 (thinking)</code> へ切替。<br>
+            <strong>③ クリーンアップ:</strong> 難所を突破・アーキテクチャ確定後は再び <code>Gemini Flash</code> に戻して高速完走させるのが最も高精度かつ経済的です。
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 2: CORE CONCEPTS & ARTIFACTS -->
+      <!-- ========================================== -->
+      <section id="ch2" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">2</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第2章：コア概念と「Artifacts（成果物）」システム</h2>
+        </div>
+
+        <!-- 2.1 -->
+        <div id="ch2-1" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-folder-tree text-brand-400 text-sm"></i>
+            2.1 Artifacts システムの仕組みとライフサイクル
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Antigravity の最大の特徴は、チャット内の流れていくテキストではなく、専用ディレクトリ（<code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">~/.gemini/antigravity/brain/&lt;conversation-id&gt;/</code>）に構造化された<strong>「Artifacts（成果物ドキュメント）」</strong>を生成・維持管理する点にあります。
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-blue-500">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-map"></i> implementation_plan.md
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                実装前に作成される技術仕様書。変更対象ファイル一覧、設計方針、ユーザー確認事項（Open Questions）、検証手順が記載され、人間の承認待ち状態を生成します。
+              </p>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-emerald-500">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-flag-checkered"></i> walkthrough.md
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                作業完了時に作成される報告書。実施した変更の差分要約、実行した単体テスト・E2Eテスト結果、スクリーンショットや録画へのリンクが記録されます。
+              </p>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-purple-500">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-scroll"></i> transcript.jsonl
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                エージェントの思考プロセス（Thinking）、ツール呼び出し引数、標準出力の全履歴を記録したJSON Lines形式の監査ログ。いつでも過去の意思決定を逆引き可能。
+              </p>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-amber-500">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-vial"></i> scratch/ ディレクトリ
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                一時的なスクリプトや実験用データ、調査用の一時ファイルを保存する隔離領域。ワークスペースのGitツリーを汚さずに試行錯誤を行えます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.2 -->
+        <div id="ch2-2" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-user-check text-brand-400 text-sm"></i>
+            2.2 レビュー駆動開発（Review-Driven Development: RDD）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            AIエージェントによるコード破壊事故を防ぐため、Antigravity は<strong>「計画フェーズ（Planning Mode）」</strong>と<strong>「実行フェーズ（Execution Mode）」</strong>を厳格に分離する「レビュー駆動開発（RDD）」を採用しています。
+          </p>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6">
+            <div class="flex flex-col md:flex-row items-center gap-3 sm:gap-4 text-xs font-mono text-slate-300">
+              <div class="p-3 rounded-lg bg-blue-900/40 border border-blue-500/50 text-center flex-1 w-full">
+                <div class="font-bold text-blue-400 mb-1">1. Research</div>
+                コード探索・Web検索<br><span class="text-[10px] text-slate-400">※ファイル変更禁止</span>
+              </div>
+              <i class="fa-solid fa-arrow-down md:fa-arrow-right text-slate-500"></i>
+              <div class="p-3 rounded-lg bg-amber-900/40 border border-amber-500/50 text-center flex-1 w-full">
+                <div class="font-bold text-amber-400 mb-1">2. Implementation Plan</div>
+                設計書・変更予定を提示<br><span class="text-[10px] text-slate-400">※人間が確認・承認</span>
+              </div>
+              <i class="fa-solid fa-arrow-down md:fa-arrow-right text-slate-500"></i>
+              <div class="p-3 rounded-lg bg-emerald-900/40 border border-emerald-500/50 text-center flex-1 w-full">
+                <div class="font-bold text-emerald-400 mb-1">3. Autonomous Exec</div>
+                編集・ビルド・テスト自律実行<br><span class="text-[10px] text-slate-400">※テスト通過まで自己修正</span>
+              </div>
+              <i class="fa-solid fa-arrow-down md:fa-arrow-right text-slate-500"></i>
+              <div class="p-3 rounded-lg bg-purple-900/40 border border-purple-500/50 text-center flex-1 w-full">
+                <div class="font-bold text-purple-400 mb-1">4. Walkthrough</div>
+                検証エビデンス提示<br><span class="text-[10px] text-slate-400">※最終コミット完了</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout-tip p-3.5 sm:p-4 rounded-xl bg-emerald-500/10 text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm mb-4">
+            <div class="font-bold flex items-center gap-2 mb-1">
+              <i class="fa-solid fa-pen-to-square"></i> RDDの真髄：Artifacts インラインコメント機能
+            </div>
+            提示された <code class="font-mono bg-white/20 px-1 rounded">implementation_plan.md</code> やコードDiff画面では、修正したいテキスト範囲をマウスでドラッグ選択して「Add Comment」をクリックすることで、<strong>該当行に直接インライン修正指示</strong>（例: 「ここはJWTではなくセッションCookieで実装して」）を書き込めます。「Submit Feedback」を押すだけで、エージェントは全体の文脈を保ったままピンポイントに計画を書き直します。
+          </div>
+        </div>
+
+        <!-- 2.3 -->
+        <div id="ch2-3" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-code-branch text-brand-400 text-sm"></i>
+            2.3 Local Mode vs New Worktree Mode
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            エージェントにタスクを依頼する際、実行環境の分離レベルを2つのモードから選択できます。
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Local Workspace Mode</h4>
+                <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-slate-200 dark:bg-darkbg-700 rounded font-mono">デフォルト</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+                現在開いているワーキングディレクトリ上で直接ファイルを編集します。エディタの保存やHot Reloadが即座に反応し、開発者がリアルタイムに差分を確認できます。
+              </p>
+              <ul class="text-xs text-slate-500 space-y-1 list-disc list-inside">
+                <li>メリット: 即時フィードバック、シンプルなタスク向け</li>
+                <li>注意点: 人間の未コミット作業と競合する可能性あり</li>
+              </ul>
+            </div>
+
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-brand-500/50 shadow-md">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-bold text-brand-500 dark:text-brand-400 text-sm sm:text-base">New Worktree Mode</h4>
+                <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-brand-500/20 text-brand-400 rounded font-mono">推奨: 重厚タスク</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+                Git Worktree 機構を用いて、裏側で独立したワークスペースディレクトリを瞬時にクローン作成。メインの作業ディレクトリを一切汚さずにエージェントが自律作業を行います。
+              </p>
+              <ul class="text-xs text-slate-500 space-y-1 list-disc list-inside">
+                <li>メリット: メイン作業と完全並行稼働、失敗しても1秒で破棄可能</li>
+                <li>完了時: テスト通過後にワンクリックでブランチマージ</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Git Worktree Isolation Mermaid -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 max-w-full overflow-hidden">
+            <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-2">Git Worktree による完全並行開発アーキテクチャ</div>
+            <div class="overflow-x-auto max-w-full pb-2">
+              <div class="min-w-[500px]">
+                <div class="mermaid">
+graph LR
+    Repo[(Git Repository<br>.git/ Objects)] --- W1[Main Workspace<br>開発者の直接編集ブランチ]
+    Repo --- W2[Worktree A<br>Agent: 新機能自律実装]
+    Repo --- W3[Worktree B<br>Agent: E2Eテスト自動化]
+    style Repo fill:#1e293b,stroke:#64748b,color:#fff
+    style W1 fill:#0369a1,stroke:#38bdf8,color:#fff
+    style W2 fill:#065f46,stroke:#10b981,color:#fff
+    style W3 fill:#3b0764,stroke:#9333ea,color:#fff
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.4 Reasoning Effort -->
+        <div id="ch2-4">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-brain text-brand-400 text-sm"></i>
+            2.4 推論努力度（Reasoning Effort）の設定指針 & 判断マトリクス
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Gemini 3.7 Flash や Claude 4.6 (thinking) などの推論モデルでは、タスクの難易度に応じて<strong>「Reasoning Effort（推論の深さ・思考時間）」</strong>を調整することで、コストと速度、解答精度のトレードオフを最適化できます。
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-emerald-500 shadow-sm">
+              <div class="font-bold text-emerald-500 dark:text-emerald-400 text-xs sm:text-sm mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-gauge"></i> Low（低推論）
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+                思考ステップを最小化し超高速に応答。定型的なボイラープレート生成、変数名のリネーム、単純なCSS調整に最適。
+              </p>
+              <span class="text-[10px] text-slate-400 font-mono">目安: 1〜3秒で即座に応答</span>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-blue-500 shadow-sm">
+              <div class="font-bold text-blue-500 dark:text-blue-400 text-xs sm:text-sm mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-gauge-simple-high"></i> Medium（標準推論）
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+                バランスの取れた標準設定。一般的なWeb機能開発、API統合、単体テストスイートの自動作成、コードレビューに最適。
+              </p>
+              <span class="text-[10px] text-slate-400 font-mono">目安: 5〜15秒の論理検証</span>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-purple-500 shadow-sm">
+              <div class="font-bold text-purple-500 dark:text-purple-400 text-xs sm:text-sm mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-microchip"></i> High（深層推論）
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+                思考トークンを最大限活用。難解なRace Condition調査、大規模分散アーキテクチャ設計、数学的アルゴリズム導出に必須。
+              </p>
+              <span class="text-[10px] text-slate-400 font-mono">目安: 30秒〜数分のディープ思考</span>
+            </div>
+          </div>
+
+          <!-- Decision Matrix Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <table class="min-w-[600px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold">開発シーン・タスク種別</th>
+                  <th class="p-3 font-semibold">推奨設定</th>
+                  <th class="p-3 font-semibold">推奨モデル</th>
+                  <th class="p-3 font-semibold">選定理由</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 font-semibold">Tab補完・インライン微修正</td>
+                  <td class="p-3 text-emerald-400 font-mono font-bold">Low</td>
+                  <td class="p-3 font-mono">Gemini 3.7 Flash</td>
+                  <td class="p-3">打鍵速度に追従する低レイテンシが必要なため</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold">通常機能実装・テスト作成</td>
+                  <td class="p-3 text-blue-400 font-mono font-bold">Medium</td>
+                  <td class="p-3 font-mono">Gemini 3.7 Flash</td>
+                  <td class="p-3">適度な思考深度と高速なツール呼び出しのバランス</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold">大規模リファクタ・型エラー連鎖</td>
+                  <td class="p-3 text-purple-400 font-mono font-bold">High</td>
+                  <td class="p-3 font-mono">Claude 3.7 Sonnet (thinking)</td>
+                  <td class="p-3">数十ファイルに跨る依存関係の深層推論が必要なため</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 3: SLASH COMMANDS -->
+      <!-- ========================================== -->
+      <section id="ch3" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">3</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第3章：スラッシュコマンド完全マスター</h2>
+        </div>
+
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+          スラッシュコマンドは、チャットUIやCLI上で <code class="font-mono text-brand-400">/</code> を入力することで呼び出せる専用エージェント行動トリガーです。
+        </p>
+
+        <!-- 3.1 /goal -->
+        <div id="ch3-1" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="px-2.5 sm:px-3 py-1 bg-blue-500/20 text-blue-400 font-mono font-bold rounded-lg text-sm sm:text-base">/goal</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">自律完走指示（Autonomous Hill-Climbing ループ）</h3>
+            </div>
+            <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-blue-500/20 text-blue-400 font-mono font-bold rounded">最重要コマンド</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            途中で人間に細かな質問や確認を求めず、ゴールとして設定された数値基準や品質要件（例: <strong>「Lighthouse スコア全指標100点」「テスト全件パス」</strong>）を満たすまで、エージェントが「現状監査 ➜ ガイダンス検索 ➜ 修正 ➜ ブラウザ再検証」を自律反復（Autonomous Hill-Climbing）して完走します。
+          </p>
+
+          <!-- Mermaid Goal Hill-Climbing Loop -->
+          <div class="p-3.5 sm:p-4 rounded-xl bg-darkbg-900 border border-slate-700 mb-4 max-w-full overflow-hidden">
+            <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-2">/goal 自律山登り（Hill-Climbing）反復サイクル</div>
+            <div class="overflow-x-auto max-w-full pb-2">
+              <div class="min-w-[500px]">
+                <div class="mermaid">
+graph LR
+    Goal[ゴール定義<br>例: Lighthouse 100点] --> Audit[1. Chrome MCP監査<br>スコア測定・課題特定]
+    Audit --> Guide[2. ガイダンス検索<br>Modern Web Plugin]
+    Guide --> Fix[3. 自律コード修正<br>Modern CSS / A11y / APIs]
+    Fix --> Test[4. ブラウザ再検証<br>DevTools / Test]
+    Test -->|スコア未達| Audit
+    Test -->|全指標100点達成| Done[完了 & 成果物出力<br>walkthrough.md]
+    style Goal fill:#0369a1,stroke:#38bdf8,color:#fff
+    style Done fill:#065f46,stroke:#10b981,color:#fff
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">公式推奨：Lighthouse All 100 & モダンWeb移行プロンプト例:</div>
+          <div class="relative group mb-4 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">/goal get lighthouse scores to 100 across the board for the "/" landing page. Run the dev server and use chrome mcp to test. Use modern web guidance to also migrate to the latest web apis, modern css, js and html.</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <div class="callout-tip p-3 rounded-lg bg-emerald-500/10 text-emerald-900 dark:text-emerald-200 text-xs leading-relaxed">
+            <strong>バックグラウンド自律稼働とタスクリスト追従:</strong><br>
+            `/goal` 実行中、エージェントは自らタスクリスト（Todo）を作成・更新しながら消化します。ブラウザ画面を閉じて別の作業をしていても、バックグラウンドの Chrome DevTools MCP が自動でレンダリング・監査を継続するため、開発者は完全放置（Overnight実行）でゴール達成を待つことができます。
+          </div>
+        </div>
+
+        <!-- 3.2 /grill-me -->
+        <div id="ch3-2" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="px-2.5 sm:px-3 py-1 bg-purple-500/20 text-purple-400 font-mono font-bold rounded-lg text-sm sm:text-base">/grill-me</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">要件定義・アライメント・インタビュー</h3>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            実装を開始する前に、エージェント側から開発者に対して徹底的に質問攻めを行い、仕様の曖昧さ、エッジケース、セキュリティ要件、データモデルの設計意図を洗い出します。
+          </p>
+          <div class="callout-note p-3.5 sm:p-4 rounded-xl bg-blue-500/10 text-blue-900 dark:text-blue-200 text-xs sm:text-sm leading-relaxed">
+            <strong>使用推奨シーン:</strong> 新規マイクロサービスの設計、認証認可の仕様策定、複雑なビジネスロジックの導入時。曖昧なまま着手して後から全書き換えになるリスクを完全に防ぎます。
+          </div>
+        </div>
+
+        <!-- 3.3 /browser -->
+        <div id="ch3-3" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="px-2.5 sm:px-3 py-1 bg-emerald-500/20 text-emerald-400 font-mono font-bold rounded-lg text-sm sm:text-base">/browser</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Chrome 操作 & ブラウザ自動化の3大ルート</h3>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            組み込みの Chrome ブラウザを立ち上げ、Webページのクリック、フォーム入力、Cookie/LocalStorage操作、スクリーンショット取得、コンソールエラーの収集を自動で行います。
+          </p>
+
+          <div class="relative group mb-6 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">/browser
+1. http://localhost:3000/login にアクセスし、ユーザー名 'testuser'、パスワード 'password123' でログインしてください。
+2. ダッシュボードにリダイレクトされた後、設定ページを開いてプロファイル画像をアップロードできるか検証してください。
+3. エラーが発生した場合はDevToolsのコンソールログを取得し、修正パッチを作成してください。</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Browser Automation 3 Routes Comparison Table -->
+          <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-table-columns text-emerald-400"></i>
+            ブラウザ自動化 3大ルートの仕組みと使い分け比較
+          </h4>
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <table class="min-w-[620px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold">自動化ルート</th>
+                  <th class="p-3 font-semibold">仕組み / プロトコル</th>
+                  <th class="p-3 font-semibold">メリット / 特徴</th>
+                  <th class="p-3 font-semibold">最適なユースケース</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 font-bold text-emerald-400">① 組み込みCDP (/browser)</td>
+                  <td class="p-3">Chrome DevTools Protocol 直接連携</td>
+                  <td class="p-3">設定不要で最速。UI操作・録画・スクショを1行で即時実行。</td>
+                  <td class="p-3">日常的なUI目視確認、レイアウト崩れチェック、単発検証。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-blue-400">② BrowserMCP (DevTools MCP)</td>
+                  <td class="p-3">Model Context Protocol 構造化ブリッジ</td>
+                  <td class="p-3">DOMツリー・ネットワーク・a11y・LCP等の内部データを直接取得。</td>
+                  <td class="p-3">Core Web Vitals パフォーマンス改善、アクセシビリティ監査。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-purple-400">③ Playwright (Skills / CLI)</td>
+                  <td class="p-3">Playwright テストランナー（Node/Python）</td>
+                  <td class="p-3">完全なテストコードを生成。CI/CDでの自動回帰テストが可能。</td>
+                  <td class="p-3">本番デプロイ前の厳格なE2Eテストスイート自動構築。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3.4 /schedule -->
+        <div id="ch3-4" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="px-2.5 sm:px-3 py-1 bg-amber-500/20 text-amber-400 font-mono font-bold rounded-lg text-sm sm:text-base">/schedule</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">定期実行 & タイマータスク（SDLC自動化）</h3>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            エージェントに対して「〇分後」の一時タイマー通知や、「毎朝9時」「毎時0分」といったCron形式のスケジュールタスクを設定できます。
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
+            <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-darkbg-900 border border-slate-200 dark:border-slate-700 text-xs">
+              <div class="font-bold text-slate-900 dark:text-white mb-1">ワンショットタイマー例</div>
+              <code class="font-mono text-amber-400 break-all">/schedule 15m "デプロイ完了を確認してヘルスチェックを実行"</code>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-darkbg-900 border border-slate-200 dark:border-slate-700 text-xs">
+              <div class="font-bold text-slate-900 dark:text-white mb-1">Cron定期ジョブ例</div>
+              <code class="font-mono text-amber-400 break-all">/schedule cron "0 9 * * 1-5" "依存ライブラリのセキュリティ監査とPR作成"</code>
+            </div>
+          </div>
+
+          <!-- Schedule Parameter Reference Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <table class="min-w-[600px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-2.5 font-semibold font-mono">パラメータ名</th>
+                  <th class="p-2.5 font-semibold">型 / 設定値</th>
+                  <th class="p-2.5 font-semibold">動作説明</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300 font-mono text-[11px]">
+                <tr>
+                  <td class="p-2.5 text-brand-400">DurationSeconds</td>
+                  <td class="p-2.5 font-sans">整数（例: <code>600</code>）</td>
+                  <td class="p-2.5 font-sans">ワンショットタイマーの待機秒数。CronExpressionと排他。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">CronExpression</td>
+                  <td class="p-2.5 font-sans">文字列（例: <code>*/5 * * * *</code>）</td>
+                  <td class="p-2.5 font-sans">標準5フィールドCron式。定期リピートタスクに指定。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">TimerCondition</td>
+                  <td class="p-2.5"><code>'never'</code> | <code>'any'</code> | <code>&lt;id&gt;</code></td>
+                  <td class="p-2.5 font-sans">早期覚醒条件。<code>any</code> は任意メッセージ受信時に即時起床。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">IsDaemon</td>
+                  <td class="p-2.5"><code>true</code> | <code>false</code></td>
+                  <td class="p-2.5 font-sans"><code>true</code> は現在のチャット完了後もバックグラウンドで永続常駐。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3.5 Custom Workflows -->
+        <div id="ch3-5">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-brand-400 text-sm"></i>
+            3.5 カスタムワークフローの自作（.agent/workflows/ & {{args}} 仕様）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            プロジェクトルートの <code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">.agent/workflows/</code> ディレクトリに Markdown ファイルを配置するだけで、チーム専用のオリジナルスラッシュコマンドを自由に追加できます。引数プレースホルダー <code class="font-mono text-brand-400">{{args}}</code> にも完全対応しています。
+          </p>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">例: .agent/workflows/review-pr.md（引数対応ワークフロー）</div>
+          <div class="relative group max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">---
+description: "指定されたPR番号またはブランチのコード差分を読み込み、レビューコメントを作成"
+slash_command: review-pr
+---
+
+# PR 自動レビューワークフロー（引数: {{args}}）
+
+あなたはリードコードレビュアーです。指定された対象 `{{args}}` に対して自律レビューを実行してください。
+
+1. `git diff main...{{args}}` を取得し、変更されたコードのアーキテクチャ妥当性を検証する。
+2. セキュリティ（OWASP Top 10）、パフォーマンス、命名規則、テスト漏れの観点で指摘事項を整理する。
+3. 差分に対する具体的な修正提案コードを含む `pr_review_report.md` を作成する。</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 4: ADVANCED ORCHESTRATION -->
+      <!-- ========================================== -->
+      <section id="ch4" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">4</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第4章：高度な自律オーケストレーション</h2>
+        </div>
+
+        <!-- 4.1 Dynamic Subagents -->
+        <div id="ch4-1" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-users-gear text-brand-400 text-sm"></i>
+            4.1 Dynamic Subagents（動的サブエージェント）とコンテキスト保護
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            大規模なリポジトリで数百個のファイルを検索・閲覧すると、メインエージェントのコンテキストウィンドウが不要なログで溢れ（コンテキスト汚染）、推論精度が急激に低下します。
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Antigravity は <code class="font-mono text-xs text-brand-400 bg-darkbg-800 px-1 py-0.5 rounded">invoke_subagent</code> ツールにより、一時的な子エージェント（Subagent）をオンデマンドで生成。子エージェントは隔離されたコンテキストで膨大な探索を行い、最終的な<strong>「要約された結論」</strong>だけを親エージェントに返却します。
+          </p>
+
+          <!-- Mermaid Subagents Architecture (Mobile Scrollable) -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 max-w-full overflow-hidden">
+            <div class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-2">サブエージェントによる並列分散アーキテクチャ</div>
+            <div class="sm:hidden text-center text-[11px] text-slate-400 mb-2 font-mono">
+              <i class="fa-solid fa-arrows-left-right mr-1"></i> 指で横スクロールして拡大表示
+            </div>
+            <div class="overflow-x-auto max-w-full pb-2">
+              <div class="min-w-[550px]">
+                <div class="mermaid">
+graph TD
+    Parent[親エージェント: Main Orchestrator<br>Clean Context] -->|調査委譲| Sub1[Subagent A: Research<br>大規模ファイル探索・Web検索]
+    Parent -->|並行委譲| Sub2[Subagent B: DB Specialist<br>SQL Connect / Migration作成]
+    Parent -->|並行委譲| Sub3[Subagent C: Frontend Tester<br>ブラウザUIテスト]
+    Sub1 -->|要約結果のみ通知| Parent
+    Sub2 -->|スキーマ定義のみ通知| Parent
+    Sub3 -->|テスト合否のみ通知| Parent
+    style Parent fill:#0369a1,stroke:#38bdf8,color:#fff
+    style Sub1 fill:#1e293b,stroke:#64748b,color:#fff
+    style Sub2 fill:#1e293b,stroke:#64748b,color:#fff
+    style Sub3 fill:#1e293b,stroke:#64748b,color:#fff
+                </div>
+              </div>
+            </div>
+          <!-- Subagents Messaging Protocol Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm mb-6">
+            <table class="min-w-[600px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-2.5 font-semibold font-mono">ツール / API</th>
+                  <th class="p-2.5 font-semibold">通信方向</th>
+                  <th class="p-2.5 font-semibold">役割・動作仕様</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300 font-mono text-[11px]">
+                <tr>
+                  <td class="p-2.5 text-brand-400">invoke_subagent</td>
+                  <td class="p-2.5 font-sans">親 ➜ 子（生成）</td>
+                  <td class="p-2.5 font-sans">固有の conversationID を持つ子エージェントをオンデマンド召喚。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">send_message</td>
+                  <td class="p-2.5 font-sans">親 ➜ 子 / 子 ➜ 親</td>
+                  <td class="p-2.5 font-sans">稼働中または待機中のサブエージェントへ追加指示・中間結果を双方向送信。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">manage_subagents</td>
+                  <td class="p-2.5 font-sans">親 ➜ 管理機構</td>
+                  <td class="p-2.5 font-sans">子エージェントの稼働一覧取得（list）、個別終了（kill）、全停止（kill_all）。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4.2 Async Task Management -->
+        <div id="ch4-2" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-clock text-brand-400 text-sm"></i>
+            4.2 Asynchronous Task Management & システムトレイ常駐
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            開発サーバーの起動（<code class="font-mono text-xs">npm run dev</code>）や重いビルド処理、Dockerの起動などの長時間プロセスは、<strong>非同期バックグラウンドタスク</strong>として実行されます。
+          </p>
+
+          <div class="space-y-3 mb-4">
+            <!-- Reactive Wakeup Box -->
+            <div class="callout-important p-3.5 sm:p-4 rounded-xl bg-purple-500/10 text-purple-900 dark:text-purple-200 text-xs sm:text-sm leading-relaxed">
+              <strong>Reactive Wakeup（リアクティブ起動）& タイマー監視:</strong><br>
+              エージェントは無駄にCPUを消費してポーリングを行いません。タスク完了やサブエージェントからのメッセージを受信した瞬間にイベント駆動で自動再開します。また、長時間の探索がスタックしないよう、<code class="font-mono text-xs bg-white/20 px-1 rounded">schedule</code> ツールによる「90秒チェックイン（Heartbeat監視）」を設定し、応答がない場合の自律リカバリを担保します。
+            </div>
+
+            <!-- Taskbar / System Tray Daemon -->
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1.5 flex items-center gap-2">
+                <i class="fa-solid fa-bell-concierge text-brand-400"></i>
+                OSタスクトレイ常駐 & 並列稼働エージェント数の可視化
+              </div>
+              <p class="leading-relaxed">
+                Antigravity はバックグラウンドで `/goal` や深夜の自動テストスイートが走っている際、<strong>Windows の通知領域（タスクトレイ）/ macOS メニューバーに常駐</strong>します。アイコン上に「現在並行稼働しているエージェント数（例: <span class="px-1.5 py-0.5 rounded bg-brand-500 text-white font-mono font-bold text-[10px]">3</span>）」がバッジ表示され、クリック1発で対象の会話や録画ビューへ即座に復帰できます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.3 Hooks -->
+        <div id="ch4-3" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-plug-circle-bolt text-brand-400 text-sm"></i>
+            4.3 JSON Lifecycle Hooks（ライフサイクルフック）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            プロジェクト内の <code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">.agent/hooks.json</code> で定義することで、エージェントの特定イベント（ツール実行前、ターン開始時、完了時）にシェルスクリプトやバリデータを自動介入させることができます。
+          </p>
+
+          <!-- Hooks Lifecycle Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm mb-4">
+            <table class="min-w-[600px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-2.5 font-semibold font-mono">フックイベント名</th>
+                  <th class="p-2.5 font-semibold">発火タイミング</th>
+                  <th class="p-2.5 font-semibold">代表的な活用ユースケース</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300 font-mono text-[11px]">
+                <tr>
+                  <td class="p-2.5 text-brand-400">pre_tool_execution</td>
+                  <td class="p-2.5 font-sans">ツール実行直前（ブロック可）</td>
+                  <td class="p-2.5 font-sans">危険コマンド（rm -rf / drop db）の静的検査と遮断。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">post_file_write</td>
+                  <td class="p-2.5 font-sans">ファイル保存直後</td>
+                  <td class="p-2.5 font-sans">Prettier / Biome / ESLint の自動フォーマッター即時実行。</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-brand-400">on_goal_complete</td>
+                  <td class="p-2.5 font-sans">/goal タスク完走時</td>
+                  <td class="p-2.5 font-sans">Slack / Discord / Teams への完了通知 Webhook 呼出。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">設定例: .agent/hooks.json</div>
+          <div class="relative group max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-json">{
+  "hooks": {
+    "pre_tool_execution": [
+      {
+        "matcher": "run_command",
+        "condition": "command.includes('rm -rf') || command.includes('drop database')",
+        "action": "block_and_alert",
+        "message": "危険なコマンドが検出されたため実行をブロックしました。"
+      }
+    ],
+    "post_file_write": [
+      {
+        "matcher": "*.ts|*.tsx|*.js",
+        "action": "execute_script",
+        "command": "npx prettier --write {{file_path}}"
+      }
+    ]
+  }
+}</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4.4 Security & Permissions -->
+        <div id="ch4-4">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-brand-400 text-sm"></i>
+            4.4 セキュリティ・権限ポリシー & カーネルサンドボックス
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Antigravity は、エージェントによる偶発的なファイル破壊や機密情報漏洩を防ぐため、すべての敏感な操作を <code class="font-mono text-brand-400">action(target)</code> 形式でモデル化し、3段階のアクセスリスト（Deny / Ask / Allow）とOSカーネルレベルのサンドボックスで評価します。
+          </p>
+
+          <!-- 3-Tier Access Policy Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-red-500 shadow-sm">
+              <div class="font-bold text-red-500 dark:text-red-400 text-xs sm:text-sm mb-1">1. Deny（恒久ブロック）</div>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                即座に実行を遮断。<code class="font-mono text-[10px]">.env</code>、SSH秘密鍵、<code class="font-mono text-[10px]">.git/</code> への書き込み、<code class="font-mono text-[10px]">sudo</code>、<code class="font-mono text-[10px]">rm -rf</code> 等を恒久的に防壁化。
+              </p>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-amber-500 shadow-sm">
+              <div class="font-bold text-amber-500 dark:text-amber-400 text-xs sm:text-sm mb-1">2. Ask（手動承認要求）</div>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                実行前にユーザーへ承認ダイアログを表示。未設定のコマンドや外部URLアクセス、破壊的マイグレーション等の安全弁として機能。
+              </p>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-l-4 border-emerald-500 shadow-sm">
+              <div class="font-bold text-emerald-500 dark:text-emerald-400 text-xs sm:text-sm mb-1">3. Allow（自動承認）</div>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                プロンプトなしで自律実行を許可。<code class="font-mono text-[10px]">git</code> コマンド、<code class="font-mono text-[10px]">npm test</code>、ワークスペース内 <code class="font-mono text-[10px]">src/</code> へのファイル書き込みを承認。
+              </p>
+            </div>
+          </div>
+
+          <!-- Permissions Resource Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 mb-6 shadow-sm">
+            <table class="min-w-[620px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold">アクション</th>
+                  <th class="p-3 font-semibold">ターゲット構文の例</th>
+                  <th class="p-3 font-semibold">既定値</th>
+                  <th class="p-3 font-semibold">説明 & 暗黙ルール</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">read_file</td>
+                  <td class="p-3 font-mono">read_file(/path), read_file(*)</td>
+                  <td class="p-3">Ask（Workspace内はAllow）</td>
+                  <td class="p-3">ファイルの読み取り権限。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">write_file</td>
+                  <td class="p-3 font-mono">write_file(src/), write_file(.git/)</td>
+                  <td class="p-3">Ask（Workspace内はAllow）</td>
+                  <td class="p-3">ファイルの新規作成・編集。<strong>※write許可時は自動でreadも許可</strong></td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">command</td>
+                  <td class="p-3 font-mono">command(git), command(npm run (build|test))</td>
+                  <td class="p-3">Ask</td>
+                  <td class="p-3">プレフィックスや正規表現で端末コマンドを制御。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">read_url</td>
+                  <td class="p-3 font-mono">read_url(google.com), read_url(*)</td>
+                  <td class="p-3">Ask</td>
+                  <td class="p-3">HTTPリクエストによる外部ドキュメント取得。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">execute_url</td>
+                  <td class="p-3 font-mono">execute_url(localhost), execute_url(aws.amazon.com)</td>
+                  <td class="p-3">Ask</td>
+                  <td class="p-3">ブラウザ操作（クリック・フォーム入力）の接続先ドメイン制限。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">unsandboxed</td>
+                  <td class="p-3 font-mono">unsandboxed(docker), unsandboxed(*)</td>
+                  <td class="p-3">Ask</td>
+                  <td class="p-3">カーネルサンドボックス外でのコマンド直接実行。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold text-brand-400">mcp</td>
+                  <td class="p-3 font-mono">mcp(postgres/*), mcp(github/create_pr)</td>
+                  <td class="p-3">Ask</td>
+                  <td class="p-3">MCPツールの個別またはサーバー単位の実行制御。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Configuration Example -->
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">権限設定の推奨テンプレート（Allow / Deny / Ask）:</div>
+          <div class="relative group mb-6 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown"># Allow（自動承認）
+command(git)
+command(npm run (build|lint|test))
+write_file(src/)
+write_file(tests/)
+read_url(google.com)
+read_url(github.com)
+mcp(linter/*)
+
+# Deny（恒久ブロック - セキュリティ絶対防衛）
+command(rm -rf)
+command(sudo)
+command(curl .*)
+write_file(.git/)
+write_file(.env*)
+write_file(/home/user/.ssh)
+
+# Ask（危険度が高い操作は手動承認）
+command(*)
+execute_url(aws.amazon.com)
+mcp(postgres/execute_mutation)</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Kernel Sandbox & YOLO Mode -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 space-y-3 text-xs text-slate-300">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+              <i class="fa-solid fa-lock text-amber-400"></i> OSカーネルレベルのターミナルサンドボックス機構
+            </h4>
+            <p class="text-slate-400 leading-relaxed">
+              Antigravity のサンドボックスは、エージェントが実行する端末コマンドをOSカーネル層で物理隔離します。
+            </p>
+            <ul class="space-y-1.5 list-disc list-inside text-slate-300 font-mono text-[11px]">
+              <li><strong>macOS:</strong> Apple Seatbelt (<code class="text-brand-400">sandbox-exec</code>) によりワークスペース外への書き込みをカーネルレベルで遮断。</li>
+              <li><strong>Linux:</strong> <code class="text-brand-400">nsjail</code> によるプロセス分離・ファイルシステムマウント隔離・リソース制限。</li>
+              <li><strong>ネットワーク隔離:</strong> <code class="text-brand-400">Sandbox Allow Network: OFF</code> に設定することで、<code class="text-brand-400">read_url</code> で許可したドメイン以外の全アウトバウンド通信を遮断。</li>
+            </ul>
+
+            <div class="callout-caution p-3 rounded-lg bg-red-500/10 border-l-4 border-red-500 text-red-900 dark:text-red-200 text-xs mt-3">
+              <strong>CLI YOLO モード（--dangerously-skip-permissions）の警告:</strong><br>
+              全確認プロンプトをスキップする YOLO 起動は、Docker コンテナや隔離 VM などの使い捨て環境でのみ自己責任で使用してください。ホストマシンの本番ディレクトリでは絶対に使用しないでください。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 5: SKILLS, MCP & PYTHON SDK -->
+      <!-- ========================================== -->
+      <section id="ch5" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">5</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第5章：Skills・MCP・Python SDK 連携</h2>
+        </div>
+
+        <!-- 5.1 Skills -->
+        <div id="ch5-1" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-toolbox text-brand-400 text-sm"></i>
+            5.1 Agent Skills 仕様と Progressive Disclosure
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            <strong>Skill（スキル）</strong>とは、特定ドメインの知識や手順（Firebase構築、Next.js最適化、アクセシビリティ監査など）をカプセル化したモジュールです。
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            通常時はスキルの「名前と概要」のみがインデックスされ、タスクに関連すると判断された瞬間にのみ本体（<code class="font-mono text-xs">SKILL.md</code>）がコンテキストに読み込まれる<strong>Progressive Disclosure（段階的開示）</strong>により、トークン消費を最小限に抑えます。
+          </p>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">例: .agents/skills/docker-deploy/SKILL.md</div>
+          <div class="relative group mb-6 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">---
+name: docker-deploy
+description: Multi-stage Docker build and Google Cloud Run deployment automation. Use when user wants to containerize or deploy apps.
+---
+
+# Docker Deployment Skill
+
+このスキルが呼び出された際は、以下のベストプラクティスを厳守してください：
+
+1. Dockerfile は必ず Multi-stage build を採用し、本番イメージにビルドツールを含めないこと。
+2. 非rootユーザー（`USER appuser`）でプロセスを実行すること。
+3. `.dockerignore` を自動生成し、`.git`, `node_modules`, `.env` を除外すること。</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5.2 MCP -->
+        <div id="ch5-2" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-network-wired text-brand-400 text-sm"></i>
+            5.2 Model Context Protocol (MCP) サーバー連携（Chrome DevTools MCP & stdio/HTTP）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Antigravity は業界標準の <strong>Model Context Protocol (MCP)</strong> にネイティブ対応しています。<code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">mcp_config.json</code> を記述することで、<strong>Chrome DevTools MCP</strong>（Lighthouse監査・パフォーマンストレース）、PostgreSQL、GitHub、Sentry などの外部ツールを即座にエージェントに利用させることができます。
+          </p>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">設定場所: グローバル (~/.gemini/config/mcp_config.json) または ワークスペース (.agents/mcp_config.json)</div>
+          <div class="relative group mb-4 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-json">{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "env": {
+        "PUPPETEER_HEADLESS": "true"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_xxxxxxxxxxxx"
+      }
+    },
+    "remote-ai-analytics": {
+      "serverUrl": "https://api.example.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_TOKEN"
+      }
+    }
+  }
+}</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-xs">
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white mb-1 font-mono text-emerald-400 flex items-center gap-1.5">
+                <i class="fa-brands fa-chrome"></i> Chrome DevTools MCP 主要ツール
+              </div>
+              <ul class="space-y-1 text-slate-600 dark:text-slate-300 text-[11px] list-disc list-inside">
+                <li><code class="font-mono text-brand-400">lighthouse_audit</code>: 全指標スコア測定</li>
+                <li><code class="font-mono text-brand-400">performance_start_trace</code>: LCP/INP分析</li>
+                <li><code class="font-mono text-brand-400">navigate_page</code>: ブラウザ遷移とDOM取得</li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white mb-1 font-mono text-blue-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check"></i> 動作確認プロンプト
+              </div>
+              <p class="text-slate-600 dark:text-slate-300 text-[11px] leading-relaxed">
+                チャットで <code class="font-mono text-brand-400">What tools do you have access to?</code> と質問し、MCPツール一覧が返れば接続完了です。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5.3 Python SDK -->
+        <div id="ch5-3">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-brands fa-python text-brand-400 text-sm"></i>
+            5.3 Google Antigravity Python SDK 実践プログラミング
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            自社スクリプトやCI/CDパイプラインからプログラムでエージェントを召喚・制御する完全コード例です。思考ストリーミング、ツール呼び出し監視、カスタムツールの付与が可能です。
+          </p>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">Python SDK 実装例 (main.py)</div>
+          <div class="relative group max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-python">import asyncio
+import sys
+from google.antigravity import Agent, LocalAgentConfig, CapabilitiesConfig
+
+async def run_autonomous_pipeline():
+    # 1. エージェントの構成設定（書き込み権限・コマンド実行ツールを有効化）
+    config = LocalAgentConfig(
+        system_instructions="あなたは最先端のフルスタックエンジニアです。テスト駆動で堅牢なコードを作成してください。",
+        capabilities=CapabilitiesConfig(
+            enable_file_write=True,
+            enable_run_command=True,
+        ),
+        model="gemini-3.7-flash",
+    )
+
+    # 2. 非同期コンテキストマネージャーでエージェントを起動
+    async with Agent(config) as agent:
+        print("=== Antigravity Agent 起動中 ===")
+        
+        # チャット指示を送信
+        response = await agent.chat(
+            "FastAPI を使ったシンプルな認証API（/login, /me）を作成し、pytest の単体テストを作成して実行してください。"
+        )
+
+        # 思考（Thinking）ログのリアルタイム監視
+        async for thought in response.thoughts:
+            print(f"[\033[94mThinking\033[0m] {thought}")
+
+        # ツール呼び出しの監視
+        async for tool_call in response.tool_calls:
+            print(f"[\033[92mTool Executed\033[0m] {tool_call.name} (args: {tool_call.args})")
+
+        # 最終レスポンストークンのストリーミング出力
+        print("\n=== エージェント最終報告 ===")
+        async for token in response:
+            sys.stdout.write(token)
+            sys.stdout.flush()
+        print("\n")
+
+if __name__ == "__main__":
+    asyncio.run(run_autonomous_pipeline())</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5.4 Build with Google Plugins & Plugin Spec -->
+        <div id="ch5-4" class="mt-10 sm:mt-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-puzzle-piece text-brand-400 text-sm"></i>
+            5.4 Build with Google Plugins と Agent Plugin Spec
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Google Antigravity は、エコシステム全体の専門知識・MCPツール・ルールをワンクリックで導入できる<strong>「Build with Google Plugins」</strong>および、業界標準規格となった<strong>「Agent Plugin Spec」</strong>に完全対応しています。
+          </p>
+
+          <!-- Settings Guide Callout -->
+          <div class="callout-tip p-3.5 sm:p-4 rounded-xl bg-emerald-500/10 text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm mb-6">
+            <div class="font-bold flex items-center gap-2 mb-1">
+              <i class="fa-solid fa-sliders"></i> プラグインの有効化手順
+            </div>
+            デスクトップアプリまたはIDEの設定画面から <code class="font-mono bg-white/20 px-1.5 py-0.5 rounded">Settings > Customizations > Build with Google Plugins</code> を開き、必要な公式プラグインをトグルONにするだけで即座にプロジェクトへロードされます。
+          </div>
+
+          <!-- Official Plugins Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-2">
+                <span class="p-2 rounded-lg bg-blue-500/10 text-blue-500 text-base"><i class="fa-brands fa-chrome"></i></span>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Modern Web Guidance Plugin</h4>
+                  <span class="text-[10px] text-slate-400 font-mono">HTML/CSS/JS Best Practices</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+                <code class="font-mono text-[11px] text-brand-400">npx -y modern-web-guidance@latest search/retrieve</code> を通じ、最新のWeb標準仕様・WebMCP・Core Web Vitals改善ノウハウをオンデマンド取得。
+              </p>
+              <p class="text-[11px] text-slate-500 leading-relaxed">
+                Popover API、View Transitions、Container Queries、<code>:has()</code>、<code>text-wrap: balance</code>、アクセシビリティ（a11y）の是正コードを自動適用。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-2">
+                <span class="p-2 rounded-lg bg-amber-500/10 text-amber-500 text-base"><i class="fa-solid fa-fire"></i></span>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Firebase Plugin</h4>
+                  <span class="text-[10px] text-slate-400 font-mono">Backend & Data Connect</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Firebase Data Connect (PostgreSQL)、Firestore、Auth、App Hosting、Remote Config、セキュリティルール静的監査（Security Rules Auditor）を網羅。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-2">
+                <span class="p-2 rounded-lg bg-cyan-500/10 text-cyan-500 text-base"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Flutter / Android CLI</h4>
+                  <span class="text-[10px] text-slate-400 font-mono">Cross-Platform & Native Mobile</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Widget設計、状態管理、ネイティブ連携、Gradleビルド自動化、エミュレータ起動・Logcatデバッグまでをエージェントが自律遂行。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-2">
+                <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 text-base"><i class="fa-solid fa-database"></i></span>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Data Agent Kit</h4>
+                  <span class="text-[10px] text-slate-400 font-mono">SQL Optimization & Pipeline</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                複雑なSQLクエリのEXPLAIN実行計画解析、インデックス設計、BigQueryやPostgreSQLのマイグレーション自動化を強力にサポート。
+              </p>
+            </div>
+          </div>
+
+          <!-- Agent Plugin Spec Architecture -->
+          <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-box-archive text-brand-400"></i>
+            Agent Plugin Spec（プラグイン標準パッケージ規格）の自作
+          </h4>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            Agent Plugin Spec は、スキル（Skills）、MCP設定（MCP Config）、コーディングルール（Rules）、フック（Hooks）を1つの再利用可能なパッケージとして束ねる共通規格です。
+          </p>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">自作プラグインのディレクトリ構成:</div>
+          <div class="relative group mb-4 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">my-company-plugin/
+├── plugin.json              # プラグインのマニフェスト定義（メタデータ・依存関係）
+├── skills/                  # 再利用可能なスキル群
+│   └── secure-api-design/
+│       └── SKILL.md
+├── mcp_config.json          # バンドルするMCPサーバーの接続定義
+├── rules/                   # チーム共通のコーディング規約（GEMINI.md / AGENTS.md）
+│   └── security-rules.md
+└── hooks.json               # ツール実行前後の自動検証フック</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">例: plugin.json の記述</div>
+          <div class="relative group max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-json">{
+  "name": "enterprise-standard-suite",
+  "version": "1.0.0",
+  "description": "社内セキュリティ規約、PostgreSQL MCP、自動リファクタリングスキルを統合したプラグイン",
+  "skills": ["./skills/secure-api-design"],
+  "mcp_config": "./mcp_config.json",
+  "rules": ["./rules/security-rules.md"],
+  "hooks": "./hooks.json"
+}</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 6: REAL-WORLD PLAYBOOKS -->
+      <!-- ========================================== -->
+      <section id="ch6" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">6</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第6章：実戦ユースケース＆プレイブック</h2>
+        </div>
+
+        <!-- 6.1 Playbook 1: Web App Development -->
+        <div id="ch6-1" class="mb-8 sm:mb-12">
+          <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P1</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">実践チュートリアル1：Webアプリ開発（React + TS + Vite + Express + Postgres）</h3>
+              </div>
+              <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-blue-500/20 text-blue-400 font-mono rounded">フルスタック構築</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              空のディレクトリから、タスク管理アプリ（JWT認証・PostgreSQL・Tailwind UI・Playwright E2E検証）を段階的かつ安全に構築する実践フローです。
+            </p>
+
+            <div class="space-y-4 text-xs">
+              <div class="border-l-2 border-blue-500 pl-3">
+                <strong class="text-slate-900 dark:text-white font-bold block mb-1">Step 1: ワークスペース & ルール準備</strong>
+                <p class="text-slate-500 mb-2">新規フォルダで Antigravity を開き、<code class="font-mono text-brand-400">.agents/rules/coding.md</code> にTypeScript strict / テスト必須 / .env保護ルールを配置。</p>
+              </div>
+
+              <div class="border-l-2 border-blue-500 pl-3">
+                <strong class="text-slate-900 dark:text-white font-bold block mb-1">Step 2: 計画ファースト（Plan First）で Artifacts 出力</strong>
+                <p class="text-slate-500 mb-2">実装前にエージェントへ計画立案を指示し、アーキテクチャとスキーマ設計を承認します。</p>
+                <div class="relative group max-w-full">
+                  <pre class="line-numbers text-xs overflow-x-auto max-w-full"><code class="language-markdown">/goal
+タスク管理Webアプリを作成したい。
+【スタック】React + TypeScript + Vite + Tailwind CSS + Node.js/Express + PostgreSQL (Prisma)
+【要件】
+1. まずは要件整理とDBスキーマ、APIエンドポイント設計を Artifacts の計画書として出力してください。
+2. 私が承認するまでソースコードの書き込みは行わないこと。</code></pre>
+                  <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] rounded border border-slate-600 transition shadow">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="border-l-2 border-blue-500 pl-3">
+                <strong class="text-slate-900 dark:text-white font-bold block mb-1">Step 3: モデルを使い分けた段階実装 & Browser Agent 検証</strong>
+                <p class="text-slate-500 mb-2">基本足場は <code>Gemini Flash</code>、複雑なJWT認証やSQL最適化は <code>Claude Sonnet / Opus 4.6 (thinking)</code> にエスカレーション。完了後は Browser Agent にブラウザ巡回とスクリーンショット検証を指示。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6.2 Playbook 2: LP Template -->
+        <div id="ch6-2" class="mb-8 sm:mb-12">
+          <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P2</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">実践チュートリアル2：高速LP作成（単一HTML + Tailwind + Nano Banana 2）</h3>
+              </div>
+              <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-cyan-500/20 text-cyan-400 font-mono rounded">CVR特化LP</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              コンバージョン率を最大化するB2B SaaS向けランディングページ（LP）を、外部CSSファイル不要の単一HTMLと画像生成AIで爆速構築するフローです。
+            </p>
+
+            <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">投入プロンプト:</div>
+            <div class="relative group mb-4 max-w-full">
+              <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">/goal
+B2B SaaSの新規獲得ランディングページ（index.html）を単一ファイルで作成してください。
+
+【構成セクション】
+1. ヒーローセクション（魅力的なキャッチコピー + 無料トライアルCTAボタン）
+2. 顧客の課題提起（3つのペインポイント）
+3. ソリューション＆主要機能（アイコン付き3カラム）
+4. 導入事例・お客様の声（信頼性の高いカードUI）
+5. 料金プラン比較表（推奨プランのバッジ付き）
+6. よくある質問（FAQアコーディオン）
+7. フッター（プライバシーポリシー・コピーライト）
+
+【デザイン＆技術制約】
+- Tailwind CSS (CDN) と Lucide Icons / FontAwesome を利用し、単一HTMLで完結すること。
+- 必要に応じて Nano Banana 2 を呼び出し、ヒーロー背景や機能イメージ画像を自動生成して配置すること。
+- /browser で 1920x1080 (PC) と 375x812 (Mobile) の両方で崩れがないか目視検証すること。</code></pre>
+              <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6.3 Playbook 3 -->
+        <div id="ch6-3" class="mb-8 sm:mb-12">
+          <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-purple-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P3</div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">大規模レガシーコードのリファクタリング（Worktree Mode + TDD）</h3>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              既存のJavaScriptプロジェクトをTypeScriptへ移行し、全関数に厳格な型定義とUnit Testを適用するプレイブック。Worktree Modeで現在のコードを保護します。
+            </p>
+
+            <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">投入プロンプト:</div>
+            <div class="relative group max-w-full">
+              <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">/goal
+`src/legacy/` 配下の全JSファイルをTypeScript (`.ts`) にリファクタリングしてください。
+
+【厳格ルール】
+1. `any` 型の使用を禁止し、厳格な Interface / Type 定義を行うこと。
+2. 各モジュールの単体テスト（Jest / Vitest）を `tests/unit/` に新設し、移行前の振る舞いが完全に維持されていることをテストすること。
+3. `npm run type-check` および `npm test` がエラーゼロで通過すること。</code></pre>
+              <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6.4 Playbook 4: Lighthouse All 100 Autonomous Loop -->
+        <div id="ch6-4" class="mb-8 sm:mb-12">
+          <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border-2 border-emerald-500/40 shadow-lg max-w-full">
+            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P4</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">実録：Gemini 3.7 Flash × /goal による Lighthouse All 100 ＆ モダンWeb完全移行</h3>
+              </div>
+              <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-400 font-mono font-bold rounded">自律Hill-Climbing実戦</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              Gemini 3.7 Flash の高速推論とツールコーリング性能を活かし、人間が介入することなく「現状監査 ➜ ガイダンス検索 ➜ 修正実装 ➜ ブラウザ検証」をループさせて、<strong>Lighthouse スコア全指標100点 ＆ 最新Web標準への完全移行</strong>を自律達成するメインプレイブックです。
+            </p>
+
+            <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">投入プロンプト:</div>
+            <div class="relative group mb-6 max-w-full">
+              <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">/goal get lighthouse scores to 100 across the board for the "/" landing page. Run the dev server and use chrome mcp to test. Use modern web guidance to also migrate to the latest web apis, modern css, js and html.</code></pre>
+              <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <!-- 4-Stage Autonomous Process Cards -->
+            <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-stairs text-emerald-400"></i>
+              エージェントが自律遂行する4段階のプロセス詳細
+            </h4>
+
+            <div class="space-y-4 mb-6">
+              <!-- Step 1 -->
+              <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-900 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-5 h-5 rounded-full bg-blue-500 text-white font-mono text-[11px] flex items-center justify-center font-bold">1</span>
+                  <h5 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Initial Audit（現状監査 & 課題ギャップ分析）</h5>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mb-2 leading-relaxed">
+                  エージェントは自動でローカルサーバーを起動し、<strong>Chrome DevTools MCP</strong>（<code class="font-mono text-[11px] text-brand-400">lighthouse_audit</code> / <code class="font-mono text-[11px] text-brand-400">performance_start_trace</code>）を呼出。Desktop / Mobile の現状スコアを計測し、問題点を構造化した監査Artifactを出力します。
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
+                  <div class="p-2 rounded bg-darkbg-800 border border-slate-700">Performance: <span class="text-amber-400 font-bold">78</span></div>
+                  <div class="p-2 rounded bg-darkbg-800 border border-slate-700">Accessibility: <span class="text-red-400 font-bold">81</span></div>
+                  <div class="p-2 rounded bg-darkbg-800 border border-slate-700">Best Practices: <span class="text-amber-400 font-bold">75</span></div>
+                  <div class="p-2 rounded bg-darkbg-800 border border-slate-700">SEO: <span class="text-emerald-400 font-bold">90</span></div>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-900 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-5 h-5 rounded-full bg-purple-500 text-white font-mono text-[11px] flex items-center justify-center font-bold">2</span>
+                  <h5 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Guidance Retrieval（Modern Web プラグインによる最新仕様取得）</h5>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  古いCSSプロパティや非推奨APIを検出したエージェントは、<strong>Modern Web Guidance Plugin</strong>（<code class="font-mono text-[11px] text-brand-400">modern-web-guidance search/retrieve</code>）を自律実行。Web標準（Modern CSS / WebMCP / a11y規範）から最新の修正パターンをオンデマンド取得します。
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-900 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-mono text-[11px] flex items-center justify-center font-bold">3</span>
+                  <h5 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Autonomous Repair & Verification（自律修復 & 再検証ループ）</h5>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mb-2 leading-relaxed">
+                  エージェントはコードベースに対して以下の最新Web標準パッチを順次適用し、Chrome MCPで再テストを反復します：
+                </p>
+                <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside">
+                  <li><strong>Modern CSS:</strong> 見出しの自然な折り返し（<code class="font-mono text-[11px] text-emerald-400">text-wrap: balance</code>）、段落の孤立行防止（<code class="font-mono text-[11px] text-emerald-400">text-wrap: pretty</code>）、OS連動（<code class="font-mono text-[11px] text-emerald-400">color-scheme: light dark</code>）、モーション軽減対応。</li>
+                  <li><strong>Semantic & A11y:</strong> アイコンフォントへの <code class="font-mono text-[11px] text-emerald-400">aria-hidden="true"</code> 付与、可視テキストと <code class="font-mono text-[11px] text-emerald-400">aria-label</code> の一致、セマンティック構造（<code class="font-mono text-[11px] text-emerald-400">&lt;main&gt;</code>, <code class="font-mono text-[11px] text-emerald-400">&lt;header&gt;</code>）の完全是正。</li>
+                  <li><strong>Agentic Browsing & APIs:</strong> WebMCP メタタグの追加、アクセシビリティツリーの最適化、遅延読み込みと <code class="font-mono text-[11px] text-emerald-400">fetchpriority="high"</code> の設定。</li>
+                </ul>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-900 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-5 h-5 rounded-full bg-teal-500 text-white font-mono text-[11px] flex items-center justify-center font-bold">4</span>
+                  <h5 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Final Artifact（全項目100点達成 & 完了レポート出力）</h5>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+                  全スコアが 100 に達した時点で、エージェントは最終成果物ドキュメント（<code class="font-mono text-[11px] text-brand-400">walkthrough.md</code>）を作成し、ビフォーアフターの差分を提示して完走します。
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
+                  <div class="p-2 rounded bg-emerald-950/40 border border-emerald-600 text-emerald-400 font-bold">Performance: 100 💯</div>
+                  <div class="p-2 rounded bg-emerald-950/40 border border-emerald-600 text-emerald-400 font-bold">Accessibility: 100 💯</div>
+                  <div class="p-2 rounded bg-emerald-950/40 border border-emerald-600 text-emerald-400 font-bold">Best Practices: 100 💯</div>
+                  <div class="p-2 rounded bg-emerald-950/40 border border-emerald-600 text-emerald-400 font-bold">SEO: 100 💯</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Periodic CI/CD Automation Tip -->
+            <div class="callout-tip p-3 rounded-lg bg-blue-500/10 text-blue-900 dark:text-blue-200 text-xs leading-relaxed">
+              <strong>応用：CI/CD・日次運用での定期自動監査（/schedule 連携）</strong><br>
+              <code class="font-mono text-[11px]">/schedule cron "0 8 * * 1-5" "Run lighthouse audit with chrome mcp and open PR if score drops below 95"</code> を設定することで、毎朝自動でリグレッションテストと品質監査を自律稼働させることができます。
+            </div>
+          </div>
+        </div>
+
+        <!-- 6.5 Playbook 5: WordPress Plugin Development -->
+        <div id="ch6-5">
+          <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-brand-500/40 shadow-lg max-w-full">
+            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P5</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">WordPress プラグイン開発の完全手順（セキュリティ5原則・WPCS規約）</h3>
+              </div>
+              <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-brand-500/20 text-brand-400 font-mono rounded">公式セキュリティ完全網羅</span>
+            </div>
+            
+            <p class="text-xs text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+              WordPress 公式セキュリティ原則（「データを信用しない」「WordPress APIに頼る」）に基づき、nonce検証・サニタイズ・エスケープ・権限チェック・プリペアドステートメントを100%実装する完全手順です。
+            </p>
+
+            <!-- WordPress Security 5 Rules Code Block -->
+            <div class="mb-6">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-shield-virus text-brand-400"></i>
+                WordPress セキュリティの5原則（必須実装コード集）
+              </h4>
+              <div class="relative group max-w-full">
+                <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-php">&lt;?php
+// 1. 直接アクセスの即時遮断（全PHPファイルの先頭に記述）
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+// 2. Nonce による CSRF 対策（フォーム出力 & 受信検証）
+// 【フォーム出力時】
+wp_nonce_field( 'my_lead_action', 'my_lead_nonce' );
+
+// 【受信検証時: WPCS準拠の unslash + sanitize + verify】
+if ( ! isset( $_POST['my_lead_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['my_lead_nonce'] ) ), 'my_lead_action' ) ) {
+    wp_die( esc_html__( 'セキュリティチェックに失敗しました。', 'my-plugin' ) );
+}
+
+// 3. 入力値のサニタイズ（入力時・型に応じた関数を使用）
+$name  = sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) );
+$email = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
+$msg   = wp_kses_post( wp_unslash( $_POST['message'] ?? '' ) );
+$qty   = absint( $_POST['qty'] ?? 0 );
+
+// 4. 出力のエスケープ（出力直前でコンテキストに応じた関数を使用）
+echo esc_html( $name );                                              // テキスト出力
+echo '&lt;a href="' . esc_url( $user_url ) . '"&gt;' . esc_html__( '詳細', 'my-plugin' ) . '&lt;/a&gt;'; // URL & 翻訳テキスト
+printf( '&lt;input value="%s" /&gt;', esc_attr( $name ) );               // HTML属性値内
+
+// 5. 権限チェック (Capability Check)
+if ( ! current_user_can( 'manage_options' ) ) {
+    wp_die( esc_html__( 'この操作を実行する権限がありません。', 'my-plugin' ) );
+}
+
+// 6. プリペアドステートメントによる SQL インジェクション完全防止
+global $wpdb;
+$table_name = $wpdb->prefix . 'my_leads';
+$wpdb->insert(
+    $table_name,
+    array( 'name' => $name, 'email' => $email, 'created_at' => current_time( 'mysql' ) ),
+    array( '%s', '%s', '%s' )
+);
+$results = $wpdb->get_results(
+    $wpdb->prepare( "SELECT * FROM {$table_name} WHERE email = %s", $email )
+);</code></pre>
+                <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Workspace Rule for WP Security -->
+            <div class="mb-6">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-file-code text-brand-400"></i>
+                エージェント用ワークスペースルール（.agents/rules/wordpress-security.md）
+              </h4>
+              <div class="relative group max-w-full">
+                <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown"># WordPress プラグイン開発セキュリティ規約
+
+- すべてのユーザー入力は sanitize_* 関数でサニタイズすること。
+- すべての出力は esc_html / esc_attr / esc_url / wp_kses_post でエスケープすること。
+- 状態変更リクエストには必ず nonce を付与し wp_verify_nonce で検証すること。
+- 権限チェックは current_user_can('manage_options') 等で実施すること。
+- SQL は必ず $wpdb->prepare() を使用し、直接クエリ展開を禁止すること。
+- ユーザー向け文字列はすべて __() / _e() / esc_html__() でラップし i18n 対応すること。
+- $_GET / $_POST の直接参照を禁止し、必ず wp_unslash() とサニタイズを併用すること。
+- 直接アクセス防止コード `if ( ! defined( 'ABSPATH' ) ) exit;` を全PHPファイルの先頭に記述すること。</code></pre>
+                <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Release Audit Prompt -->
+            <div class="border-l-2 border-emerald-500 pl-3 sm:pl-4">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2">リリース前セキュリティ監査プロンプト</h4>
+              <div class="relative group max-w-full">
+                <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown">/goal
+作成した WordPress プラグインのセキュリティ静的監査を実施してください。
+1. 全PHPファイルの入力サニタイズ・出力エスケープ漏れの有無
+2. 全フォーム送信・AJAXにおける Nonce 検証の有無
+3. 管理者機能における current_user_can() の適用状況
+4. SQLクエリにおける $wpdb->prepare() の適用漏れの有無
+5. `WP_DEBUG=true` で Notice / Warning がゼロであることを確認し、`plugin-name.zip` を生成してください。</code></pre>
+                <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 7: PROMPT & TROUBLESHOOTING -->
+      <!-- ========================================== -->
+      <section id="ch7" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">7</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第7章：プロンプトエンジニアリング＆トラブルシューティング</h2>
+        </div>
+
+        <!-- 7.1 Constraints -->
+        <div id="ch7-1" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-bullseye text-brand-400 text-sm"></i>
+            7.1 自律エージェントを迷走・暴走させない「制約条件（Constraints）」の極意
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            自律型エージェントに指示を出す際、「何をすべきか（Do）」だけを書くと、エージェントは意図しないライブラリを勝手にインストールしたり、既存の重要なコードを書き換えてしまうことがあります。
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            成功率を最大化する鍵は<strong>「何をしてはならないか（Negative Constraints）」</strong>と<strong>「終了判定基準（Definition of Done: DoD）」</strong>を明記することです。
+          </p>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 space-y-4 text-xs max-w-full">
+            <div class="border-b border-slate-700 pb-3">
+              <div class="font-bold text-red-400 mb-1">❌ 失敗しやすい曖昧な指示</div>
+              <code class="text-slate-400 break-all">「ユーザー認証機能を作って、動くようにしておいて。」</code>
+            </div>
+            <div>
+              <div class="font-bold text-emerald-400 mb-1">⭕ 成功するプロフェッショナル指示</div>
+              <pre class="bg-darkbg-900 p-3 rounded-xl text-slate-200 font-mono leading-relaxed overflow-x-auto max-w-full text-xs">/goal
+NextAuth.js (v5) を使ったGitHub OAuth認証を導入してください。
+
+【制約条件（Constraints）】
+- 既存の Prisma スキーマにある User モデルを変更せず、Account モデルのみを追加すること。
+- 新規の外部UIコンポーネントライブラリは追加せず、既存の Tailwind クラスを使用すること。
+- 未認証ユーザーが /dashboard にアクセスした際は自動で /login にリダイレクトすること。
+
+【完了条件（Definition of Done）】
+- `npm run build` が型エラーなしで完了すること。
+- `tests/auth.test.ts` を作成し、モック認証テストが全件パスすること。</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7.2 Rules Persistence -->
+        <div id="ch7-2" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-book-bookmark text-brand-400 text-sm"></i>
+            7.2 知識永続化（GEMINI.md / AGENTS.md / Rules）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            毎回同じ指示（「日本語で回答して」「変数名はcamelCaseで」等）をプロンプトに書く必要はありません。プロジェクトのルートやディレクトリごとに配置されたルールファイルにより、エージェントは自動的にチーム規約を遵守します。
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1 font-mono">GEMINI.md / AGENTS.md</div>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                プロジェクト直下に配置。コーディング規約、アーキテクチャ方針、Gitコミットメッセージのフォーマットなどを記述します。
+              </p>
+            </div>
+
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1 font-mono">~/.gemini/config/rules/</div>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                マシン共通のグローバル設定。ユーザー個人の言語設定（日本語優先）、エディタの挙動ルールなどを永続化します。
+              </p>
+            </div>
+          </div>
+
+          <!-- Production GEMINI.md Template -->
+          <div class="text-[11px] sm:text-xs font-semibold text-slate-400 mb-2 font-mono">実務推奨：GEMINI.md 完全テンプレート</div>
+          <div class="relative group mb-4 max-w-full">
+            <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown"># Project Guidelines for Antigravity Agents
+
+## 1. 言語 & コミュニケーション方針
+- すべての回答、計画書、コード解説は自然な日本語で記述すること。
+- コードシンボル（変数名・型名・関数名）およびファイルパスは英語表記を維持すること。
+
+## 2. コーディング規約 & アーキテクチャ
+- TypeScript では `any` の使用を禁止し、厳格な Interface / Type 定義を行うこと。
+- React コンポーネントは Functional Component + Tailwind CSS で記述し、インラインスタイルを避けること。
+- 非同期処理は `async/await` で統一し、適切な `try-catch` エラーハンドリングを実装すること。
+
+## 3. テスト & ビルド検証義務
+- コード修正後は必ず `npm run type-check` および `npm test` を自律実行し、エラーゼロを確認してから完了とすること。
+- 外部API連携モジュールはモック化された単体テストを必ず併設すること。</code></pre>
+            <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] sm:text-xs rounded border border-slate-600 transition shadow">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 7.3 Troubleshooting Table -->
+        <div id="ch7-3">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-brand-400 text-sm"></i>
+            7.3 よくある失敗と対処一覧表（トラブルシューティング）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            実務で直面しやすい典型的なトラブルの原因と、現場で即効性のある対処法一覧です。
+          </p>
+
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 mb-6 shadow-sm">
+            <table class="min-w-[650px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold w-1/4">失敗・問題事象</th>
+                  <th class="p-3 font-semibold w-1/3">主な原因</th>
+                  <th class="p-3 font-semibold w-5/12">現場での即効対処法</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 font-semibold text-red-500 dark:text-red-400">勝手に破壊的コマンドを実行・パッケージ追加</td>
+                  <td class="p-3">Always Proceed モードかつサンドボックスが無効化されている。</td>
+                  <td class="p-3">設定で <code>Request Review</code> + <code>Sandbox ON</code> に変更。<code class="font-mono text-[11px]">command(rm -rf)</code>, <code class="font-mono text-[11px]">command(sudo)</code> を Deny リストに追加。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-red-500 dark:text-red-400">.env や SSH 秘密鍵が読み取られる</td>
+                  <td class="p-3">ワークスペース外または機密ファイルへのアクセス権限が Allow / Ask になっている。</td>
+                  <td class="p-3"><code class="font-mono text-[11px]">.env*</code>, <code class="font-mono text-[11px]">~/.ssh</code>, <code class="font-mono text-[11px]">.git/</code> を Deny リストに登録。ワークスペース外アクセスを Always Deny に固定。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-amber-500 dark:text-amber-400">モデルを切り替えたのに反映されない</td>
+                  <td class="p-3">会話ターンの実行中はモデルが固定される<strong>スティッキー（Sticky）仕様</strong>。</td>
+                  <td class="p-3">現在のエージェント思考ターンが完了するか、停止（Esc / Stop）した後の次ターンから新しいモデルが適用されます。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-amber-500 dark:text-amber-400">サンドボックスがプロジェクトを認識しない</td>
+                  <td class="p-3">Linux / WSL2 や macOS で最小許可パスのホワイトリストから外れている。</td>
+                  <td class="p-3">Settings > Permissions でプロジェクトの絶対パスを明示的に Allow に設定し、ウィンドウを再読み込み。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-blue-500 dark:text-blue-400">MCP ツールが認識・実行されない</td>
+                  <td class="p-3"><code class="font-mono text-[11px]">mcp_config.json</code> 設定後の IDE / CLI 再読み込み不足。</td>
+                  <td class="p-3">設定保存後、アプリ再起動またはウィンドウ再読込を実行。<code class="font-mono text-[11px]">What tools do you have access to?</code> で一覧確認。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-purple-500 dark:text-purple-400">大規模な変更でコードが荒れる / 迷走する</td>
+                  <td class="p-3">一括で指示を出しており、設計段階の合意（RDD）をスキップしている。</td>
+                  <td class="p-3">最初に <code>Artifacts</code> で計画書を出させて承認してから段階実装。難所は <code>Claude Sonnet / Opus 4.6</code> へエスカレーション。</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold text-emerald-500 dark:text-emerald-400">WordPress プラグインで警告が多発する</td>
+                  <td class="p-3">Nonce検証、入力サニタイズ、出力エスケープが漏れている。</td>
+                  <td class="p-3"><code class="font-mono text-[11px]">.agents/rules/wordpress-security.md</code> を配置し、第6章のセキュリティ5原則をエージェントに強制適用。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- APPENDIX: PRO CHECKLIST & REFERENCES -->
+      <!-- ========================================== -->
+      <section id="appendix" class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-indigo-600 text-white font-bold text-xs sm:text-sm shrink-0">A</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">付録：プロ向け実践チェックリスト & 参考リソース</h2>
+        </div>
+
+        <!-- A.1 Checklist -->
+        <div id="appendix-checklist" class="mb-10 sm:mb-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-brand-400 text-sm"></i>
+            A.1 プロフェッショナル開発チェックリスト（4領域）
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            プロジェクト立ち上げ時や本番リリース前に確認すべき必須チェック項目です。
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Setup & Environment -->
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-center gap-2 text-blue-500">
+                <i class="fa-solid fa-wrench"></i> 1. セットアップ & 環境構築
+              </h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>最新版 Antigravity IDE / agy CLI がインストールされ PATH が通っている</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>Google アカウントでログイン完了（CI 環境は <code>GEMINI_API_KEY</code> 設定済み）</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>グローバル設定（<code>~/.gemini/GEMINI.md</code>）で日本語優先などの個人設定を永続化</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Security & Sandbox -->
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-center gap-2 text-red-500">
+                <i class="fa-solid fa-shield-halved"></i> 2. セキュリティ & 防壁
+              </h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span><code>.env*</code>, <code>~/.ssh</code>, <code>.git/</code> が Deny リストに登録されている</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>ターミナルサンドボックスが有効（ネットワークは必要ドメインのみ許可）</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>破壊的コマンド（<code>rm -rf</code>, <code>sudo</code>, <code>curl .*</code>）を Deny に設定</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Workflow & Efficiency -->
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-center gap-2 text-emerald-500">
+                <i class="fa-solid fa-bolt"></i> 3. ワークフロー & 開発効率
+              </h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>モデル使い分け（Gemini Flash で高速反復 ➜ 難所は Claude Sonnet/Opus へ昇格）</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>プロジェクト固有規約を <code>.agents/rules/</code> 配下に記述</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>計画ファースト（Plan First）で Artifacts の承認を経てからコード変更を実行</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- WordPress & Enterprise -->
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-center gap-2 text-amber-500">
+                <i class="fa-brands fa-wordpress"></i> 4. WordPress 開発特有の品質
+              </h4>
+              <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>すべての状態変更に <code>wp_verify_nonce()</code> + <code>wp_unslash()</code> を適用</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>入力値サニタイズ（<code>sanitize_*</code>）と出力エスケープ（<code>esc_*</code>）の徹底</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-0.5 rounded text-brand-500 focus:ring-brand-400">
+                  <span>DBクエリは必ず <code>$wpdb->prepare()</code> を使用し、直接クエリ展開を排除</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- A.2 Official & Community References -->
+        <div id="appendix-links">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-arrow-up-right-from-square text-brand-400 text-sm"></i>
+            A.2 公式ドキュメント & 参考リソースリンク集
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <a href="https://antigravity.google/" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition block group shadow-sm">
+              <div class="font-bold text-slate-900 dark:text-white text-xs mb-1 group-hover:text-brand-400 flex items-center justify-between">
+                <span>Antigravity 公式サイト</span>
+                <i class="fa-solid fa-external-link text-[10px]"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">antigravity.google</p>
+            </a>
+
+            <a href="https://antigravity.google/docs/home" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition block group shadow-sm">
+              <div class="font-bold text-slate-900 dark:text-white text-xs mb-1 group-hover:text-brand-400 flex items-center justify-between">
+                <span>公式ドキュメント Home</span>
+                <i class="fa-solid fa-external-link text-[10px]"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">antigravity.google/docs/home</p>
+            </a>
+
+            <a href="https://antigravity.google/download" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition block group shadow-sm">
+              <div class="font-bold text-slate-900 dark:text-white text-xs mb-1 group-hover:text-brand-400 flex items-center justify-between">
+                <span>インストーラ ダウンロード</span>
+                <i class="fa-solid fa-external-link text-[10px]"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">antigravity.google/download</p>
+            </a>
+
+            <a href="https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition block group shadow-sm">
+              <div class="font-bold text-slate-900 dark:text-white text-xs mb-1 group-hover:text-brand-400 flex items-center justify-between">
+                <span>Google Developers Blog</span>
+                <i class="fa-solid fa-external-link text-[10px]"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">公式リリース発表記事</p>
+            </a>
+
+            <a href="https://codelabs.developers.google.com/getting-started-google-antigravity" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition block group shadow-sm">
+              <div class="font-bold text-slate-900 dark:text-white text-xs mb-1 group-hover:text-brand-400 flex items-center justify-between">
+                <span>Google Codelabs: Getting Started</span>
+                <i class="fa-solid fa-external-link text-[10px]"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">ハンズオンチュートリアル</p>
+            </a>
+
+            <a href="https://developer.wordpress.org/apis/security/" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition block group shadow-sm">
+              <div class="font-bold text-slate-900 dark:text-white text-xs mb-1 group-hover:text-brand-400 flex items-center justify-between">
+                <span>WordPress Security Handbook</span>
+                <i class="fa-solid fa-external-link text-[10px]"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">公式セキュリティ開発ガイド</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- A.3 Shortcuts -->
+        <div id="appendix-shortcuts" class="mt-10 sm:mt-12">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-keyboard text-brand-400 text-sm"></i>
+            A.3 Windows / macOS 主要キーボードショートカット一覧
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
+            IDEおよびデスクトップアプリ（2.0）でエージェントを最速操作するための主要ショートカットです（Windows / macOS 両対応）。
+          </p>
+
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <table class="min-w-[620px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold w-1/3">Windows / macOS キー</th>
+                  <th class="p-3 font-semibold w-1/3">機能名</th>
+                  <th class="p-3 font-semibold w-1/3">動作内容</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Ctrl / Cmd + K</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Quick Switcher / 会話ピッカー</td>
+                  <td class="p-3">全アクティブ会話・並列タスク・別ブランチを瞬時に検索・切り替え。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Ctrl / Cmd + L</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Focus Chat Input</td>
+                  <td class="p-3">エディタからエージェントのチャット入力欄へ即座にカーソルを移動。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Alt / Option + ↑ / ↓</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Switch Conversations</td>
+                  <td class="p-3">並行稼働している前後の会話セッションを順番に切り替え。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Ctrl / Cmd + I</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Inline Agent Generation</td>
+                  <td class="p-3">エディタの選択コード位置でインラインプロンプトバーを開き直接編集指示。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Ctrl / Cmd + Shift + L</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Send Selection to Agent</td>
+                  <td class="p-3">現在エディタで選択しているコードブロックを参照としてチャットへ即時添付。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Ctrl / Cmd + ,</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Agent Settings</td>
+                  <td class="p-3">エージェントの自律度設定・Customizations（Plugins / Rules / MCP）を開く。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Ctrl / Cmd + .</kbd></td>
+                  <td class="p-3 font-semibold text-brand-400">Agent Quick Fix</td>
+                  <td class="p-3">Linterやコンパイラエラーの波線箇所でエージェントに自動修正を指示。</td>
+                </tr>
+                <tr>
+                  <td class="p-3"><kbd class="px-2 py-1 bg-slate-200 dark:bg-darkbg-700 rounded font-mono text-xs font-semibold text-slate-800 dark:text-slate-200">Esc</kbd></td>
+                  <td class="p-3 font-semibold text-red-400">Stop Agent Execution</td>
+                  <td class="p-3">エージェントの自律思考（Thinking）やツール実行ループを即時中断。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FOOTER ==================== -->
+      <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span>Google Antigravity Mastery Manual &copy; 2026</span>
+          <span>•</span>
+          <a href="https://github.com/TsugawaTV/google-antigravity-guide" target="_blank" rel="noopener" class="text-brand-500 hover:underline flex items-center gap-1">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHubで編集を提案する</span>
+          </a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/TsugawaTV/google-antigravity-guide/issues" target="_blank" rel="noopener" class="hover:text-brand-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Issueを報告</span>
+          </a>
+          <a href="#hero" class="hover:text-brand-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>トップへ戻る</span>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Prism.js Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup-templating.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+
+  <!-- Interactive JavaScript Engine -->
+  <script>
+    // 1. Theme Toggle (Dark / Light)
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+
+    function updateTheme(isDark) {
+      if (isDark) {
+        htmlEl.classList.add('dark');
+        themeIcon.className = 'fa-solid fa-moon text-sm sm:text-base';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        htmlEl.classList.remove('dark');
+        themeIcon.className = 'fa-solid fa-sun text-amber-500 text-sm sm:text-base';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      updateTheme(false);
+    } else {
+      updateTheme(true);
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      updateTheme(!htmlEl.classList.contains('dark'));
+    });
+
+    // 2. Mobile Sidebar Drawer & Backdrop
+    const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+    function openMobileSidebar() {
+      sidebar.classList.remove('-translate-x-full');
+      sidebarBackdrop.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMobileSidebar() {
+      sidebar.classList.add('-translate-x-full');
+      sidebarBackdrop.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (mobileSidebarToggle) mobileSidebarToggle.addEventListener('click', openMobileSidebar);
+    if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeMobileSidebar);
+    if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeMobileSidebar);
+
+    // Close mobile sidebar upon clicking a TOC link
+    document.querySelectorAll('#sidebar .toc-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 1024) {
+          closeMobileSidebar();
+        }
+      });
+    });
+
+    // 3. One-Click Code Copy Button
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const pre = button.closest('.group').querySelector('pre code');
+        if (pre) {
+          navigator.clipboard.writeText(pre.innerText).then(() => {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copied!';
+            button.classList.add('bg-emerald-950', 'border-emerald-600');
+            setTimeout(() => {
+              button.innerHTML = originalHTML;
+              button.classList.remove('bg-emerald-950', 'border-emerald-600');
+            }, 2000);
+          });
+        }
+      });
+    });
+
+    // 4. ScrollSpy (Active TOC Tracking) & Auto-Scrolling Sidebar
+    const trackedElements = document.querySelectorAll('section[id], div[id^="ch"], div[id^="appendix"]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    let lastActiveId = '';
+
+    function updateActiveTOC() {
+      let currentId = 'hero';
+      const scrollPos = window.scrollY + 140;
+
+      trackedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        if (scrollPos >= top) {
+          currentId = el.getAttribute('id');
+        }
+      });
+
+      if (currentId !== lastActiveId) {
+        lastActiveId = currentId;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentId}`) {
+            link.classList.add('active');
+            // サイドバー内のアクティブ目次項目が画面外にはみ出さないよう連動スクロール
+            link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          }
+        });
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveTOC, { passive: true });
+    window.addEventListener('resize', updateActiveTOC);
+    document.addEventListener('DOMContentLoaded', updateActiveTOC);
+    updateActiveTOC();
+
+    // 5. Search Modal & Indexing
+    const searchTriggerBtn = document.getElementById('searchTriggerBtn');
+    const searchModal = document.getElementById('searchModal');
+    const searchCloseBtn = document.getElementById('searchCloseBtn');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    // Build Search Index
+    const searchIndex = [];
+    document.querySelectorAll('h2, h3, h4, p').forEach(el => {
+      const section = el.closest('section, div[id]');
+      const id = section ? section.getAttribute('id') : 'hero';
+      const text = el.innerText.trim();
+      if (text.length > 5 && id) {
+        searchIndex.push({
+          id: id,
+          title: el.tagName.startsWith('H') ? text : (section.querySelector('h2, h3') ? section.querySelector('h2, h3').innerText : 'ドキュメント本文'),
+          snippet: text.substring(0, 120) + (text.length > 120 ? '...' : ''),
+          tag: el.tagName
+        });
+      }
+    });
+
+    function openSearch() {
+      searchModal.classList.remove('hidden');
+      searchModal.classList.add('flex');
+      searchInput.focus();
+    }
+
+    function closeSearch() {
+      searchModal.classList.add('hidden');
+      searchModal.classList.remove('flex');
+      searchInput.value = '';
+    }
+
+    if (searchTriggerBtn) searchTriggerBtn.addEventListener('click', openSearch);
+    if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearch();
+      }
+      if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+        closeSearch();
+      }
+    });
+
+    searchModal.addEventListener('click', (e) => {
+      if (e.target === searchModal) closeSearch();
+    });
+
+    // Real-time Filtering
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      if (!query) {
+        searchResults.innerHTML = '<div class="p-4 text-center text-sm text-slate-400">検索キーワードを入力してください...</div>';
+        return;
+      }
+
+      const matches = searchIndex.filter(item => 
+        item.title.toLowerCase().includes(query) || item.snippet.toLowerCase().includes(query)
+      ).slice(0, 8);
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = '<div class="p-4 text-center text-sm text-slate-400">一致するコンテンツが見つかりませんでした。</div>';
+        return;
+      }
+
+      searchResults.innerHTML = matches.map(m => `
+        <a href="#${m.id}" class="search-item block p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-darkbg-700 transition" onclick="document.getElementById('searchModal').classList.add('hidden')">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-400 font-mono">${m.tag}</span>
+            <span class="text-sm font-bold text-slate-900 dark:text-white">${m.title}</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">${m.snippet}</p>
+        </a>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
