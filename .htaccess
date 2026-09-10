@@ -1,0 +1,44 @@
+# --------------------------------------------------
+# 1. ファイル一覧の表示を禁止（ディレクトリリスティング拒否）
+# --------------------------------------------------
+Options -Indexes
+
+# --------------------------------------------------
+# 2. ドットで始まる隠しファイル（.git, .env等）への直接アクセス拒否
+# --------------------------------------------------
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# --------------------------------------------------
+# 3. バックアップファイル（.bak, .old, .sql等）へのアクセス拒否
+# --------------------------------------------------
+<FilesMatch "\.(bak|old|orig|save|sql|log|swp|md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# --------------------------------------------------
+# 4. セキュリティヘッダーの付与
+# --------------------------------------------------
+<IfModule mod_headers.c>
+  # 他サイトからの iframe 埋め込み（クリックジャッキング）防止
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # ブラウザによる MIME タイプの誤認・不正実行防止
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # リファラー情報の安全な送信
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
