@@ -129,14 +129,20 @@
       text-rendering: optimizeLegibility;
     }
 
-    /* 日本語タイポグラフィの美しさ向上 */
-    h1, h2, h3, h4 {
+    /* 日本語タイポグラフィ & 文節折り返しの最適化（モダンWeb標準） */
+    h1, h2, h3, h4, h5, h6 {
+      word-break: auto-phrase;
+      line-break: strict;
       text-wrap: balance;
+      overflow-wrap: break-word;
       letter-spacing: -0.01em;
     }
-    p, li {
+    p, li, blockquote {
+      word-break: auto-phrase;
+      line-break: strict;
       text-wrap: pretty;
       line-height: 1.75;
+      overflow-wrap: break-word;
     }
 
     /* スタイリッシュなスクロールバー */
@@ -472,16 +478,18 @@
       <!-- CHAPTER 1: OVERVIEW & ARCHITECTURE -->
       <!-- ========================================== -->
       <section id="ch1" class="mb-16 sm:mb-20">
-        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
-          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">1</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第1章：Antigravity 概要とアーキテクチャ</h2>
+        <div class="flex items-start sm:items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0 mt-0.5 sm:mt-0">1</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white leading-snug">
+            <span class="inline-block">第1章：</span><span class="inline-block">Antigravity 概要と</span><span class="inline-block">アーキテクチャ</span>
+          </h2>
         </div>
 
         <!-- 1.1 -->
         <div id="ch1-1" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-cube text-brand-400 text-sm"></i>
-            1.1 Agent-First 開発思想の革命（Cursor / Copilot との違い）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-cube text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">1.1 Agent-First </span><span class="inline-block">開発思想の革命</span><span class="inline-block">（Cursor / Copilot との違い）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Google Antigravity は、従来の「コード補完型（Copilot）」や「サイドバー質問型（Cursor初期モデル）」とは一線を画す、<strong>「完全自律完走型（Agent-First）」</strong>のソフトウェアエンジニアリングプラットフォームです。
@@ -560,9 +568,9 @@ graph LR
 
         <!-- 1.2 -->
         <div id="ch1-2" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-layer-group text-brand-400 text-sm"></i>
-            1.2 プロダクトラインナップの役割と使い分け
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-layer-group text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">1.2 プロダクトラインナップの</span><span class="inline-block">役割と使い分け</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
             Antigravity は単一のツールではなく、開発者のワークスタイルに合わせて4つの形態（Surfaces）がシームレスに提供されています。すべての形態で同一の Agent Engine と Customization（Rules / Skills / MCP）が共有されます。
@@ -739,9 +747,9 @@ graph LR
 
         <!-- 1.3 -->
         <div id="ch1-3">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-microchip text-brand-400 text-sm"></i>
-            1.3 バックエンドモデルの選定指針 & 料金・レート制限
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-microchip text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">1.3 バックエンドモデルの</span><span class="inline-block">選定指針 & </span><span class="inline-block">料金・レート制限</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Antigravity はタスクの複雑度、推論深度、予算、速度要件に応じて複数の次世代推論エンジンをシームレスに切り替えて利用できます。設定サイドバー（Settings > Global Settings > Model Selection）または Python SDK の `model` パラメータで指定可能です。
@@ -856,16 +864,18 @@ graph LR
       <!-- CHAPTER 2: CORE CONCEPTS & ARTIFACTS -->
       <!-- ========================================== -->
       <section id="ch2" class="mb-16 sm:mb-20">
-        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
-          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">2</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第2章：コア概念と「Artifacts（成果物）」システム</h2>
+        <div class="flex items-start sm:items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0 mt-0.5 sm:mt-0">2</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white leading-snug">
+            <span class="inline-block">第2章：</span><span class="inline-block">コア概念と</span><span class="inline-block">「Artifacts（成果物）」</span><span class="inline-block">システム</span>
+          </h2>
         </div>
 
         <!-- 2.1 -->
         <div id="ch2-1" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-folder-tree text-brand-400 text-sm"></i>
-            2.1 Artifacts システムの仕組みとライフサイクル
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-folder-tree text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">2.1 Artifacts システムの</span><span class="inline-block">仕組みと</span><span class="inline-block">ライフサイクル</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Antigravity の最大の特徴は、チャット内の流れていくテキストではなく、専用ディレクトリ（<code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">~/.gemini/antigravity/brain/&lt;conversation-id&gt;/</code>）に構造化された<strong>「Artifacts（成果物ドキュメント）」</strong>を生成・維持管理する点にあります。
@@ -912,9 +922,9 @@ graph LR
 
         <!-- 2.2 -->
         <div id="ch2-2" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-user-check text-brand-400 text-sm"></i>
-            2.2 レビュー駆動開発（Review-Driven Development: RDD）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-user-check text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">2.2 レビュー駆動開発</span><span class="inline-block">（Review-Driven Development: RDD）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             AIエージェントによるコード破壊事故を防ぐため、Antigravity は<strong>「計画フェーズ（Planning Mode）」</strong>と<strong>「実行フェーズ（Execution Mode）」</strong>を厳格に分離する「レビュー駆動開発（RDD）」を採用しています。
@@ -954,9 +964,9 @@ graph LR
 
         <!-- 2.3 -->
         <div id="ch2-3" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-code-branch text-brand-400 text-sm"></i>
-            2.3 Local Mode vs New Worktree Mode
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-code-branch text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">2.3 Local Mode vs </span><span class="inline-block">New Worktree Mode</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             エージェントにタスクを依頼する際、実行環境の分離レベルを2つのモードから選択できます。
@@ -1014,9 +1024,9 @@ graph LR
 
         <!-- 2.4 Reasoning Effort -->
         <div id="ch2-4">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-brain text-brand-400 text-sm"></i>
-            2.4 推論努力度（Reasoning Effort）の設定指針 & 判断マトリクス
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-brain text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">2.4 推論努力度</span><span class="inline-block">（Reasoning Effort）の</span><span class="inline-block">設定指針 & </span><span class="inline-block">判断マトリクス</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Gemini 3.7 Flash や Claude 4.6 (thinking) などの推論モデルでは、タスクの難易度に応じて<strong>「Reasoning Effort（推論の深さ・思考時間）」</strong>を調整することで、コストと速度、解答精度のトレードオフを最適化できます。
@@ -1089,14 +1099,12 @@ graph LR
           </div>
         </div>
       </section>
-
-      <!-- ========================================== -->
-      <!-- CHAPTER 3: SLASH COMMANDS -->
-      <!-- ========================================== -->
-      <section id="ch3" class="mb-16 sm:mb-20">
-        <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
-          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">3</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第3章：スラッシュコマンド完全マスター</h2>
+<section id="ch3" class="mb-16 sm:mb-20">
+        <div class="flex items-start sm:items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0 mt-0.5 sm:mt-0">3</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white leading-snug">
+            <span class="inline-block">第3章：</span><span class="inline-block">スラッシュコマンド</span><span class="inline-block">完全マスター</span>
+          </h2>
         </div>
 
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
@@ -1106,9 +1114,11 @@ graph LR
         <!-- 3.1 /goal -->
         <div id="ch3-1" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <div class="flex items-center gap-2.5 sm:gap-3">
-              <span class="px-2.5 sm:px-3 py-1 bg-blue-500/20 text-blue-400 font-mono font-bold rounded-lg text-sm sm:text-base">/goal</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">自律完走指示（Autonomous Hill-Climbing ループ）</h3>
+            <div class="flex items-start sm:items-center gap-2.5 sm:gap-3 leading-snug">
+              <span class="px-2.5 sm:px-3 py-1 bg-blue-500/20 text-blue-400 font-mono font-bold rounded-lg text-sm sm:text-base shrink-0">/goal</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                <span class="inline-block">自律完走指示</span><span class="inline-block">（Autonomous Hill-Climbing ループ）</span>
+              </h3>
             </div>
             <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-blue-500/20 text-blue-400 font-mono font-bold rounded">最重要コマンド</span>
           </div>
@@ -1153,9 +1163,11 @@ graph LR
         <!-- 3.2 /grill-me -->
         <div id="ch3-2" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <div class="flex items-center gap-2.5 sm:gap-3">
-              <span class="px-2.5 sm:px-3 py-1 bg-purple-500/20 text-purple-400 font-mono font-bold rounded-lg text-sm sm:text-base">/grill-me</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">要件定義・アライメント・インタビュー</h3>
+            <div class="flex items-start sm:items-center gap-2.5 sm:gap-3 leading-snug">
+              <span class="px-2.5 sm:px-3 py-1 bg-purple-500/20 text-purple-400 font-mono font-bold rounded-lg text-sm sm:text-base shrink-0">/grill-me</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                <span class="inline-block">要件定義・</span><span class="inline-block">アライメント・</span><span class="inline-block">インタビュー</span>
+              </h3>
             </div>
           </div>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
@@ -1169,9 +1181,11 @@ graph LR
         <!-- 3.3 /browser -->
         <div id="ch3-3" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <div class="flex items-center gap-2.5 sm:gap-3">
-              <span class="px-2.5 sm:px-3 py-1 bg-emerald-500/20 text-emerald-400 font-mono font-bold rounded-lg text-sm sm:text-base">/browser</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Chrome 操作 & ブラウザ自動化の3大ルート</h3>
+            <div class="flex items-start sm:items-center gap-2.5 sm:gap-3 leading-snug">
+              <span class="px-2.5 sm:px-3 py-1 bg-emerald-500/20 text-emerald-400 font-mono font-bold rounded-lg text-sm sm:text-base shrink-0">/browser</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                <span class="inline-block">Chrome 操作 & </span><span class="inline-block">ブラウザ自動化3大ルート比較</span>
+              </h3>
             </div>
           </div>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
@@ -1230,9 +1244,11 @@ graph LR
         <!-- 3.4 /schedule -->
         <div id="ch3-4" class="mb-8 sm:mb-10 p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <div class="flex items-center gap-2.5 sm:gap-3">
-              <span class="px-2.5 sm:px-3 py-1 bg-amber-500/20 text-amber-400 font-mono font-bold rounded-lg text-sm sm:text-base">/schedule</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">定期実行 & タイマータスク（SDLC自動化）</h3>
+            <div class="flex items-start sm:items-center gap-2.5 sm:gap-3 leading-snug">
+              <span class="px-2.5 sm:px-3 py-1 bg-amber-500/20 text-amber-400 font-mono font-bold rounded-lg text-sm sm:text-base shrink-0">/schedule</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                <span class="inline-block">定期実行 & </span><span class="inline-block">タイマータスク</span><span class="inline-block">（SDLC自動化）</span>
+              </h3>
             </div>
           </div>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
@@ -1288,9 +1304,9 @@ graph LR
 
         <!-- 3.5 Custom Workflows -->
         <div id="ch3-5">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-wand-magic-sparkles text-brand-400 text-sm"></i>
-            3.5 カスタムワークフローの自作（.agent/workflows/ & {{args}} 仕様）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-wand-magic-sparkles text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">3.5 カスタムワークフローの自作</span><span class="inline-block">（.agent/workflows/ & </span><span class="inline-block">{{args}} 仕様）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             プロジェクトルートの <code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">.agent/workflows/</code> ディレクトリに Markdown ファイルを配置するだけで、チーム専用のオリジナルスラッシュコマンドを自由に追加できます。引数プレースホルダー <code class="font-mono text-brand-400">{{args}}</code> にも完全対応しています。
@@ -1323,14 +1339,14 @@ slash_command: review-pr
       <section id="ch4" class="mb-16 sm:mb-20">
         <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
           <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">4</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第4章：高度な自律オーケストレーション</h2>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white"><span class="inline-block">第4章：</span><span class="inline-block">高度な自律オーケストレーション</span></h2>
         </div>
 
         <!-- 4.1 Dynamic Subagents -->
         <div id="ch4-1" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-users-gear text-brand-400 text-sm"></i>
-            4.1 Dynamic Subagents（動的サブエージェント）とコンテキスト保護
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-users-gear text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">4.1 Dynamic Subagents</span><span class="inline-block">（動的サブエージェント）と</span><span class="inline-block">コンテキスト保護</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             大規模なリポジトリで数百個のファイルを検索・閲覧すると、メインエージェントのコンテキストウィンドウが不要なログで溢れ（コンテキスト汚染）、推論精度が急激に低下します。
@@ -1395,9 +1411,9 @@ graph TD
 
         <!-- 4.2 Async Task Management -->
         <div id="ch4-2" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-clock text-brand-400 text-sm"></i>
-            4.2 Asynchronous Task Management & システムトレイ常駐
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-clock text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">4.2 Asynchronous Task</span><span class="inline-block">Management & </span><span class="inline-block">システムトレイ常駐</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             開発サーバーの起動（<code class="font-mono text-xs">npm run dev</code>）や重いビルド処理、Dockerの起動などの長時間プロセスは、<strong>非同期バックグラウンドタスク</strong>として実行されます。
@@ -1412,9 +1428,9 @@ graph TD
 
             <!-- Taskbar / System Tray Daemon -->
             <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300">
-              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1.5 flex items-center gap-2">
-                <i class="fa-solid fa-bell-concierge text-brand-400"></i>
-                OSタスクトレイ常駐 & 並列稼働エージェント数の可視化
+              <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1.5 flex items-start gap-2 leading-snug">
+                <i class="fa-solid fa-bell-concierge text-brand-400 shrink-0 mt-0.5"></i>
+                <span><span class="inline-block">OSタスクトレイ常駐 & </span><span class="inline-block">並列稼働エージェント数の可視化</span></span>
               </div>
               <p class="leading-relaxed">
                 Antigravity はバックグラウンドで `/goal` や深夜の自動テストスイートが走っている際、<strong>Windows の通知領域（タスクトレイ）/ macOS メニューバーに常駐</strong>します。アイコン上に「現在並行稼働しているエージェント数（例: <span class="px-1.5 py-0.5 rounded bg-brand-500 text-white font-mono font-bold text-[10px]">3</span>）」がバッジ表示され、クリック1発で対象の会話や録画ビューへ即座に復帰できます。
@@ -1425,9 +1441,9 @@ graph TD
 
         <!-- 4.3 Hooks -->
         <div id="ch4-3" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-plug-circle-bolt text-brand-400 text-sm"></i>
-            4.3 JSON Lifecycle Hooks（ライフサイクルフック）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-plug-circle-bolt text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">4.3 JSON Lifecycle Hooks</span><span class="inline-block">（ライフサイクルフック）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             プロジェクト内の <code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">.agent/hooks.json</code> で定義することで、エージェントの特定イベント（ツール実行前、ターン開始時、完了時）にシェルスクリプトやバリデータを自動介入させることができます。
@@ -1492,9 +1508,9 @@ graph TD
 
         <!-- 4.4 Security & Permissions -->
         <div id="ch4-4">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-shield-halved text-brand-400 text-sm"></i>
-            4.4 セキュリティ・権限ポリシー & カーネルサンドボックス
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-shield-halved text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">4.4 セキュリティ・権限ポリシー & </span><span class="inline-block">カーネルサンドボックス</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Antigravity は、エージェントによる偶発的なファイル破壊や機密情報漏洩を防ぐため、すべての敏感な操作を <code class="font-mono text-brand-400">action(target)</code> 形式でモデル化し、3段階のアクセスリスト（Deny / Ask / Allow）とOSカーネルレベルのサンドボックスで評価します。
@@ -1613,8 +1629,9 @@ mcp(postgres/execute_mutation)</code></pre>
 
           <!-- Kernel Sandbox & YOLO Mode -->
           <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 space-y-3 text-xs text-slate-300">
-            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
-              <i class="fa-solid fa-lock text-amber-400"></i> OSカーネルレベルのターミナルサンドボックス機構
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-start gap-2 leading-snug">
+              <i class="fa-solid fa-lock text-amber-400 shrink-0 mt-0.5"></i>
+              <span><span class="inline-block">OSカーネルレベルの</span><span class="inline-block">ターミナルサンドボックス機構</span></span>
             </h4>
             <p class="text-slate-400 leading-relaxed">
               Antigravity のサンドボックスは、エージェントが実行する端末コマンドをOSカーネル層で物理隔離します。
@@ -1639,14 +1656,14 @@ mcp(postgres/execute_mutation)</code></pre>
       <section id="ch5" class="mb-16 sm:mb-20">
         <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
           <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">5</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第5章：Skills・MCP・Python SDK 連携</h2>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white"><span class="inline-block">第5章：</span><span class="inline-block">Skills・MCP・</span><span class="inline-block">Python SDK 連携</span></h2>
         </div>
 
         <!-- 5.1 Skills -->
         <div id="ch5-1" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-toolbox text-brand-400 text-sm"></i>
-            5.1 Agent Skills 仕様と Progressive Disclosure
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-toolbox text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">5.1 Agent Skills 仕様と</span><span class="inline-block">Progressive Disclosure</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             <strong>Skill（スキル）</strong>とは、特定ドメインの知識や手順（Firebase構築、Next.js最適化、アクセシビリティ監査など）をカプセル化したモジュールです。
@@ -1677,9 +1694,9 @@ description: Multi-stage Docker build and Google Cloud Run deployment automation
 
         <!-- 5.2 MCP -->
         <div id="ch5-2" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-network-wired text-brand-400 text-sm"></i>
-            5.2 Model Context Protocol (MCP) サーバー連携（Chrome DevTools MCP & stdio/HTTP）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-network-wired text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">5.2 Model Context Protocol</span><span class="inline-block">(MCP) サーバー連携</span><span class="inline-block">（Chrome DevTools MCP & </span><span class="inline-block">stdio/HTTP）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Antigravity は業界標準の <strong>Model Context Protocol (MCP)</strong> にネイティブ対応しています。<code class="font-mono text-[11px] sm:text-xs bg-slate-100 dark:bg-darkbg-800 px-1.5 py-0.5 rounded break-all">mcp_config.json</code> を記述することで、<strong>Chrome DevTools MCP</strong>（Lighthouse監査・パフォーマンストレース）、PostgreSQL、GitHub、Sentry などの外部ツールを即座にエージェントに利用させることができます。
@@ -1740,9 +1757,9 @@ description: Multi-stage Docker build and Google Cloud Run deployment automation
 
         <!-- 5.3 Python SDK -->
         <div id="ch5-3">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-brands fa-python text-brand-400 text-sm"></i>
-            5.3 Google Antigravity Python SDK 実践プログラミング
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-brands fa-python text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">5.3 Google Antigravity</span><span class="inline-block">Python SDK </span><span class="inline-block">実践プログラミング</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             自社スクリプトやCI/CDパイプラインからプログラムでエージェントを召喚・制御する完全コード例です。思考ストリーミング、ツール呼び出し監視、カスタムツールの付与が可能です。
@@ -1799,9 +1816,9 @@ if __name__ == "__main__":
 
         <!-- 5.4 Build with Google Plugins & Plugin Spec -->
         <div id="ch5-4" class="mt-10 sm:mt-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-puzzle-piece text-brand-400 text-sm"></i>
-            5.4 Build with Google Plugins と Agent Plugin Spec
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-puzzle-piece text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">5.4 Build with Google Plugins と</span><span class="inline-block">Agent Plugin Spec</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Google Antigravity は、エコシステム全体の専門知識・MCPツール・ルールをワンクリックで導入できる<strong>「Build with Google Plugins」</strong>および、業界標準規格となった<strong>「Agent Plugin Spec」</strong>に完全対応しています。
@@ -1874,9 +1891,9 @@ if __name__ == "__main__":
           </div>
 
           <!-- Agent Plugin Spec Architecture -->
-          <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-box-archive text-brand-400"></i>
-            Agent Plugin Spec（プラグイン標準パッケージ規格）の自作
+          <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-start gap-2 leading-snug">
+            <i class="fa-solid fa-box-archive text-brand-400 shrink-0 mt-0.5"></i>
+            <span><span class="inline-block">Agent Plugin Spec</span><span class="inline-block">（プラグイン標準パッケージ規格）の自作</span></span>
           </h4>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             Agent Plugin Spec は、スキル（Skills）、MCP設定（MCP Config）、コーディングルール（Rules）、フック（Hooks）を1つの再利用可能なパッケージとして束ねる共通規格です。
@@ -1922,16 +1939,18 @@ if __name__ == "__main__":
       <section id="ch6" class="mb-16 sm:mb-20">
         <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
           <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">6</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第6章：実戦ユースケース＆プレイブック</h2>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white"><span class="inline-block">第6章：</span><span class="inline-block">実戦ユースケース＆</span><span class="inline-block">プレイブック</span></h2>
         </div>
 
         <!-- 6.1 Playbook 1: Web App Development -->
         <div id="ch6-1" class="mb-8 sm:mb-12">
           <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P1</div>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">実践チュートリアル1：Webアプリ開発（React + TS + Vite + Express + Postgres）</h3>
+              <div class="flex items-start gap-2.5 sm:gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 mt-0.5">P1</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                  <span class="inline-block">実践チュートリアル1：</span><span class="inline-block">Webアプリ開発</span><span class="inline-block">（React + TS + Vite + </span><span class="inline-block">Express + Postgres）</span>
+                </h3>
               </div>
               <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-blue-500/20 text-blue-400 font-mono rounded">フルスタック構築</span>
             </div>
@@ -1973,9 +1992,11 @@ if __name__ == "__main__":
         <div id="ch6-2" class="mb-8 sm:mb-12">
           <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P2</div>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">実践チュートリアル2：高速LP作成（単一HTML + Tailwind + Nano Banana 2）</h3>
+              <div class="flex items-start gap-2.5 sm:gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 mt-0.5">P2</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                  <span class="inline-block">実践チュートリアル2：</span><span class="inline-block">高速LP作成</span><span class="inline-block">（単一HTML + Tailwind + </span><span class="inline-block">Nano Banana 2）</span>
+                </h3>
               </div>
               <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-cyan-500/20 text-cyan-400 font-mono rounded">CVR特化LP</span>
             </div>
@@ -2011,9 +2032,11 @@ B2B SaaSの新規獲得ランディングページ（index.html）を単一フ�
         <!-- 6.3 Playbook 3 -->
         <div id="ch6-3" class="mb-8 sm:mb-12">
           <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm max-w-full">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-purple-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P3</div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">大規模レガシーコードのリファクタリング（Worktree Mode + TDD）</h3>
+            <div class="flex items-start gap-2.5 sm:gap-3 mb-3">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-purple-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 mt-0.5">P3</div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                <span class="inline-block">大規模レガシーコードの</span><span class="inline-block">リファクタリング</span><span class="inline-block">（Worktree Mode + TDD）</span>
+              </h3>
             </div>
             <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
               既存のJavaScriptプロジェクトをTypeScriptへ移行し、全関数に厳格な型定義とUnit Testを適用するプレイブック。Worktree Modeで現在のコードを保護します。
@@ -2039,9 +2062,11 @@ B2B SaaSの新規獲得ランディングページ（index.html）を単一フ�
         <div id="ch6-4" class="mb-8 sm:mb-12">
           <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border-2 border-emerald-500/40 shadow-lg max-w-full">
             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P4</div>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">実録：Gemini 3.7 Flash × /goal による Lighthouse All 100 ＆ モダンWeb完全移行</h3>
+              <div class="flex items-start gap-2.5 sm:gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 mt-0.5">P4</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                  <span class="inline-block">実録：Gemini 3.7 Flash × </span><span class="inline-block">/goal による </span><span class="inline-block">Lighthouse All 100 ＆ </span><span class="inline-block">モダンWeb完全移行</span>
+                </h3>
               </div>
               <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-400 font-mono font-bold rounded">自律Hill-Climbing実戦</span>
             </div>
@@ -2058,9 +2083,9 @@ B2B SaaSの新規獲得ランディングページ（index.html）を単一フ�
             </div>
 
             <!-- 4-Stage Autonomous Process Cards -->
-            <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-center gap-2">
-              <i class="fa-solid fa-stairs text-emerald-400"></i>
-              エージェントが自律遂行する4段階のプロセス詳細
+            <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-3 flex items-start gap-2 leading-snug">
+              <i class="fa-solid fa-stairs text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><span class="inline-block">エージェントが自律遂行する</span><span class="inline-block">4段階のプロセス詳細</span></span>
             </h4>
 
             <div class="space-y-4 mb-6">
@@ -2138,9 +2163,11 @@ B2B SaaSの新規獲得ランディングページ（index.html）を単一フ�
         <div id="ch6-5">
           <div class="p-4 sm:p-6 rounded-2xl bg-white dark:bg-darkbg-800 border border-brand-500/40 shadow-lg max-w-full">
             <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">P5</div>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">WordPress プラグイン開発の完全手順（セキュリティ5原則・WPCS規約）</h3>
+              <div class="flex items-start gap-2.5 sm:gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 mt-0.5">P5</div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                  <span class="inline-block">WordPress プラグイン開発の</span><span class="inline-block">完全手順</span><span class="inline-block">（セキュリティ5原則・</span><span class="inline-block">WPCS規約）</span>
+                </h3>
               </div>
               <span class="text-[10px] sm:text-xs px-2 py-0.5 bg-brand-500/20 text-brand-400 font-mono rounded">公式セキュリティ完全網羅</span>
             </div>
@@ -2151,9 +2178,9 @@ B2B SaaSの新規獲得ランディングページ（index.html）を単一フ�
 
             <!-- WordPress Security 5 Rules Code Block -->
             <div class="mb-6">
-              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-shield-virus text-brand-400"></i>
-                WordPress セキュリティの5原則（必須実装コード集）
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-start gap-2 leading-snug">
+                <i class="fa-solid fa-shield-virus text-brand-400 shrink-0 mt-0.5"></i>
+                <span><span class="inline-block">WordPress セキュリティの</span><span class="inline-block">5原則</span><span class="inline-block">（必須実装コード集）</span></span>
               </h4>
               <div class="relative group max-w-full">
                 <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-php">&lt;?php
@@ -2206,9 +2233,9 @@ $results = $wpdb->get_results(
 
             <!-- Workspace Rule for WP Security -->
             <div class="mb-6">
-              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-file-code text-brand-400"></i>
-                エージェント用ワークスペースルール（.agents/rules/wordpress-security.md）
+              <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-2 flex items-start gap-2 leading-snug">
+                <i class="fa-solid fa-file-code text-brand-400 shrink-0 mt-0.5"></i>
+                <span><span class="inline-block">エージェント用ワークスペースルール</span><span class="inline-block">（.agents/rules/</span><span class="inline-block">wordpress-security.md）</span></span>
               </h4>
               <div class="relative group max-w-full">
                 <pre class="line-numbers text-xs sm:text-sm overflow-x-auto max-w-full"><code class="language-markdown"># WordPress プラグイン開発セキュリティ規約
@@ -2254,14 +2281,14 @@ $results = $wpdb->get_results(
       <section id="ch7" class="mb-16 sm:mb-20">
         <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
           <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-500 text-white font-bold text-xs sm:text-sm shrink-0">7</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">第7章：プロンプトエンジニアリング＆トラブルシューティング</h2>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white"><span class="inline-block">第7章：</span><span class="inline-block">プロンプトエンジニアリング＆</span><span class="inline-block">トラブルシューティング</span></h2>
         </div>
 
         <!-- 7.1 Constraints -->
         <div id="ch7-1" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-bullseye text-brand-400 text-sm"></i>
-            7.1 自律エージェントを迷走・暴走させない「制約条件（Constraints）」の極意
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-bullseye text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">7.1 自律エージェントを</span><span class="inline-block">迷走・暴走させない</span><span class="inline-block">「制約条件（Constraints）」の極意</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             自律型エージェントに指示を出す際、「何をすべきか（Do）」だけを書くと、エージェントは意図しないライブラリを勝手にインストールしたり、既存の重要なコードを書き換えてしまうことがあります。
@@ -2294,9 +2321,9 @@ NextAuth.js (v5) を使ったGitHub OAuth認証を導入してください。
 
         <!-- 7.2 Rules Persistence -->
         <div id="ch7-2" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-book-bookmark text-brand-400 text-sm"></i>
-            7.2 知識永続化（GEMINI.md / AGENTS.md / Rules）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-book-bookmark text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">7.2 知識永続化</span><span class="inline-block">（GEMINI.md / AGENTS.md / </span><span class="inline-block">Rules）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             毎回同じ指示（「日本語で回答して」「変数名はcamelCaseで」等）をプロンプトに書く必要はありません。プロジェクトのルートやディレクトリごとに配置されたルールファイルにより、エージェントは自動的にチーム規約を遵守します。
@@ -2343,9 +2370,9 @@ NextAuth.js (v5) を使ったGitHub OAuth認証を導入してください。
 
         <!-- 7.3 Troubleshooting Table -->
         <div id="ch7-3">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-triangle-exclamation text-brand-400 text-sm"></i>
-            7.3 よくある失敗と対処一覧表（トラブルシューティング）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-triangle-exclamation text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">7.3 よくある失敗と対処一覧表</span><span class="inline-block">（トラブルシューティング）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             実務で直面しやすい典型的なトラブルの原因と、現場で即効性のある対処法一覧です。
@@ -2408,14 +2435,14 @@ NextAuth.js (v5) を使ったGitHub OAuth認証を導入してください。
       <section id="appendix" class="mb-16 sm:mb-20">
         <div class="flex items-center gap-3 pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800">
           <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-indigo-600 text-white font-bold text-xs sm:text-sm shrink-0">A</span>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white">付録：プロ向け実践チェックリスト & 参考リソース</h2>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white"><span class="inline-block">付録：</span><span class="inline-block">プロ向け実践チェックリスト & </span><span class="inline-block">参考リソース</span></h2>
         </div>
 
         <!-- A.1 Checklist -->
         <div id="appendix-checklist" class="mb-10 sm:mb-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-list-check text-brand-400 text-sm"></i>
-            A.1 プロフェッショナル開発チェックリスト（4領域）
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-list-check text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">A.1 プロフェッショナル開発</span><span class="inline-block">チェックリスト（4領域）</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
             プロジェクト立ち上げ時や本番リリース前に確認すべき必須チェック項目です。
@@ -2510,9 +2537,9 @@ NextAuth.js (v5) を使ったGitHub OAuth認証を導入してください。
 
         <!-- A.2 Official & Community References -->
         <div id="appendix-links">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-arrow-up-right-from-square text-brand-400 text-sm"></i>
-            A.2 公式ドキュメント & 参考リソースリンク集
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-arrow-up-right-from-square text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">A.2 公式ドキュメント & </span><span class="inline-block">参考リソースリンク集</span></span>
           </h3>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -2568,9 +2595,9 @@ NextAuth.js (v5) を使ったGitHub OAuth認証を導入してください。
 
         <!-- A.3 Shortcuts -->
         <div id="appendix-shortcuts" class="mt-10 sm:mt-12">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-keyboard text-brand-400 text-sm"></i>
-            A.3 Windows / macOS 主要キーボードショートカット一覧
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-keyboard text-brand-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">A.3 Windows / macOS </span><span class="inline-block">主要キーボードショートカット一覧</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
             IDEおよびデスクトップアプリ（2.0）でエージェントを最速操作するための主要ショートカットです（Windows / macOS 両対応）。
