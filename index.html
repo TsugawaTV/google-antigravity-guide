@@ -106,16 +106,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 
-  <!-- Mermaid.js for Diagrams -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'dark',
-      securityLevel: 'loose',
-      fontFamily: 'Inter, "Noto Sans JP", sans-serif'
-    });
-  </script>
 
   <style>
     /* 画面の横揺れ防止 & スムーススクロール */
@@ -538,30 +528,243 @@
             </table>
           </div>
 
-          <!-- Mermaid Diagram: Agent Execution Loop (Mobile Horizontal Scrollable) -->
-          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 max-w-full overflow-hidden">
-            <div class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-2">Antigravity 自律実行サイクル (Observe-Plan-Act-Verify)</div>
-            <div class="sm:hidden text-center text-[11px] text-slate-400 mb-2 font-mono">
-              <i class="fa-solid fa-arrows-left-right mr-1"></i> 指で横スクロールして拡大表示
+          <!-- Responsive Agent Execution Cycle Flow -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 max-w-full">
+            <div class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-3 sm:mb-4 flex items-center justify-between flex-wrap gap-2">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-arrows-spin text-brand-400"></i>
+                Antigravity 自律実行サイクル (Observe-Plan-Act-Verify)
+              </span>
+              <span class="text-[10px] text-slate-400 font-mono hidden sm:inline">自律反復・自己修復ループ</span>
             </div>
-            <div class="overflow-x-auto max-w-full pb-2">
-              <div class="min-w-[550px]">
-                <div class="mermaid">
-graph LR
-    A[ユーザー指示 /goal] --> B[1. Observe<br>コード探索・Web調査]
-    B --> C[2. Plan<br>Implementation Plan立案]
-    C --> D[3. Act<br>ファイル作成・編集・コマンド]
-    D --> E[4. Verify<br>テスト実行・Browser検証]
-    E -->|失敗・エラー検知| D
-    E -->|完全パス| F[5. Walkthrough作成<br>ゴール達成完了]
-    style A fill:#1e293b,stroke:#64748b,color:#fff
-    style B fill:#0c4a6e,stroke:#0284c7,color:#fff
-    style C fill:#431407,stroke:#ea580c,color:#fff
-    style D fill:#14532d,stroke:#16a34a,color:#fff
-    style E fill:#3b0764,stroke:#9333ea,color:#fff
-    style F fill:#065f46,stroke:#10b981,color:#fff
+
+            <!-- Desktop Step Flow (Visible on lg+) -->
+            <div class="hidden lg:block">
+              <div class="grid grid-cols-6 gap-2.5 relative">
+                <!-- Step 0: Input -->
+                <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-600/80 flex flex-col justify-between relative">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">TRIGGER</span>
+                    <i class="fa-solid fa-terminal text-slate-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-white text-xs sm:text-sm mb-0.5">ユーザー指示</div>
+                    <div class="text-[11px] text-slate-400 font-mono">/goal プロンプト投入</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 1: Observe -->
+                <div class="p-3 rounded-xl bg-sky-950/40 border border-sky-600/50 flex flex-col justify-between relative">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300">STEP 1</span>
+                    <i class="fa-solid fa-magnifying-glass text-sky-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-sky-200 text-xs sm:text-sm mb-0.5">1. Observe</div>
+                    <div class="text-[11px] text-slate-300">コード探索・Web調査</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 2: Plan -->
+                <div class="p-3 rounded-xl bg-amber-950/40 border border-amber-600/50 flex flex-col justify-between relative">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">STEP 2</span>
+                    <i class="fa-solid fa-compass-drafting text-amber-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-amber-200 text-xs sm:text-sm mb-0.5">2. Plan</div>
+                    <div class="text-[11px] text-slate-300">Plan計画書立案・合意</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 3: Act -->
+                <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-600/50 flex flex-col justify-between relative ring-1 ring-emerald-500/30">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">STEP 3</span>
+                    <i class="fa-solid fa-code text-emerald-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-emerald-200 text-xs sm:text-sm mb-0.5 flex items-center justify-between">
+                      <span>3. Act</span>
+                      <span class="text-[9px] px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 font-mono">修復先</span>
+                    </div>
+                    <div class="text-[11px] text-slate-300">コード生成・編集・実行</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 4: Verify -->
+                <div class="p-3 rounded-xl bg-purple-950/40 border-2 border-purple-500/60 flex flex-col justify-between relative shadow-lg shadow-purple-950/30">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">STEP 4</span>
+                    <i class="fa-solid fa-vial-circle-check text-purple-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-purple-200 text-xs sm:text-sm mb-0.5">4. Verify</div>
+                    <div class="text-[11px] text-slate-300 mb-2">テスト・Browser自動検証</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 5: Done -->
+                <div class="p-3 rounded-xl bg-teal-950/40 border border-teal-600/50 flex flex-col justify-between">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300">STEP 5</span>
+                    <i class="fa-solid fa-circle-check text-teal-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-teal-200 text-xs sm:text-sm mb-0.5">5. Walkthrough</div>
+                    <div class="text-[11px] text-slate-300">成果物出力 & 完走</div>
+                  </div>
                 </div>
               </div>
+
+              <!-- Desktop SVG Loop Connection (Verify -> Act) -->
+              <div class="relative -mt-1 mb-2">
+                <svg class="w-full h-9" viewBox="0 0 600 36" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <path d="M 450 0 V 16 C 450 28, 350 28, 350 16 V 4" stroke="#c084fc" stroke-width="2" stroke-dasharray="4 3" />
+                  <polygon points="350,0 346,8 354,8" fill="#c084fc" />
+                  <rect x="360" y="10" width="80" height="16" rx="8" fill="#1e1b4b" stroke="#a855f7" stroke-width="1"/>
+                  <text x="400" y="21" fill="#e9d5ff" font-size="8.5" font-family="sans-serif" text-anchor="middle" font-weight="bold">↶ 失敗時修復ループ</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Mobile Step Flow with Timeline & Self-Healing Loop (Visible on <lg) -->
+            <div class="lg:hidden space-y-3 my-2">
+              <div class="relative pl-6 space-y-3 pt-1">
+                <!-- 左側：垂直タイムライン幹線レール -->
+                <div class="absolute left-2 top-2 bottom-4 w-0.5 bg-gradient-to-b from-slate-500 via-sky-500 via-amber-500 via-emerald-500 via-purple-500 to-teal-400 rounded-full"></div>
+
+                <!-- Step 0: Input -->
+                <div class="relative">
+                  <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-slate-700 border-2 border-slate-400"></div>
+                  <div class="p-3 rounded-xl bg-slate-800/90 border border-slate-600/80 text-xs shadow-sm">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">TRIGGER</span>
+                      <i class="fa-solid fa-terminal text-slate-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-white text-xs sm:text-sm mb-0.5">ユーザー指示</div>
+                    <div class="text-[11px] text-slate-400 font-mono">/goal プロンプト投入</div>
+                  </div>
+                </div>
+
+                <!-- Step 1: Observe -->
+                <div class="relative">
+                  <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-sky-950 border-2 border-sky-400"></div>
+                  <div class="p-3 rounded-xl bg-sky-950/40 border border-sky-600/50 text-xs shadow-sm">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300">STEP 1</span>
+                      <i class="fa-solid fa-magnifying-glass text-sky-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-sky-200 text-xs sm:text-sm mb-0.5">1. Observe</div>
+                    <div class="text-[11px] text-slate-300">コード探索・Web調査</div>
+                  </div>
+                </div>
+
+                <!-- Step 2: Plan -->
+                <div class="relative">
+                  <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-amber-950 border-2 border-amber-400"></div>
+                  <div class="p-3 rounded-xl bg-amber-950/40 border border-amber-600/50 text-xs shadow-sm">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">STEP 2</span>
+                      <i class="fa-solid fa-compass-drafting text-amber-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-amber-200 text-xs sm:text-sm mb-0.5">2. Plan</div>
+                    <div class="text-[11px] text-slate-300">Plan計画書立案・合意</div>
+                  </div>
+                </div>
+
+                <!-- Step 3 & Step 4: Act & Verify with Physical Self-Healing Loop -->
+                <div class="relative pr-6">
+                  <!-- 右側：自己修復ループ物理レール（VerifyからActへ上向きに戻るUターン線） -->
+                  <div class="absolute right-0 top-6 bottom-8 w-5 flex flex-col items-center justify-between pointer-events-none">
+                    <i class="fa-solid fa-arrow-up text-purple-400 text-xs"></i>
+                    <div class="w-0.5 flex-1 bg-gradient-to-t from-purple-500 to-purple-400 rounded-full border-r border-dashed border-purple-400"></div>
+                    <div class="absolute top-1/2 -translate-y-1/2 right-2 px-1.5 py-0.5 rounded bg-purple-950 border border-purple-500/60 text-purple-200 text-[9px] font-bold whitespace-nowrap shadow-md">
+                      ↶ エラー時修復
+                    </div>
+                    <div class="w-2.5 h-2.5 rounded-bl border-b-2 border-l-2 border-purple-400"></div>
+                  </div>
+
+                  <!-- Step 3: Act -->
+                  <div class="relative mb-3">
+                    <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-emerald-950 border-2 border-emerald-400"></div>
+                    <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-600/50 text-xs ring-1 ring-emerald-500/30 shadow-sm">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">STEP 3</span>
+                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">修復先ノード</span>
+                      </div>
+                      <div class="font-bold text-emerald-200 text-xs sm:text-sm mb-0.5">3. Act</div>
+                      <div class="text-[11px] text-slate-300">コード生成・編集・実行</div>
+                    </div>
+                  </div>
+
+                  <!-- Step 4: Verify -->
+                  <div class="relative">
+                    <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-purple-950 border-2 border-purple-400"></div>
+                    <div class="p-3 rounded-xl bg-purple-950/40 border-2 border-purple-500/60 text-xs shadow-md">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">STEP 4</span>
+                        <i class="fa-solid fa-vial-circle-check text-purple-400 text-xs"></i>
+                      </div>
+                      <div class="font-bold text-purple-200 text-xs sm:text-sm mb-0.5">4. Verify</div>
+                      <div class="text-[11px] text-slate-300 mb-2">テスト・Browser自動検証</div>
+                      <!-- 合否分岐表示 -->
+                      <div class="space-y-1 pt-1.5 border-t border-purple-500/30 text-[10px]">
+                        <div class="flex items-center justify-between text-purple-300 font-bold">
+                          <span><i class="fa-solid fa-rotate-left mr-1 text-red-400"></i>エラー検知時</span>
+                          <span class="font-mono text-emerald-300">➜ 右のループで Step 3 へ戻る</span>
+                        </div>
+                        <div class="flex items-center justify-between text-teal-300 font-bold">
+                          <span><i class="fa-solid fa-check mr-1 text-teal-400"></i>全テスト合格時</span>
+                          <span class="font-mono text-teal-200">➜ 下の Step 5 へ進出</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 5: Done -->
+                <div class="relative">
+                  <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-teal-950 border-2 border-teal-400"></div>
+                  <div class="p-3 rounded-xl bg-teal-950/40 border border-teal-600/50 text-xs shadow-sm">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300">STEP 5</span>
+                      <i class="fa-solid fa-circle-check text-teal-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-teal-200 text-xs sm:text-sm mb-0.5">5. Walkthrough</div>
+                    <div class="text-[11px] text-slate-300">成果物出力 & 完走</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loop Back Notice Bar -->
+            <div class="mt-3 p-3 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-between text-xs text-purple-200 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-arrows-rotate text-purple-400 shrink-0"></i>
+                <span><strong>自己修復ループ：</strong> テスト未達・エラー時は自動で <strong class="text-emerald-400">Step 3 (Act)</strong> へ戻り自律修正。全指標パスで <strong class="text-teal-400">Step 5</strong> へ進出</span>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono font-bold shrink-0">Autonomous Loop</span>
             </div>
           </div>
         </div>
@@ -1002,20 +1205,174 @@ graph LR
             </div>
           </div>
 
-          <!-- Git Worktree Isolation Mermaid -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 max-w-full overflow-hidden">
-            <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-2">Git Worktree による完全並行開発アーキテクチャ</div>
-            <div class="overflow-x-auto max-w-full pb-2">
-              <div class="min-w-[500px]">
-                <div class="mermaid">
-graph LR
-    Repo[(Git Repository<br>.git/ Objects)] --- W1[Main Workspace<br>開発者の直接編集ブランチ]
-    Repo --- W2[Worktree A<br>Agent: 新機能自律実装]
-    Repo --- W3[Worktree B<br>Agent: E2Eテスト自動化]
-    style Repo fill:#1e293b,stroke:#64748b,color:#fff
-    style W1 fill:#0369a1,stroke:#38bdf8,color:#fff
-    style W2 fill:#065f46,stroke:#10b981,color:#fff
-    style W3 fill:#3b0764,stroke:#9333ea,color:#fff
+          <!-- Git Worktree Isolation Architecture (Responsive Flow) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-800 border border-slate-700 max-w-full">
+            <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-3 flex items-center justify-between flex-wrap gap-2">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-code-fork text-brand-400"></i>
+                Git Worktree による完全並行開発アーキテクチャ
+              </span>
+              <span class="text-[10px] text-slate-400 font-mono hidden sm:inline">物理分離 & 高速コンテキスト切り替え</span>
+            </div>
+
+            <!-- Central Git Repository Box -->
+            <div class="p-3 sm:p-3.5 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between mb-3 text-xs">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm shrink-0">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-white font-mono text-xs sm:text-sm">Git Repository (.git/ Objects)</div>
+                  <div class="text-[11px] text-slate-400">共通のコミット履歴・オブジェクトDB（ストレージ無駄消費ゼロ）</div>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 hidden md:inline border border-slate-600">Shared Storage</span>
+            </div>
+
+            <!-- Desktop Tree Fork Connector (SVG: Smooth Bezier Curves, visible on md+) -->
+            <div class="hidden md:block my-2 relative">
+              <svg class="w-full h-11" viewBox="0 0 600 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <!-- 中央幹ライン -->
+                <line x1="300" y1="0" x2="300" y2="16" stroke="#64748b" stroke-width="2" />
+                <circle cx="300" cy="16" r="4" fill="#38bdf8" />
+                
+                <!-- 左フォーク (Main Workspace) -->
+                <path d="M 300 16 C 300 32, 100 24, 100 44" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3" />
+                <polygon points="100,44 96,36 104,36" fill="#38bdf8" />
+                
+                <!-- 中央フォーク (Worktree A) -->
+                <line x1="300" y1="16" x2="300" y2="44" stroke="#10b981" stroke-width="2" stroke-dasharray="4 3" />
+                <polygon points="300,44 296,36 304,36" fill="#10b981" />
+                
+                <!-- 右フォーク (Worktree B) -->
+                <path d="M 300 16 C 300 32, 500 24, 500 44" stroke="#c084fc" stroke-width="2" stroke-dasharray="4 3" />
+                <polygon points="500,44 496,36 504,36" fill="#c084fc" />
+
+                <!-- 中央フォークラベル -->
+                <rect x="225" y="7" width="150" height="18" rx="9" fill="#0f172a" stroke="#64748b" stroke-width="1"/>
+                <text x="300" y="20" fill="#94a3b8" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">git worktree add で分岐</text>
+              </svg>
+            </div>
+
+            <!-- Desktop 3 Parallel Worktrees (Visible on md+) -->
+            <div class="hidden md:grid md:grid-cols-3 gap-3 text-xs">
+              <!-- Main Workspace -->
+              <div class="p-3 sm:p-3.5 rounded-xl bg-sky-950/30 border border-sky-600/50 flex flex-col justify-between shadow-md">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300">MAIN</span>
+                    <i class="fa-solid fa-user-pen text-sky-400 text-xs"></i>
+                  </div>
+                  <div class="font-bold text-sky-200 text-xs sm:text-sm mb-1">Main Workspace</div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">開発者自身が直接作業するメインブランチ。エージェントの影響を受けず安全。</p>
+                </div>
+                <div class="mt-2 text-[10px] font-mono text-sky-400/80">branch: main / staging</div>
+              </div>
+
+              <!-- Worktree A -->
+              <div class="p-3 sm:p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-600/50 flex flex-col justify-between shadow-md">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">WORKTREE A</span>
+                    <i class="fa-solid fa-robot text-emerald-400 text-xs"></i>
+                  </div>
+                  <div class="font-bold text-emerald-200 text-xs sm:text-sm mb-1">Worktree A (Agent 1)</div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">新機能の自律実装・プロトタイプ作成。裏側で独立稼働しテストまで完走。</p>
+                </div>
+                <div class="mt-2 text-[10px] font-mono text-emerald-400/80">branch: feat/new-billing</div>
+              </div>
+
+              <!-- Worktree B -->
+              <div class="p-3 sm:p-3.5 rounded-xl bg-purple-950/30 border border-purple-600/50 flex flex-col justify-between shadow-md">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">WORKTREE B</span>
+                    <i class="fa-solid fa-microscope text-purple-400 text-xs"></i>
+                  </div>
+                  <div class="font-bold text-purple-200 text-xs sm:text-sm mb-1">Worktree B (Agent 2)</div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">Playwright E2Eテスト自動作成や、深夜のリファクタリングを並行処理。</p>
+                </div>
+                <div class="mt-2 text-[10px] font-mono text-purple-400/80">branch: test/e2e-suite</div>
+              </div>
+            </div>
+
+            <!-- Mobile Worktrees Branching Tree Layout (Visible on <md) -->
+            <div class="md:hidden space-y-3 my-2">
+              <!-- 分岐起点バナー -->
+              <div class="p-2 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300 flex items-center gap-2 text-[10px] font-mono shadow-sm">
+                <i class="fa-solid fa-code-fork text-brand-400 shrink-0"></i>
+                <span><strong>git worktree add:</strong> 独立物理ディレクトリへ並行分岐</span>
+              </div>
+
+              <!-- 左幹線レール ＆ 水平分岐ツリー -->
+              <div class="relative pl-7 space-y-4 pt-1">
+                <!-- 垂直幹線レール -->
+                <div class="absolute left-2.5 top-0 bottom-6 w-0.5 bg-gradient-to-b from-slate-500 via-emerald-500 to-purple-500 rounded-full"></div>
+
+                <!-- Main Workspace -->
+                <div class="relative">
+                  <!-- 水平分岐コネクタ -->
+                  <div class="flex items-center gap-1.5 mb-1.5 -ml-5">
+                    <div class="w-4 h-0.5 bg-sky-400 shrink-0"></div>
+                    <i class="fa-solid fa-caret-right text-sky-400 text-xs -ml-1 shrink-0"></i>
+                    <span class="px-2 py-0.5 rounded bg-sky-950/90 border border-sky-500/60 text-sky-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      Main Branch（開発者専用）
+                    </span>
+                  </div>
+                  <!-- カード本体 -->
+                  <div class="p-3.5 rounded-xl bg-sky-950/30 border border-sky-600/50 shadow-md">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300">MAIN</span>
+                      <i class="fa-solid fa-user-pen text-sky-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-sky-200 text-xs mb-1">Main Workspace</div>
+                    <p class="text-[11px] text-slate-300 leading-relaxed mb-2">開発者自身が直接作業するメインブランチ。エージェントの影響を受けず安全。</p>
+                    <div class="text-[10px] font-mono text-sky-400/80">branch: main / staging</div>
+                  </div>
+                </div>
+
+                <!-- Worktree A -->
+                <div class="relative">
+                  <!-- 水平分岐コネクタ -->
+                  <div class="flex items-center gap-1.5 mb-1.5 -ml-5">
+                    <div class="w-4 h-0.5 bg-emerald-400 shrink-0"></div>
+                    <i class="fa-solid fa-caret-right text-emerald-400 text-xs -ml-1 shrink-0"></i>
+                    <span class="px-2 py-0.5 rounded bg-emerald-950/90 border border-emerald-500/60 text-emerald-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      Worktree A（自律実装 Agent 1）
+                    </span>
+                  </div>
+                  <!-- カード本体 -->
+                  <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-600/50 shadow-md">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">WORKTREE A</span>
+                      <i class="fa-solid fa-robot text-emerald-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-emerald-200 text-xs mb-1">Worktree A (Agent 1)</div>
+                    <p class="text-[11px] text-slate-300 leading-relaxed mb-2">新機能の自律実装・プロトタイプ作成。裏側で独立稼働しテストまで完走。</p>
+                    <div class="text-[10px] font-mono text-emerald-400/80">branch: feat/new-billing</div>
+                  </div>
+                </div>
+
+                <!-- Worktree B -->
+                <div class="relative">
+                  <!-- 水平分岐コネクタ -->
+                  <div class="flex items-center gap-1.5 mb-1.5 -ml-5">
+                    <div class="w-4 h-0.5 bg-purple-400 shrink-0"></div>
+                    <i class="fa-solid fa-caret-right text-purple-400 text-xs -ml-1 shrink-0"></i>
+                    <span class="px-2 py-0.5 rounded bg-purple-950/90 border border-purple-500/60 text-purple-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      Worktree B（自動テスト Agent 2）
+                    </span>
+                  </div>
+                  <!-- カード本体 -->
+                  <div class="p-3.5 rounded-xl bg-purple-950/30 border border-purple-600/50 shadow-md">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">WORKTREE B</span>
+                      <i class="fa-solid fa-microscope text-purple-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-purple-200 text-xs mb-1">Worktree B (Agent 2)</div>
+                    <p class="text-[11px] text-slate-300 leading-relaxed mb-2">Playwright E2Eテスト自動作成や、深夜のリファクタリングを並行処理。</p>
+                    <div class="text-[10px] font-mono text-purple-400/80">branch: test/e2e-suite</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1126,23 +1483,214 @@ graph LR
             途中で人間に細かな質問や確認を求めず、ゴールとして設定された数値基準や品質要件（例: <strong>「Lighthouse スコア全指標100点」「テスト全件パス」</strong>）を満たすまで、エージェントが「現状監査 ➜ ガイダンス検索 ➜ 修正 ➜ ブラウザ再検証」を自律反復（Autonomous Hill-Climbing）して完走します。
           </p>
 
-          <!-- Mermaid Goal Hill-Climbing Loop -->
-          <div class="p-3.5 sm:p-4 rounded-xl bg-darkbg-900 border border-slate-700 mb-4 max-w-full overflow-hidden">
-            <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-2">/goal 自律山登り（Hill-Climbing）反復サイクル</div>
-            <div class="overflow-x-auto max-w-full pb-2">
-              <div class="min-w-[500px]">
-                <div class="mermaid">
-graph LR
-    Goal[ゴール定義<br>例: Lighthouse 100点] --> Audit[1. Chrome MCP監査<br>スコア測定・課題特定]
-    Audit --> Guide[2. ガイダンス検索<br>Modern Web Plugin]
-    Guide --> Fix[3. 自律コード修正<br>Modern CSS / A11y / APIs]
-    Fix --> Test[4. ブラウザ再検証<br>DevTools / Test]
-    Test -->|スコア未達| Audit
-    Test -->|全指標100点達成| Done[完了 & 成果物出力<br>walkthrough.md]
-    style Goal fill:#0369a1,stroke:#38bdf8,color:#fff
-    style Done fill:#065f46,stroke:#10b981,color:#fff
+          <!-- Responsive Goal Hill-Climbing Loop -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-darkbg-900 border border-slate-700 mb-4 max-w-full">
+            <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-3 flex items-center justify-between flex-wrap gap-2">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-mountain-sun text-brand-400"></i>
+                /goal 自律山登り（Hill-Climbing）反復サイクル
+              </span>
+              <span class="text-[10px] text-emerald-400 font-mono font-bold hidden sm:inline">Lighthouse All 100 Loop</span>
+            </div>
+
+            <!-- Desktop Steps (Visible on lg+) -->
+            <div class="hidden lg:block">
+              <div class="grid grid-cols-5 gap-2.5 relative text-xs">
+                <!-- Step 0: Goal -->
+                <div class="p-3 rounded-xl bg-sky-950/40 border border-sky-600/50 flex flex-col justify-between relative">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300">GOAL</span>
+                    <i class="fa-solid fa-bullseye text-sky-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-sky-200 text-xs sm:text-sm mb-0.5">ゴール定義</div>
+                    <div class="text-[11px] text-slate-300">例: Lighthouse 100点達成</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 1: Audit -->
+                <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex flex-col justify-between relative ring-1 ring-amber-500/30">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">STEP 1</span>
+                    <i class="fa-brands fa-chrome text-amber-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-200 text-xs sm:text-sm mb-0.5 flex items-center justify-between">
+                      <span>1. Chrome MCP監査</span>
+                      <span class="text-[9px] px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono">再監査先</span>
+                    </div>
+                    <div class="text-[11px] text-slate-400">現状スコア測定・課題抽出</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 2: Guide -->
+                <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex flex-col justify-between relative">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">STEP 2</span>
+                    <i class="fa-solid fa-compass text-purple-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-200 text-xs sm:text-sm mb-0.5">2. ガイダンス検索</div>
+                    <div class="text-[11px] text-slate-400">Modern Web プラグイン仕様</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 3: Fix -->
+                <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex flex-col justify-between relative">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">STEP 3</span>
+                    <i class="fa-solid fa-code text-emerald-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-200 text-xs sm:text-sm mb-0.5">3. 自律コード修正</div>
+                    <div class="text-[11px] text-slate-400">Modern CSS / A11y / APIs</div>
+                  </div>
+                  <!-- Desktop Sequence Arrow -->
+                  <div class="flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 w-5 h-5 rounded-full bg-slate-800 border border-slate-600 items-center justify-center text-[9px] text-slate-400 shadow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Step 4: Verify & Done -->
+                <div class="p-3 rounded-xl bg-emerald-950/40 border-2 border-emerald-500/60 flex flex-col justify-between relative shadow-lg shadow-emerald-950/30">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">STEP 4</span>
+                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-emerald-200 text-xs sm:text-sm mb-0.5">4. ブラウザ再検証</div>
+                    <div class="text-[11px] text-slate-300 mb-2">全指標100点で完走出力</div>
+                  </div>
                 </div>
               </div>
+
+              <!-- Desktop SVG Hill-Climbing Loop Connection (Step 4 -> Step 1) -->
+              <div class="relative -mt-1 mb-2">
+                <svg class="w-full h-10" viewBox="0 0 600 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <path d="M 540 0 V 18 C 540 32, 180 32, 180 18 V 4" stroke="#34d399" stroke-width="2" stroke-dasharray="5 3" />
+                  <polygon points="180,0 176,8 184,8" fill="#34d399" />
+                  <rect x="290" y="15" width="140" height="18" rx="9" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                  <text x="360" y="27.5" fill="#a7f3d0" font-size="9" font-family="sans-serif" text-anchor="middle" font-weight="bold">↶ スコア未達時: 再監査ループ</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Mobile Goal Hill-Climbing Timeline with Loop (Visible on <lg) -->
+            <div class="lg:hidden space-y-3 my-2">
+              <div class="relative pl-6 space-y-3 pt-1">
+                <!-- 左側：垂直タイムライン幹線レール -->
+                <div class="absolute left-2 top-2 bottom-4 w-0.5 bg-gradient-to-b from-sky-400 via-amber-400 via-purple-400 to-emerald-400 rounded-full"></div>
+
+                <!-- Step 0: Goal -->
+                <div class="relative">
+                  <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-sky-950 border-2 border-sky-400"></div>
+                  <div class="p-3 rounded-xl bg-sky-950/40 border border-sky-600/50 text-xs shadow-sm">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300">GOAL</span>
+                      <i class="fa-solid fa-bullseye text-sky-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-sky-200 text-xs sm:text-sm mb-0.5">ゴール定義</div>
+                    <div class="text-[11px] text-slate-300">例: Lighthouse 100点達成</div>
+                  </div>
+                </div>
+
+                <!-- Step 1〜4: Hill-Climbing Loop Area with Physical Loop Line -->
+                <div class="relative pr-6">
+                  <!-- 右側：山登り再監査ループ物理レール（Step 4からStep 1へ上向きに戻る大周回線） -->
+                  <div class="absolute right-0 top-6 bottom-8 w-5 flex flex-col items-center justify-between pointer-events-none">
+                    <i class="fa-solid fa-arrow-up text-emerald-400 text-xs"></i>
+                    <div class="w-0.5 flex-1 bg-gradient-to-t from-emerald-500 via-emerald-400 to-amber-400 rounded-full border-r border-dashed border-emerald-400"></div>
+                    <div class="absolute top-1/2 -translate-y-1/2 right-2 px-1.5 py-0.5 rounded bg-emerald-950 border border-emerald-500/60 text-emerald-200 text-[9px] font-bold whitespace-nowrap shadow-md">
+                      ↶ 未達時: 再監査
+                    </div>
+                    <div class="w-2.5 h-2.5 rounded-bl border-b-2 border-l-2 border-emerald-400"></div>
+                  </div>
+
+                  <!-- Step 1: Audit -->
+                  <div class="relative mb-3">
+                    <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-amber-950 border-2 border-amber-400"></div>
+                    <div class="p-3 rounded-xl bg-slate-800/90 border border-slate-700 text-xs ring-1 ring-amber-500/30 shadow-sm">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">STEP 1</span>
+                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">再監査ノード</span>
+                      </div>
+                      <div class="font-bold text-slate-200 text-xs sm:text-sm mb-0.5">1. Chrome MCP監査</div>
+                      <div class="text-[11px] text-slate-400">現状スコア測定・課題抽出</div>
+                    </div>
+                  </div>
+
+                  <!-- Step 2: Guide -->
+                  <div class="relative mb-3">
+                    <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-purple-950 border-2 border-purple-400"></div>
+                    <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-xs shadow-sm">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">STEP 2</span>
+                        <i class="fa-solid fa-compass text-purple-400 text-xs"></i>
+                      </div>
+                      <div class="font-bold text-slate-200 text-xs sm:text-sm mb-0.5">2. ガイダンス検索</div>
+                      <div class="text-[11px] text-slate-400">Modern Web プラグイン仕様</div>
+                    </div>
+                  </div>
+
+                  <!-- Step 3: Fix -->
+                  <div class="relative mb-3">
+                    <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-emerald-950 border-2 border-emerald-400"></div>
+                    <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-xs shadow-sm">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300">STEP 3</span>
+                        <i class="fa-solid fa-code text-emerald-400 text-xs"></i>
+                      </div>
+                      <div class="font-bold text-slate-200 text-xs sm:text-sm mb-0.5">3. 自律コード修正</div>
+                      <div class="text-[11px] text-slate-400">Modern CSS / A11y / APIs</div>
+                    </div>
+                  </div>
+
+                  <!-- Step 4: Verify & Done -->
+                  <div class="relative">
+                    <div class="absolute -left-[20px] top-3.5 w-2.5 h-2.5 rounded-full bg-emerald-950 border-2 border-emerald-400"></div>
+                    <div class="p-3 rounded-xl bg-emerald-950/40 border-2 border-emerald-500/60 text-xs shadow-md">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">STEP 4</span>
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                      </div>
+                      <div class="font-bold text-emerald-200 text-xs sm:text-sm mb-0.5">4. ブラウザ再検証</div>
+                      <div class="text-[11px] text-slate-300 mb-2">全指標100点で完走出力</div>
+                      <!-- 合否分岐表示 -->
+                      <div class="space-y-1 pt-1.5 border-t border-emerald-500/30 text-[10px]">
+                        <div class="flex items-center justify-between text-amber-300 font-bold">
+                          <span><i class="fa-solid fa-rotate-left mr-1 text-amber-400"></i>スコア未達時</span>
+                          <span class="font-mono text-amber-300">➜ 右のループで Step 1 へ戻る</span>
+                        </div>
+                        <div class="flex items-center justify-between text-emerald-300 font-bold">
+                          <span><i class="fa-solid fa-check mr-1 text-emerald-400"></i>100点達成時</span>
+                          <span class="font-mono text-emerald-200">➜ ゴール完走 (walkthrough.md)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loop Banner -->
+            <div class="mt-3 p-2.5 sm:p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between text-xs text-emerald-200 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-arrow-rotate-right text-emerald-400 shrink-0"></i>
+                <span><strong>Hill-Climbing 反復判定：</strong> スコア未達（例: 78点）時は自動で <strong class="text-amber-400">Step 1 (監査)</strong> へ戻りループ再実行。全指標100点達成で成果物（<code class="font-mono text-emerald-300">walkthrough.md</code>）を出力し完走</span>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold shrink-0">100% Goal Driven</span>
             </div>
           </div>
 
@@ -1355,57 +1903,325 @@ slash_command: review-pr
             Antigravity は <code class="font-mono text-xs text-brand-400 bg-darkbg-800 px-1 py-0.5 rounded">invoke_subagent</code> ツールにより、一時的な子エージェント（Subagent）をオンデマンドで生成。子エージェントは隔離されたコンテキストで膨大な探索を行い、最終的な<strong>「要約された結論」</strong>だけを親エージェントに返却します。
           </p>
 
-          <!-- Mermaid Subagents Architecture (Mobile Scrollable) -->
-          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 max-w-full overflow-hidden">
-            <div class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-2">サブエージェントによる並列分散アーキテクチャ</div>
-            <div class="sm:hidden text-center text-[11px] text-slate-400 mb-2 font-mono">
-              <i class="fa-solid fa-arrows-left-right mr-1"></i> 指で横スクロールして拡大表示
+          <!-- Responsive Subagents Architecture Flow -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 max-w-full">
+            <div class="text-xs font-mono text-brand-400 uppercase tracking-widest mb-3 flex items-center justify-between flex-wrap gap-2">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-sitemap text-brand-400"></i>
+                サブエージェントによる並列分散アーキテクチャ
+              </span>
+              <span class="text-[10px] text-slate-400 font-mono hidden sm:inline">コンテキスト汚染の物理防止</span>
             </div>
-            <div class="overflow-x-auto max-w-full pb-2">
-              <div class="min-w-[550px]">
-                <div class="mermaid">
-graph TD
-    Parent[親エージェント: Main Orchestrator<br>Clean Context] -->|調査委譲| Sub1[Subagent A: Research<br>大規模ファイル探索・Web検索]
-    Parent -->|並行委譲| Sub2[Subagent B: DB Specialist<br>SQL Connect / Migration作成]
-    Parent -->|並行委譲| Sub3[Subagent C: Frontend Tester<br>ブラウザUIテスト]
-    Sub1 -->|要約結果のみ通知| Parent
-    Sub2 -->|スキーマ定義のみ通知| Parent
-    Sub3 -->|テスト合否のみ通知| Parent
-    style Parent fill:#0369a1,stroke:#38bdf8,color:#fff
-    style Sub1 fill:#1e293b,stroke:#64748b,color:#fff
-    style Sub2 fill:#1e293b,stroke:#64748b,color:#fff
-    style Sub3 fill:#1e293b,stroke:#64748b,color:#fff
+
+            <!-- Parent Agent Card -->
+            <div class="max-w-2xl mx-auto p-3.5 sm:p-4 rounded-xl bg-gradient-to-r from-sky-950/60 to-blue-950/60 border border-sky-500/50 text-xs shadow-lg shadow-sky-950/40">
+              <div class="flex items-center justify-between flex-wrap gap-2 mb-1.5">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0">
+                    <i class="fa-solid fa-crown"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-white text-xs sm:text-sm">親エージェント（Main Orchestrator）</div>
+                    <div class="text-[11px] text-sky-300 font-mono">Clean Context（汚染ゼロの最高推論精度を維持）</div>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/40 font-bold">Orchestrator</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                全体の進捗統括と最終判断のみに集中。重たいファイル全走査やテスト試行錯誤はサブエージェントへ隔離委譲。
+              </p>
+            </div>
+
+            <!-- Desktop Bidirectional Curves Connector (SVG: Smooth Solid Bezier Curves) -->
+            <div class="hidden md:block my-2 relative">
+              <svg class="w-full h-28 lg:h-32" viewBox="0 0 900 110" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <!-- ================= 親 ➜ 子A (調査委譲) ================= -->
+                <path d="M 300 0 C 270 50, 95 40, 80 102" stroke="#38bdf8" stroke-width="2.5" />
+                <polygon points="80,110 75,100 85,100" fill="#38bdf8" />
+                <!-- バッジ: 調査委譲 -->
+                <rect x="140" y="24" width="68" height="22" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="174" y="39" fill="#bae6fd" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">調査委譲</text>
+
+                <!-- ================= 子A ➜ 親 (要約結果のみ通知) ================= -->
+                <path d="M 190 110 C 205 60, 335 65, 350 8" stroke="#34d399" stroke-width="2.5" />
+                <polygon points="350,0 345,10 355,10" fill="#34d399" />
+                <!-- バッジ: 要約結果のみ通知 -->
+                <rect x="215" y="56" width="120" height="22" rx="4" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+                <text x="275" y="71" fill="#a7f3d0" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">要約結果のみ通知</text>
+
+                <!-- ================= 親 ➜ 子B (並行委譲) ================= -->
+                <path d="M 420 0 C 405 35, 400 65, 410 102" stroke="#38bdf8" stroke-width="2.5" />
+                <polygon points="410,110 405,100 415,100" fill="#38bdf8" />
+                <!-- バッジ: 並行委譲 -->
+                <rect x="345" y="44" width="68" height="22" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="379" y="59" fill="#bae6fd" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">並行委譲</text>
+
+                <!-- ================= 子B ➜ 親 (スキーマ定義のみ通知) ================= -->
+                <path d="M 490 110 C 500 65, 495 35, 480 8" stroke="#34d399" stroke-width="2.5" />
+                <polygon points="480,0 475,10 485,10" fill="#34d399" />
+                <!-- バッジ: スキーマ定義のみ通知 -->
+                <rect x="475" y="44" width="130" height="22" rx="4" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+                <text x="540" y="59" fill="#a7f3d0" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">スキーマ定義のみ通知</text>
+
+                <!-- ================= 親 ➜ 子C (並行委譲) ================= -->
+                <path d="M 550 0 C 565 65, 695 60, 710 102" stroke="#38bdf8" stroke-width="2.5" />
+                <polygon points="710,110 705,100 715,100" fill="#38bdf8" />
+                <!-- バッジ: 並行委譲 -->
+                <rect x="615" y="56" width="68" height="22" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="649" y="71" fill="#bae6fd" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">並行委譲</text>
+
+                <!-- ================= 子C ➜ 親 (テスト合否のみ通知) ================= -->
+                <path d="M 820 110 C 805 40, 625 50, 600 8" stroke="#34d399" stroke-width="2.5" />
+                <polygon points="600,0 595,10 605,10" fill="#34d399" />
+                <!-- バッジ: テスト合否のみ通知 -->
+                <rect x="690" y="24" width="124" height="22" rx="4" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+                <text x="752" y="39" fill="#a7f3d0" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">テスト合否のみ通知</text>
+              </svg>
+            </div>
+
+            <!-- Desktop Subagents Grid (3-Col Grid: visible on md+) -->
+            <div class="hidden md:grid md:grid-cols-3 gap-4 text-xs mb-5">
+              <!-- Subagent A Card -->
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700 flex flex-col justify-between h-full shadow-md">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300">SUBAGENT A</span>
+                    <i class="fa-solid fa-magnifying-glass text-blue-400 text-xs"></i>
+                  </div>
+                  <div class="font-bold text-white text-xs sm:text-sm mb-1">Research Specialist</div>
+                  <p class="text-[11px] text-slate-400 leading-relaxed">数百ファイルのgrep探索、公式ドキュメントWeb検索を隔離環境で実行。</p>
+                </div>
+              </div>
+
+              <!-- Subagent B Card -->
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700 flex flex-col justify-between h-full shadow-md">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">SUBAGENT B</span>
+                    <i class="fa-solid fa-database text-amber-400 text-xs"></i>
+                  </div>
+                  <div class="font-bold text-white text-xs sm:text-sm mb-1">DB Specialist</div>
+                  <p class="text-[11px] text-slate-400 leading-relaxed">SQL Connect / マイグレーション作成と、EXPLAIN実行計画の最適化。</p>
+                </div>
+              </div>
+
+              <!-- Subagent C Card -->
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700 flex flex-col justify-between h-full shadow-md">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">SUBAGENT C</span>
+                    <i class="fa-solid fa-vial text-purple-400 text-xs"></i>
+                  </div>
+                  <div class="font-bold text-white text-xs sm:text-sm mb-1">Frontend Tester</div>
+                  <p class="text-[11px] text-slate-400 leading-relaxed">DevTools MCP連携による実ブラウザUI巡回、スクリーンショット採取。</p>
                 </div>
               </div>
             </div>
-          <!-- Subagents Messaging Protocol Table -->
-          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm mb-6">
-            <table class="min-w-[600px] w-full text-left text-xs">
-              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
-                <tr>
-                  <th class="p-2.5 font-semibold font-mono">ツール / API</th>
-                  <th class="p-2.5 font-semibold">通信方向</th>
-                  <th class="p-2.5 font-semibold">役割・動作仕様</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300 font-mono text-[11px]">
-                <tr>
-                  <td class="p-2.5 text-brand-400">invoke_subagent</td>
-                  <td class="p-2.5 font-sans">親 ➜ 子（生成）</td>
-                  <td class="p-2.5 font-sans">固有の conversationID を持つ子エージェントをオンデマンド召喚。</td>
-                </tr>
-                <tr>
-                  <td class="p-2.5 text-brand-400">send_message</td>
-                  <td class="p-2.5 font-sans">親 ➜ 子 / 子 ➜ 親</td>
-                  <td class="p-2.5 font-sans">稼働中または待機中のサブエージェントへ追加指示・中間結果を双方向送信。</td>
-                </tr>
-                <tr>
-                  <td class="p-2.5 text-brand-400">manage_subagents</td>
-                  <td class="p-2.5 font-sans">親 ➜ 管理機構</td>
-                  <td class="p-2.5 font-sans">子エージェントの稼働一覧取得（list）、個別終了（kill）、全停止（kill_all）。</td>
-                </tr>
-              </tbody>
-            </table>
+
+            <!-- Mobile Subagents Bus/Tree Layout (Visible on <md) -->
+            <div class="md:hidden space-y-4 my-3">
+              <!-- 幹線起点バナーヘッダー -->
+              <div class="grid grid-cols-2 gap-2 text-[10px] font-mono">
+                <!-- 青：委譲フロー起点 -->
+                <div class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/30 text-sky-300 flex items-center gap-1.5 shadow-sm">
+                  <i class="fa-solid fa-arrow-down text-sky-400 shrink-0"></i>
+                  <div class="leading-tight">
+                    <span class="text-[9px] text-sky-400 block font-bold">親 ➜ 子（並行委譲）</span>
+                    <span class="font-bold">invoke_subagent</span>
+                  </div>
+                </div>
+                <!-- 緑：返却フロー起点 -->
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 flex items-center gap-1.5 shadow-sm">
+                  <i class="fa-solid fa-arrow-up text-emerald-400 shrink-0"></i>
+                  <div class="leading-tight">
+                    <span class="text-[9px] text-emerald-400 block font-bold">子 ➜ 親（集約返却）</span>
+                    <span class="font-bold">send_message</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 子カード群（左レール：青・緑の垂直デュアル幹線 ＋ 各カードへの水平分岐・合流） -->
+              <div class="relative pl-7 space-y-4 pt-1">
+                <!-- 垂直幹線レール：青（親➜子 委譲ライン） -->
+                <div class="absolute left-2.5 top-0 bottom-6 w-0.5 bg-gradient-to-b from-sky-400 via-sky-500 to-sky-600 rounded-full"></div>
+                <!-- 垂直幹線レール：緑（子➜親 返却ライン） -->
+                <div class="absolute left-4.5 top-0 bottom-6 w-0.5 bg-gradient-to-t from-emerald-500 via-emerald-400 to-emerald-300 rounded-full"></div>
+
+                <!-- ===== SUBAGENT A ===== -->
+                <div class="relative">
+                  <!-- 委譲分岐コネクタ（青幹線からカードへ） -->
+                  <div class="flex items-center gap-1.5 mb-1.5 -ml-5">
+                    <div class="w-4 h-0.5 bg-sky-400 shrink-0"></div>
+                    <i class="fa-solid fa-caret-right text-sky-400 text-xs -ml-1 shrink-0"></i>
+                    <span class="px-2 py-0.5 rounded bg-sky-950/90 border border-sky-500/60 text-sky-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      <i class="fa-solid fa-arrow-down mr-1 text-[9px] text-sky-400"></i>調査委譲
+                    </span>
+                  </div>
+
+                  <!-- カード本体 -->
+                  <div class="p-3.5 rounded-xl bg-slate-900/95 border border-slate-700 shadow-md">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300">SUBAGENT A</span>
+                      <i class="fa-solid fa-magnifying-glass text-blue-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-white text-xs mb-1">Research Specialist</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">数百ファイルのgrep探索、公式ドキュメントWeb検索を隔離環境で実行。</p>
+                  </div>
+
+                  <!-- 返却集約コネクタ（カードから緑幹線へ） -->
+                  <div class="flex items-center gap-1.5 mt-1.5 -ml-3">
+                    <span class="px-2 py-0.5 rounded bg-emerald-950/90 border border-emerald-500/60 text-emerald-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      <i class="fa-solid fa-arrow-up mr-1 text-[9px] text-emerald-400"></i>要約結果のみ通知
+                    </span>
+                    <div class="flex-1 h-0.5 bg-emerald-400/40"></div>
+                    <i class="fa-solid fa-caret-left text-emerald-400 text-xs shrink-0"></i>
+                    <div class="w-2 h-0.5 bg-emerald-400 shrink-0"></div>
+                  </div>
+                </div>
+
+                <!-- ===== SUBAGENT B ===== -->
+                <div class="relative">
+                  <!-- 委譲分岐コネクタ（青幹線からカードへ） -->
+                  <div class="flex items-center gap-1.5 mb-1.5 -ml-5">
+                    <div class="w-4 h-0.5 bg-sky-400 shrink-0"></div>
+                    <i class="fa-solid fa-caret-right text-sky-400 text-xs -ml-1 shrink-0"></i>
+                    <span class="px-2 py-0.5 rounded bg-sky-950/90 border border-sky-500/60 text-sky-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      <i class="fa-solid fa-arrow-down mr-1 text-[9px] text-sky-400"></i>並行委譲
+                    </span>
+                  </div>
+
+                  <!-- カード本体 -->
+                  <div class="p-3.5 rounded-xl bg-slate-900/95 border border-slate-700 shadow-md">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">SUBAGENT B</span>
+                      <i class="fa-solid fa-database text-amber-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-white text-xs mb-1">DB Specialist</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">SQL Connect / マイグレーション作成と、EXPLAIN実行計画の最適化。</p>
+                  </div>
+
+                  <!-- 返却集約コネクタ（カードから緑幹線へ） -->
+                  <div class="flex items-center gap-1.5 mt-1.5 -ml-3">
+                    <span class="px-2 py-0.5 rounded bg-emerald-950/90 border border-emerald-500/60 text-emerald-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      <i class="fa-solid fa-arrow-up mr-1 text-[9px] text-emerald-400"></i>スキーマ定義のみ通知
+                    </span>
+                    <div class="flex-1 h-0.5 bg-emerald-400/40"></div>
+                    <i class="fa-solid fa-caret-left text-emerald-400 text-xs shrink-0"></i>
+                    <div class="w-2 h-0.5 bg-emerald-400 shrink-0"></div>
+                  </div>
+                </div>
+
+                <!-- ===== SUBAGENT C ===== -->
+                <div class="relative">
+                  <!-- 委譲分岐コネクタ（青幹線からカードへ） -->
+                  <div class="flex items-center gap-1.5 mb-1.5 -ml-5">
+                    <div class="w-4 h-0.5 bg-sky-400 shrink-0"></div>
+                    <i class="fa-solid fa-caret-right text-sky-400 text-xs -ml-1 shrink-0"></i>
+                    <span class="px-2 py-0.5 rounded bg-sky-950/90 border border-sky-500/60 text-sky-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      <i class="fa-solid fa-arrow-down mr-1 text-[9px] text-sky-400"></i>並行委譲
+                    </span>
+                  </div>
+
+                  <!-- カード本体 -->
+                  <div class="p-3.5 rounded-xl bg-slate-900/95 border border-slate-700 shadow-md">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">SUBAGENT C</span>
+                      <i class="fa-solid fa-vial text-purple-400 text-xs"></i>
+                    </div>
+                    <div class="font-bold text-white text-xs mb-1">Frontend Tester</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">DevTools MCP連携による実ブラウザUI巡回、スクリーンショット採取。</p>
+                  </div>
+
+                  <!-- 返却集約コネクタ（カードから緑幹線へ） -->
+                  <div class="flex items-center gap-1.5 mt-1.5 -ml-3">
+                    <span class="px-2 py-0.5 rounded bg-emerald-950/90 border border-emerald-500/60 text-emerald-300 text-[10px] font-bold shrink-0 shadow-sm">
+                      <i class="fa-solid fa-arrow-up mr-1 text-[9px] text-emerald-400"></i>テスト合否のみ通知
+                    </span>
+                    <div class="flex-1 h-0.5 bg-emerald-400/40"></div>
+                    <i class="fa-solid fa-caret-left text-emerald-400 text-xs shrink-0"></i>
+                    <div class="w-2 h-0.5 bg-emerald-400 shrink-0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subagents Messaging Protocol Table & Mobile Stack Cards -->
+            <div class="my-4">
+              <!-- Mobile API Stack Cards (Visible on <sm) -->
+              <div class="sm:hidden space-y-2 mb-3">
+                <!-- invoke_subagent -->
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xs shadow-sm">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <code class="font-mono text-brand-400 font-bold text-xs">invoke_subagent</code>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-sans font-semibold">親 ➜ 子（生成）</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+                    固有の conversationID を持つ子エージェントをオンデマンド召喚。
+                  </p>
+                </div>
+
+                <!-- send_message -->
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xs shadow-sm">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <code class="font-mono text-emerald-400 font-bold text-xs">send_message</code>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-sans font-semibold">親 ⇄ 子（双方向）</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+                    稼働中または待機中のサブエージェントへ追加指示・中間結果を双方向送信。
+                  </p>
+                </div>
+
+                <!-- manage_subagents -->
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xs shadow-sm">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <code class="font-mono text-amber-400 font-bold text-xs">manage_subagents</code>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-sans font-semibold">親 ➜ 管理機構</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+                    子エージェントの稼働一覧取得（list）、個別終了（kill）、全停止（kill_all）。
+                  </p>
+                </div>
+              </div>
+
+              <!-- Desktop API Table (Visible on sm+) -->
+              <div class="hidden sm:block overflow-x-auto max-w-full rounded-xl border border-slate-700/80 shadow-sm">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-800/80 text-slate-200 border-b border-slate-700">
+                    <tr>
+                      <th class="p-2.5 font-semibold font-mono">ツール / API</th>
+                      <th class="p-2.5 font-semibold">通信方向</th>
+                      <th class="p-2.5 font-semibold">役割・動作仕様</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-700/60 text-slate-300 font-mono text-[11px]">
+                    <tr>
+                      <td class="p-2.5 text-brand-400 font-bold">invoke_subagent</td>
+                      <td class="p-2.5 font-sans text-sky-300">親 ➜ 子（生成）</td>
+                      <td class="p-2.5 font-sans">固有の conversationID を持つ子エージェントをオンデマンド召喚。</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 text-emerald-400 font-bold">send_message</td>
+                      <td class="p-2.5 font-sans text-purple-300">親 ➜ 子 / 子 ➜ 親（双方向）</td>
+                      <td class="p-2.5 font-sans">稼働中または待機中のサブエージェントへ追加指示・中間結果を双方向送信。</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 text-amber-400 font-bold">manage_subagents</td>
+                      <td class="p-2.5 font-sans text-amber-300">親 ➜ 管理機構</td>
+                      <td class="p-2.5 font-sans">子エージェントの稼働一覧取得（list）、個別終了（kill）、全停止（kill_all）。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Summary Banner (Zero Context Poisoning Footer) -->
+            <div class="p-2.5 sm:p-3 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-between text-xs text-sky-200 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-sky-400 shrink-0"></i>
+                <span><strong>コンテキスト保護効果：</strong> 子エージェントの膨大な調査ログは破棄され、親のコンテキストウィンドウには「濃縮された結論」だけが届きます。</span>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono font-bold shrink-0">Zero Context Poisoning</span>
+            </div>
           </div>
         </div>
 
