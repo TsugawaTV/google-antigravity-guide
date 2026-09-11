@@ -1,6 +1,6 @@
-# 🚀 Google Antigravity 2.0 完全マスターズ・マニュアル
+# 🚀 Google Antigravity 完全マスターズ・マニュアル
 
-> **日本で最も詳しく、正確で実践的な Google Antigravity 2.0 完全攻略オープンソースガイド**
+> **日本で最も詳しく、正確で実践的な Google Antigravity 完全攻略オープンソースガイド**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -34,9 +34,14 @@
 ## 📑 目次一覧
 
 - **はじめに**
+- **第0章：5分でわかる！Antigravity クイックスタートガイド**
+  - 0.1 初めての4ステップ最短ルート（起動から完了まで）
+  - 0.2 コピペで動く！初心者向けおすすめ最初の一言
+  - 0.3 最もよく使う基本操作フロー（人間とAIの役割分担）
+  - 0.4 初心者が最初につまずきやすい3つの心得
 - **第1章：Antigravity 概要とアーキテクチャ**
-  - 1.1 Agent-First 開発思想の革命
-  - 1.2 プロダクトラインナップ（2.0 司令塔 vs IDE vs CLI vs SDK）
+  - 1.1 Agent-First 開発思想の革命（Cursor / Copilot との違い）
+  - 1.2 プロダクトラインナップの役割と使い分け（司令塔 vs IDE vs CLI vs SDK）
   - 1.3 バックエンドモデルの選定指針 & 料金・レート制限
 - **第2章：コア概念と「Artifacts（成果物）」システム**
   - 2.1 Artifacts システム（implementation_plan.md / walkthrough.md）
@@ -60,9 +65,9 @@
   - 5.3 Google Antigravity Python SDK 実践プログラミング
   - 5.4 Build with Google Plugins と Agent Plugin Spec
 - **第6章：実戦プレイブック（即戦力レシピ）**
-  - 6.1 フルスタックWebアプリのゼロイチ高速開発
-  - 6.2 B2B SaaS コンバージョン特化 LP 高速作成
-  - 6.3 大規模レガシーコードのリファクタリング（Worktree + TDD）
+  - 6.1 フルスタックWebアプリのゼロイチ高速開発（React + TS + Vite + Express + Postgres）
+  - 6.2 B2B SaaS コンバージョン特化 LP 高速作成（Tailwind + Nano Banana 2）
+  - 6.3 大規模レガシーコードのリファクタリング（Worktree Mode + TDD）
   - 6.4 **実録：Gemini 3.7 Flash × /goal による Lighthouse All 100 ＆ モダンWeb完全移行**
   - 6.5 **WordPress プラグイン開発の完全手順（セキュリティ5原則・WPCS規約）**
 - **第7章：プロンプトエンジニアリング ＆ トラブルシューティング**
