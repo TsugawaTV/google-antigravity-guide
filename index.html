@@ -6,8 +6,8 @@
   
   <!-- 基本SEOメタタグ -->
   <title>Google Antigravity 完全マスターズガイド | 2026年最新自律AIエージェント実践マニュアル</title>
-  <meta name="description" content="次世代自律AI「Google Antigravity 2.0」を使いこなすための完全実践ガイド。Gemini 3.7 Flash連携、/goal自律完走、Chrome MCPブラウザ検証、Dynamic Subagents、WordPressセキュリティ開発まで完全網羅。">
-  <meta name="keywords" content="Google Antigravity, Antigravity 2.0, Gemini 3.7 Flash, /goal, MCP, Chrome DevTools MCP, AIエージェント, 自律開発, プログラミング自動化">
+  <meta name="description" content="次世代自律AI「Google Antigravity」を使いこなすための完全実践ガイド。Gemini 3.8/3.7/3.6 Flash、3.1 Pro、Claude 4.6 (thinking)、GPT-OSS連携、/goal自律完走、Chrome MCPブラウザ検証、Dynamic Subagentsまで完全網羅。">
+  <meta name="keywords" content="Google Antigravity, Gemini 3.8 Flash, Gemini 3.1 Pro, Claude 4.6, GPT-OSS, /goal, MCP, Chrome DevTools MCP, AIエージェント, 自律開発, プログラミング自動化">
   <meta name="author" content="Google Antigravity 日本語コミュニティ">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tsugawa.tv/antigravity/">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="Google Antigravity 完全マスターズガイド | 2026年最新仕様">
-  <meta property="og:description" content="Gemini 3.7 Flash連携、/goal自律完走、Chrome MCP、Dynamic Subagents、実戦プレイブックまで完全網羅した日本一詳しい実践マニュアル。">
+  <meta property="og:description" content="Gemini 3.8 Flash連携、Claude 4.6、GPT-OSS、/goal自律完走、Chrome MCP、Dynamic Subagents、実戦プレイブックまで完全網羅した日本一詳しい実践マニュアル。">
   <meta property="og:url" content="https://tsugawa.tv/antigravity/">
   <meta property="og:site_name" content="Google Antigravity 日本語ドキュメントプロジェクト">
   <meta property="og:image" content="https://tsugawa.tv/antigravity/ogp.jpg">
@@ -1540,13 +1540,13 @@
                 <tr>
                   <td class="p-3 font-bold text-brand-400">Individual (Preview)</td>
                   <td class="p-3">無料（個人Googleアカウント）</td>
-                  <td class="p-3">Gemini 3.7 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6</td>
+                  <td class="p-3">Gemini 3.8/3.7/3.6 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6, GPT-OSS 120B</td>
                   <td class="p-3">標準クォータ（数時間ごとに自動リフレッシュ・個人開発に十分）</td>
                 </tr>
                 <tr>
                   <td class="p-3 font-bold text-purple-400">Pro / Team</td>
                   <td class="p-3">従量課金 / 月額定額</td>
-                  <td class="p-3">全モデル（Gemini 3.7/3.1, Claude 4.6, GPT-OSS）</td>
+                  <td class="p-3">全モデル（Gemini 3.8/3.7/3.6 Flash, 3.1 Pro, Claude 4.6, GPT-OSS 120B）</td>
                   <td class="p-3">クォータ枠大幅拡大・優先推論キュー・チーム共有Rules</td>
                 </tr>
                 <tr>
@@ -1559,16 +1559,84 @@
             </table>
           </div>
 
+          <!-- Model Matrix Table -->
+          <div class="overflow-x-auto max-w-full rounded-xl border border-slate-200 dark:border-slate-700 mb-6 shadow-sm">
+            <table class="min-w-[620px] w-full text-left text-xs">
+              <thead class="bg-slate-100 dark:bg-darkbg-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <tr>
+                  <th class="p-3 font-semibold">モデル名</th>
+                  <th class="p-3 font-semibold">利用可能バージョン</th>
+                  <th class="p-3 font-semibold">推論努力度（Reasoning Effort）</th>
+                  <th class="p-3 font-semibold">得意領域・推奨用途</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-300">
+                <tr>
+                  <td class="p-3 font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-bolt text-emerald-400"></i>
+                    <span>Gemini Flash</span>
+                  </td>
+                  <td class="p-3 font-mono text-emerald-400 font-semibold">3.8（最新）/ 3.7 / 3.6</td>
+                  <td class="p-3">
+                    <span class="inline-flex gap-1 font-mono text-[11px]">
+                      <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Low</span>
+                      <span class="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300">Medium</span>
+                      <span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">High</span>
+                    </span>
+                  </td>
+                  <td class="p-3">超高速・低レイテンシ。日常開発・コードベース探索・自律実行ループの主力エンジン</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-brain text-purple-400"></i>
+                    <span>Gemini Pro</span>
+                  </td>
+                  <td class="p-3 font-mono text-purple-400 font-semibold">3.1</td>
+                  <td class="p-3">
+                    <span class="inline-flex gap-1 font-mono text-[11px]">
+                      <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Low</span>
+                      <span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300">High</span>
+                    </span>
+                  </td>
+                  <td class="p-3">2M+トークン超長大コンテキスト。大規模レガシー刷新、マイクロサービス分散設計</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-code text-blue-400"></i>
+                    <span>Claude Sonnet / Opus</span>
+                  </td>
+                  <td class="p-3 font-mono text-blue-400 font-semibold">Sonnet 4.6 / Opus 4.6</td>
+                  <td class="p-3">
+                    <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono text-[11px] font-bold">Thinking のみ</span>
+                  </td>
+                  <td class="p-3">厳格な型推論（TS/Rust/C++）、エッジケース網羅、高度アルゴリズム導出</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-cube text-amber-400"></i>
+                    <span>GPT-OSS</span>
+                  </td>
+                  <td class="p-3 font-mono text-amber-400 font-semibold">120B</td>
+                  <td class="p-3">
+                    <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono text-[11px] font-bold">Medium のみ</span>
+                  </td>
+                  <td class="p-3">1200億パラメータ級オープンウェイト。標準推論によるOSS検証や独立コード監査</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="space-y-3 mb-6">
-            <!-- Gemini 3.7 Flash -->
+            <!-- Gemini 3.8 / 3.7 / 3.6 Flash -->
             <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
               <div>
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Gemini 3.7 Flash / 3.6 Flash / 3.5 Flash</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-semibold">Default / High Speed / Hybrid Reasoning</span>
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Gemini 3.8 Flash（最新）/ 3.7 Flash / 3.6 Flash</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-semibold">Low / Medium / High 対応</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 font-mono font-semibold">Default / High Speed</span>
                 </div>
                 <p class="text-xs text-slate-600 dark:text-slate-300">
-                  Google最新世代のフラッグシップ。超低レイテンシの標準応答と動的思考（Thinking）を兼備。日常的な機能開発、コードベース高速探索、自動テスト・ブラウザ検証の高速ループで最高のパフォーマンスを発揮。
+                  Google最新世代のフラッグシップ。最新の <strong>3.8 Flash</strong> に加え、安定運用のための <strong>3.7 Flash</strong>、<strong>3.6 Flash</strong> の3バージョンが利用可能。超低レイテンシ応答から動的思考（Thinking）まで、Low / Medium / High の全推論努力度に対応。日常的なコード生成、探索、自律ループの基本主力エンジンです。
                 </p>
               </div>
               <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">1M+ Token Context</div>
@@ -1577,37 +1645,54 @@
             <!-- Gemini 3.1 Pro -->
             <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
               <div>
-                <div class="flex items-center gap-2 mb-1">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
                   <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Gemini 3.1 Pro</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-mono font-semibold">Deep Architecture / Massive Context</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-mono font-semibold">Low / High 対応</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-slate-700 text-slate-300 font-mono">Massive Context</span>
                 </div>
                 <p class="text-xs text-slate-600 dark:text-slate-300">
-                  膨大なコンテキスト（2M+トークン）と深い論理的思考力を誇る重量級モデル。数万行規模のレガシーコード全面移行、マイクロサービス分散設計、難解なGit競合や循環参照の根本解決に必須。
+                  膨大なコンテキスト（2M+トークン）と深い論理的思考力を誇る重量級モデル。推論努力度は <strong>Low と High</strong> を選択可能。数万行規模のレガシーコード全面移行、マイクロサービス分散設計、難解なGit競合や循環参照の根本解決に威力を発揮します。
                 </p>
               </div>
               <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">2M+ Token Context</div>
             </div>
 
-            <!-- Claude 3.7 Sonnet / Opus 4.6 -->
+            <!-- Claude Sonnet 4.6 / Claude Opus 4.6 -->
             <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
               <div>
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Claude 3.7 Sonnet / Opus 4.6 (Thinking Mode)</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-mono font-semibold">Extended Thinking / Strict Types</span>
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Claude Sonnet 4.6 / Claude Opus 4.6</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-mono font-semibold">Thinking のみ</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">Extended Thinking</span>
                 </div>
                 <p class="text-xs text-slate-600 dark:text-slate-300">
-                  高度なアルゴリズム導出、厳格な型推論（TypeScript/Rust/C++）、Extended Thinking によるエッジケース網羅に強みを持つモデル。アルゴリズム最適化や数学的ロジックの実装に抜群の安定感を発揮。
+                  高度なアルゴリズム導出、厳格な型推論（TypeScript/Rust/C++）に特化したAnthropicの最新モデル。Antigravityでは <strong>Thinking 専用</strong>（拡張思考モード）として動作。エッジケースの網羅的設計や難解なバグ修正で抜群の安定感を提供します。
                 </p>
               </div>
               <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">200K+ Thinking Window</div>
             </div>
 
+            <!-- GPT-OSS 120B -->
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
+              <div>
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">GPT-OSS 120B</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono font-semibold">Medium のみ</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono">Open Weights</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300">
+                  1200億パラメータ級の高性能オープンウェイトモデル。Antigravityでは推論努力度 <strong>Medium 固定</strong>（標準推論）で動作。OSSベースの検証や、プロプライエタリモデルとは異なる客観的な視点でのコードレビュー・監査に最適です。
+                </p>
+              </div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-mono shrink-0">Open 120B Weights</div>
+            </div>
+
             <!-- Nano Banana 2 & Local Models -->
             <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
               <div>
-                <div class="flex items-center gap-2 mb-1">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
                   <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Nano Banana 2 & Local Models (Gemma / Ollama)</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono font-semibold">Visual Asset Gen / 100% Offline</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-slate-600 text-slate-200 font-mono font-semibold">Visual Asset Gen / 100% Offline</span>
                 </div>
                 <p class="text-xs text-slate-600 dark:text-slate-300">
                   <strong>Nano Banana 2:</strong> UIモックアップやアイコン、アーキテクチャ図の自動画像生成時にエージェントが内部呼出。<br>
@@ -1623,9 +1708,9 @@
             <div class="font-bold flex items-center gap-2 mb-1">
               <i class="fa-solid fa-arrow-trend-up"></i> 実戦テクニック：プロの「モデル・エスカレーション則」
             </div>
-            <strong>① 基本ループ:</strong> 通常の実装・リサーチ・テストは高速・低コストな <code>Gemini Flash</code> で足場を組んで反復。<br>
-            <strong>② 難所エスカレーション:</strong> 1タスクが3ファイル以上の複雑な修正に跨がる、または2回連続でテスト修正に失敗した段階で <code>Claude Sonnet / Opus 4.6 (thinking)</code> へ切替。<br>
-            <strong>③ クリーンアップ:</strong> 難所を突破・アーキテクチャ確定後は再び <code>Gemini Flash</code> に戻して高速完走させるのが最も高精度かつ経済的です。
+            <strong>① 基本ループ:</strong> 通常の実装・リサーチ・テストは高速・低コストな <code>Gemini 3.8 Flash (Low / Medium)</code> で足場を組んで反復。<br>
+            <strong>② 難所エスカレーション:</strong> 1タスクが3ファイル以上の複雑な修正に跨がる、または2回連続でテスト修正に失敗した段階で <code>Claude Sonnet 4.6 / Opus 4.6 (thinking)</code> または <code>Gemini 3.1 Pro (High)</code> へ切替。<br>
+            <strong>③ クリーンアップ:</strong> 難所を突破・アーキテクチャ確定後は再び <code>Gemini 3.8 Flash</code> に戻して高速完走させるのが最も高精度かつ経済的です。
           </div>
         </div>
       </section>
@@ -1953,38 +2038,59 @@
             <span><span class="inline-block">2.4 推論努力度</span><span class="inline-block">（Reasoning Effort）の</span><span class="inline-block">設定指針 & </span><span class="inline-block">判断マトリクス</span></span>
           </h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-xs sm:text-sm">
-            Gemini 3.7 Flash や Claude 4.6 (thinking) などの推論モデルでは、タスクの難易度に応じて<strong>「Reasoning Effort（推論の深さ・思考時間）」</strong>を調整することで、コストと速度、解答精度のトレードオフを最適化できます。
+            Gemini 3.8 / 3.7 / 3.6 Flash、Gemini 3.1 Pro、Claude Sonnet/Opus 4.6 (thinking)、GPT-OSS 120B などのモデルでは、タスクの難易度やモデル特性に応じて<strong>「Reasoning Effort（推論の深さ・思考時間）」</strong>を調整することで、コストと速度、解答精度のトレードオフを最適化できます。
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
-            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-emerald-500 shadow-sm">
-              <div class="font-bold text-emerald-500 dark:text-emerald-400 text-xs sm:text-sm mb-1 flex items-center gap-1.5">
-                <i class="fa-solid fa-gauge"></i> Low（低推論）
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-emerald-500 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="font-bold text-emerald-500 dark:text-emerald-400 text-xs sm:text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-gauge"></i> Low（低推論）
+                  </div>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">1〜3秒</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  思考ステップを最小化し超高速に応答。定型的なボイラープレート生成、変数名のリネーム、単純なCSS調整、Tab補完に最適。
+                </p>
               </div>
-              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
-                思考ステップを最小化し超高速に応答。定型的なボイラープレート生成、変数名のリネーム、単純なCSS調整に最適。
-              </p>
-              <span class="text-[10px] text-slate-400 font-mono">目安: 1〜3秒で即座に応答</span>
+              <div class="pt-2 border-t border-slate-200 dark:border-slate-700/60 text-[10px] text-slate-500 dark:text-slate-400 font-mono">
+                対応: Flash (3.6/3.7/3.8), Pro 3.1
+              </div>
             </div>
 
-            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-blue-500 shadow-sm">
-              <div class="font-bold text-blue-500 dark:text-blue-400 text-xs sm:text-sm mb-1 flex items-center gap-1.5">
-                <i class="fa-solid fa-gauge-simple-high"></i> Medium（標準推論）
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-blue-500 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="font-bold text-blue-500 dark:text-blue-400 text-xs sm:text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-gauge-simple-high"></i> Medium（標準推論）
+                  </div>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono">5〜15秒</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  バランスの取れた標準設定。一般的なWeb機能開発、API統合、単体テストスイートの自動作成、コードレビューに最適。
+                </p>
               </div>
-              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
-                バランスの取れた標準設定。一般的なWeb機能開発、API統合、単体テストスイートの自動作成、コードレビューに最適。
-              </p>
-              <span class="text-[10px] text-slate-400 font-mono">目安: 5〜15秒の論理検証</span>
+              <div class="pt-2 border-t border-slate-200 dark:border-slate-700/60 text-[10px] text-slate-500 dark:text-slate-400 font-mono">
+                対応: Flash (3.6/3.7/3.8), GPT-OSS 120B
+              </div>
             </div>
 
-            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-purple-500 shadow-sm">
-              <div class="font-bold text-purple-500 dark:text-purple-400 text-xs sm:text-sm mb-1 flex items-center gap-1.5">
-                <i class="fa-solid fa-microchip"></i> High（深層推論）
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-100 dark:bg-darkbg-800 border-t-4 border-purple-500 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="font-bold text-purple-500 dark:text-purple-400 text-xs sm:text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-microchip"></i> High / Thinking（深層推論）
+                  </div>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono">30秒〜</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  思考トークンを最大限活用。難解なRace Condition調査、大規模分散アーキテクチャ設計、厳格な型推論、数学的アルゴリズム導出に必須。
+                </p>
               </div>
-              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
-                思考トークンを最大限活用。難解なRace Condition調査、大規模分散アーキテクチャ設計、数学的アルゴリズム導出に必須。
-              </p>
-              <span class="text-[10px] text-slate-400 font-mono">目安: 30秒〜数分のディープ思考</span>
+              <div class="pt-2 border-t border-slate-200 dark:border-slate-700/60 text-[10px] text-slate-500 dark:text-slate-400 font-mono">
+                対応: Flash, Pro 3.1, Claude 4.6 (Thinkingのみ)
+              </div>
             </div>
           </div>
 
@@ -2003,20 +2109,32 @@
                 <tr>
                   <td class="p-3 font-semibold">Tab補完・インライン微修正</td>
                   <td class="p-3 text-emerald-400 font-mono font-bold">Low</td>
-                  <td class="p-3 font-mono">Gemini 3.7 Flash</td>
-                  <td class="p-3">打鍵速度に追従する低レイテンシが必要なため</td>
+                  <td class="p-3 font-mono">Gemini 3.8 Flash (Low)</td>
+                  <td class="p-3">打鍵速度に追従する超低レイテンシが必要なため</td>
                 </tr>
                 <tr>
                   <td class="p-3 font-semibold">通常機能実装・テスト作成</td>
                   <td class="p-3 text-blue-400 font-mono font-bold">Medium</td>
-                  <td class="p-3 font-mono">Gemini 3.7 Flash</td>
-                  <td class="p-3">適度な思考深度と高速なツール呼び出しのバランス</td>
+                  <td class="p-3 font-mono">Gemini 3.8 Flash (Medium)</td>
+                  <td class="p-3">適度な思考深度と高速なツール呼び出しのベストバランス</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold">オープンモデル検証・独立監査</td>
+                  <td class="p-3 text-blue-400 font-mono font-bold">Medium</td>
+                  <td class="p-3 font-mono">GPT-OSS 120B (Medium)</td>
+                  <td class="p-3">OSSウェイトを活用した標準推論による中立的なコード監査</td>
                 </tr>
                 <tr>
                   <td class="p-3 font-semibold">大規模リファクタ・型エラー連鎖</td>
+                  <td class="p-3 text-purple-400 font-mono font-bold">Thinking</td>
+                  <td class="p-3 font-mono">Claude Sonnet 4.6 (thinking)</td>
+                  <td class="p-3">数十ファイルに跨る依存関係の深層思考と厳格な型推論</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold">巨大コンテキスト・全体設計</td>
                   <td class="p-3 text-purple-400 font-mono font-bold">High</td>
-                  <td class="p-3 font-mono">Claude 3.7 Sonnet (thinking)</td>
-                  <td class="p-3">数十ファイルに跨る依存関係の深層推論が必要なため</td>
+                  <td class="p-3 font-mono">Gemini 3.1 Pro (High)</td>
+                  <td class="p-3">2M+トークンをフル活用したアーキテクチャ整合性の担保</td>
                 </tr>
               </tbody>
             </table>

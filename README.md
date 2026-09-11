@@ -20,8 +20,8 @@
 
 1. **完全単一HTML完結（Zero Dependency Single-File HTML）**
    - 外部ビルドツール不要。ブラウザで `index.html` を開くだけで、Starlight / VitePress 級のリッチなUI（ダーク/ライトモード、検索、目次連動スクロール、シンタックスハイライト、Mermaid図解）が動作します。
-2. **2026年最新仕様を完全網羅**
-   - **Gemini 3.7 Flash** / **Claude 3.7 Sonnet & Opus 4.6 (thinking)** のエスカレーションモデル選定則。
+2. **最新仕様を完全網羅**
+   - **Gemini 3.8 / 3.7 / 3.6 Flash**、**Gemini 3.1 Pro**、**Claude Sonnet 4.6 & Opus 4.6 (thinking)**、**GPT-OSS 120B** の特性と推論努力度（Reasoning Effort）選定則。
    - **`/goal` による Autonomous Hill-Climbing 自律山登りループ**（Lighthouse All 100 達成実録）。
    - **Chrome DevTools MCP** / **Modern Web Guidance Plugin** 連携。
    - **WordPress 開発セキュリティ5原則（完全コード集）**。
