@@ -299,6 +299,23 @@
           </ul>
         </div>
 
+        <!-- Ch0 -->
+        <div>
+          <a href="#ch0" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
+            <span class="flex items-center gap-1.5 text-brand-400">
+              <i class="fa-solid fa-rocket text-xs"></i>
+              <span>第0章：5分クイックスタート</span>
+            </span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded bg-brand-500/20 text-brand-300 font-mono font-bold">Start</span>
+          </a>
+          <ul class="mt-1 space-y-0.5 text-xs text-slate-600 dark:text-slate-400 border-l border-slate-200 dark:border-slate-800 ml-2 pl-3">
+            <li><a href="#ch0-1" class="toc-link block py-1 hover:text-brand-400">0.1 初めての4ステップ最短ルート</a></li>
+            <li><a href="#ch0-2" class="toc-link block py-1 hover:text-brand-400">0.2 コピペで動く最初の一言</a></li>
+            <li><a href="#ch0-3" class="toc-link block py-1 hover:text-brand-400">0.3 最もよく使う基本操作フロー</a></li>
+            <li><a href="#ch0-4" class="toc-link block py-1 hover:text-brand-400">0.4 つまずき防止の3つの心得</a></li>
+          </ul>
+        </div>
+
         <!-- Ch1 -->
         <div>
           <a href="#ch1" class="font-semibold text-slate-900 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-400 text-sm flex items-center justify-between">
@@ -426,6 +443,10 @@
             </p>
 
             <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <a href="#ch0" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-amber-500 to-brand-500 hover:from-amber-400 hover:to-brand-400 text-white font-bold text-xs sm:text-sm shadow-lg shadow-brand-500/30 transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-rocket"></i>
+                <span>5分クイックスタート</span>
+              </a>
               <a href="#ch1" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-brand-600/30 transition flex items-center justify-center gap-2">
                 <span>第1章から読む</span>
                 <i class="fa-solid fa-arrow-right"></i>
@@ -461,6 +482,552 @@
             <i class="fa-brands fa-github"></i>
             <span>GitHubで改善提案する</span>
           </a>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- CHAPTER 0: QUICK START GUIDE -->
+      <!-- ========================================== -->
+      <section id="ch0" class="mb-16 sm:mb-20">
+        <!-- Section Header -->
+        <div class="flex items-start sm:items-center justify-between pb-3 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800 flex-wrap gap-3">
+          <div class="flex items-start sm:items-center gap-3">
+            <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500 text-white font-bold text-xs sm:text-sm shrink-0 mt-0.5 sm:mt-0">0</span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-slate-900 dark:text-white leading-snug">
+              <span class="inline-block">第0章：</span><span class="inline-block">5分でわかる！</span><span class="inline-block">AntiGravity </span><span class="inline-block">クイックスタートガイド</span>
+            </h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border border-emerald-500/20 text-xs font-semibold flex items-center gap-1.5">
+              <i class="fa-solid fa-stopwatch"></i> 所要時間: 約5分
+            </span>
+            <span class="px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-500 dark:text-blue-400 border border-blue-500/20 text-xs font-semibold hidden sm:inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-graduation-cap"></i> 前提知識ゼロでOK
+            </span>
+          </div>
+        </div>
+
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 text-xs sm:text-sm">
+          Google Antigravity を手に入れたら、まず最初に何をしてどう指示を出せばいいのか？<br class="hidden sm:inline">
+          ここでは、難しい設定や専門コマンドを覚える前に、<strong>「一番早く動かして成果を出すための最短4ステップ」</strong>と<strong>「コピペですぐ使える最初の一言」</strong>を分かりやすくまとめました。
+        </p>
+
+        <!-- 0.1 -->
+        <div id="ch0-1" class="mb-12 sm:mb-16">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-route text-emerald-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">0.1 初めての</span><span class="inline-block">4ステップ最短ルート</span><span class="inline-block">（起動から完了まで）</span></span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            Antigravity は、従来の1行ずつコードを補完するツールとは根本的に異なります。人間がコードを手で打ち込むのではなく、<strong>「ゴールを伝えて計画を承認し、AIが完走するのを見守る」</strong>のが基本スタイルです。以下の4つの手順だけで、最初のタスクが完了します。
+          </p>
+
+          <!-- 4-Step Visual Flow (Responsive) -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 shadow-sm">
+            <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-5 flex items-center justify-between flex-wrap gap-2">
+              <span class="flex items-center gap-1.5 font-bold">
+                <i class="fa-solid fa-play text-emerald-400"></i>
+                初めての実行フロー（最短4ステップ）
+              </span>
+              <span class="text-[10px] text-slate-400 font-mono hidden sm:inline">Review-Driven Development</span>
+            </div>
+
+            <!-- Desktop View (lg:block): Horizontal 4-Column Grid with Connectors -->
+            <div class="hidden lg:grid grid-cols-4 gap-4 relative">
+              <!-- Step 1 -->
+              <div class="p-4 rounded-xl bg-darkbg-900 border border-slate-700/80 flex flex-col justify-between relative group hover:border-blue-500/50 transition shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 font-bold text-xs flex items-center justify-center font-mono">1</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 font-mono">起動</span>
+                  </div>
+                  <h4 class="font-bold text-white text-sm mb-1.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-folder-open text-blue-400 text-xs"></i>
+                    <span>プロジェクトを開く</span>
+                  </h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    ターミナルで作業フォルダに移動して <code class="px-1.5 py-0.5 rounded bg-slate-800 text-blue-300 font-mono text-[11px]">agy</code> と打つか、Antigravity IDE でフォルダを開きます。
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-1">
+                  <i class="fa-solid fa-circle-check text-blue-400 text-[10px]"></i>
+                  <span>AIが自動で環境を把握</span>
+                </div>
+                <!-- Connector to Step 2 -->
+                <div class="absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-darkbg-800 border border-slate-600 flex items-center justify-center text-slate-400 shadow">
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="p-4 rounded-xl bg-darkbg-900 border border-slate-700/80 flex flex-col justify-between relative group hover:border-purple-500/50 transition shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-xs flex items-center justify-center font-mono">2</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 font-mono">指示</span>
+                  </div>
+                  <h4 class="font-bold text-white text-sm mb-1.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-comment-dots text-purple-400 text-xs"></i>
+                    <span>最初の一言をチャット</span>
+                  </h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    「〇〇の機能を作って」「このエラーを直して」と普段の日本語で伝えるだけ。専門の呪文は不要です。
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-1">
+                  <i class="fa-solid fa-circle-check text-purple-400 text-[10px]"></i>
+                  <span>自然な日本語でOK</span>
+                </div>
+                <!-- Connector to Step 3 -->
+                <div class="absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-darkbg-800 border border-slate-600 flex items-center justify-center text-slate-400 shadow">
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="p-4 rounded-xl bg-darkbg-900 border border-amber-500/40 flex flex-col justify-between relative group hover:border-amber-500/70 transition shadow-sm bg-gradient-to-b from-amber-500/5 to-transparent">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center font-mono">3</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono font-bold">重要</span>
+                  </div>
+                  <h4 class="font-bold text-amber-300 text-sm mb-1.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-clipboard-check text-amber-400 text-xs"></i>
+                    <span>計画を確認して承認</span>
+                  </h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    AIが調査結果と変更計画（Plan）を提示します。内容を見て画面右上の <strong class="text-white bg-amber-600/60 px-1.5 py-0.5 rounded text-[11px]">Proceed</strong> ボタンを押します。
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-amber-300/90 flex items-center gap-1">
+                  <i class="fa-solid fa-shield-halved text-amber-400 text-[10px]"></i>
+                  <span>勝手に壊さない安全設計</span>
+                </div>
+                <!-- Connector to Step 4 -->
+                <div class="absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-darkbg-800 border border-slate-600 flex items-center justify-center text-slate-400 shadow">
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="p-4 rounded-xl bg-darkbg-900 border border-emerald-500/40 flex flex-col justify-between relative group hover:border-emerald-500/70 transition shadow-sm bg-gradient-to-b from-emerald-500/5 to-transparent">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold text-xs flex items-center justify-center font-mono">4</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold">完了</span>
+                  </div>
+                  <h4 class="font-bold text-emerald-300 text-sm mb-1.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                    <span>成果物をレビュー</span>
+                  </h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    AIがコード修正、ビルド、テスト検証まで自律完走します。完了後に表示されるサマリ（Walkthrough）と差分を確認して終わりです。
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-300/90 flex items-center gap-1">
+                  <i class="fa-solid fa-check-double text-emerald-400 text-[10px]"></i>
+                  <span>自律完走 ＆ テスト済</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile View (lg:hidden): Vertical Timeline Rail with Step Cards -->
+            <div class="lg:hidden relative pl-6 border-l-2 border-slate-700 space-y-4">
+              <!-- Step 1 Mobile -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-6 h-6 rounded-full bg-blue-500 text-white font-bold text-xs flex items-center justify-center ring-4 ring-darkbg-800">1</span>
+                <div class="p-3.5 rounded-xl bg-darkbg-900 border border-slate-700/80">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <h4 class="font-bold text-white text-xs flex items-center gap-1.5">
+                      <i class="fa-solid fa-folder-open text-blue-400"></i>
+                      <span>プロジェクトを開く</span>
+                    </h4>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20 font-mono">起動</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    作業フォルダで <code class="px-1 py-0.5 rounded bg-slate-800 text-blue-300 font-mono text-[10px]">agy</code> を実行するか、Antigravity IDE でフォルダを開きます。
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 2 Mobile -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-6 h-6 rounded-full bg-purple-500 text-white font-bold text-xs flex items-center justify-center ring-4 ring-darkbg-800">2</span>
+                <div class="p-3.5 rounded-xl bg-darkbg-900 border border-slate-700/80">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <h4 class="font-bold text-white text-xs flex items-center gap-1.5">
+                      <i class="fa-solid fa-comment-dots text-purple-400"></i>
+                      <span>最初の一言をチャット</span>
+                    </h4>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 font-mono">指示</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    「〇〇を作って」「エラーを直して」と普通の日本語でチャットに入力します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 3 Mobile -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center ring-4 ring-darkbg-800">3</span>
+                <div class="p-3.5 rounded-xl bg-darkbg-900 border border-amber-500/40 bg-gradient-to-b from-amber-500/5 to-transparent">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <h4 class="font-bold text-amber-300 text-xs flex items-center gap-1.5">
+                      <i class="fa-solid fa-clipboard-check text-amber-400"></i>
+                      <span>計画を確認して承認</span>
+                    </h4>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono font-bold">重要</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    AIが調査結果と変更計画を提示します。右上の <strong class="text-white bg-amber-600/70 px-1 py-0.5 rounded text-[10px]">Proceed</strong> ボタンを押して承認します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 4 Mobile -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-6 h-6 rounded-full bg-emerald-500 text-white font-bold text-xs flex items-center justify-center ring-4 ring-darkbg-800">4</span>
+                <div class="p-3.5 rounded-xl bg-darkbg-900 border border-emerald-500/40 bg-gradient-to-b from-emerald-500/5 to-transparent">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <h4 class="font-bold text-emerald-300 text-xs flex items-center gap-1.5">
+                      <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                      <span>成果物をレビュー</span>
+                    </h4>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold">完了</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    AIが実装・テスト修正を自律完走。表示されるサマリ（Walkthrough）と差分を確認して完了です。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 0.2 -->
+        <div id="ch0-2" class="mb-12 sm:mb-16">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">0.2 コピペで動く！</span><span class="inline-block">初心者向け</span><span class="inline-block">おすすめ最初の一言</span></span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            「最初にチャット欄へ何を打ち込めばいいかわからない…」という初心者のために、現場で最もよく使われる4大シチュエーション別のテンプレートを用意しました。右上のコピーボタンを押して、チャット欄に貼り付けるだけで使えます。
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
+            <!-- Card 1: Research -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2.5 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-md bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold font-mono">1</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">まず現状のコードを把握したいとき</h4>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 dark:text-blue-300 border border-blue-500/20 font-mono">リサーチ / 構造理解</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  既存のコードベースに初めて触るときや、他人の書いたプロジェクトを理解したいときに最適。AIがファイル構成を自動走査して要点を解説します。
+                </p>
+                <div class="relative group mb-2 max-w-full">
+                  <pre class="line-numbers text-xs overflow-x-auto max-w-full"><code class="language-markdown">このプロジェクト全体の構成と技術スタックを調べて、初心者にもわかりやすく日本語で解説してください。主要なディレクトリ構成、エントリーポイント、実行方法を箇条書きでまとめてほしいです。</code></pre>
+                  <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] rounded border border-slate-600 transition shadow">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-700/60 flex items-center gap-1.5">
+                <i class="fa-solid fa-lightbulb text-amber-400 text-xs"></i>
+                <span>ファイルを一切書き換えないため安心して使えます</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Debug -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2.5 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-md bg-rose-500/20 text-rose-400 flex items-center justify-center text-xs font-bold font-mono">2</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">エラーやバグを直してほしいとき</h4>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 text-rose-500 dark:text-rose-300 border border-rose-500/20 font-mono">エラー修復 / デバッグ</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  ビルドエラーやテスト失敗、画面崩れが起きたときにそのまま貼り付けます。エラーログをそのまま添えるだけでAIが原因を特定します。
+                </p>
+                <div class="relative group mb-2 max-w-full">
+                  <pre class="line-numbers text-xs overflow-x-auto max-w-full"><code class="language-markdown">以下のエラーが発生して困っています。原因を調査して、コードを修正し、ビルド（またはテスト）が正常に通るように修正してください。
+
+【発生しているエラー】
+(ここにターミナルやコンソールのエラー文を貼り付け)</code></pre>
+                  <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] rounded border border-slate-600 transition shadow">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-700/60 flex items-center gap-1.5">
+                <i class="fa-solid fa-lightbulb text-amber-400 text-xs"></i>
+                <span>修正後に自動でテスト実行まで行わせるのがコツ</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Feature Development (/goal) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2.5 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-md bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold font-mono">3</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">まとまった新機能を作ってほしいとき</h4>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 dark:text-emerald-300 border border-emerald-500/20 font-mono">新機能開発 / /goal</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  <code class="px-1.5 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono text-[11px]">/goal</code> コマンドを先頭につけると、AIが「計画 ➜ 実装 ➜ テスト ➜ 自己修正」を自動反復し、ゴール達成まで粘り強く自律完走します。
+                </p>
+                <div class="relative group mb-2 max-w-full">
+                  <pre class="line-numbers text-xs overflow-x-auto max-w-full"><code class="language-markdown">/goal ログイン画面に「パスワード表示切り替え（目のアイコン）」機能を追加してください。既存のTailwindスタイルに合わせ、正しく動作することまで検証してください。</code></pre>
+                  <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] rounded border border-slate-600 transition shadow">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-700/60 flex items-center gap-1.5">
+                <i class="fa-solid fa-lightbulb text-amber-400 text-xs"></i>
+                <span>途中で放置しても自動でタスクリストを消化して完走します</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Specification Alignment (/grill-me) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2.5 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-md bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold font-mono">4</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">仕様の詰め方がわからないとき</h4>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-500 dark:text-purple-300 border border-purple-500/20 font-mono">要件定義 / /grill-me</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                  「作りたいものはあるが、設計や細かい仕様が決まっていない」ときは <code class="px-1.5 py-0.5 rounded bg-slate-800 text-purple-300 font-mono text-[11px]">/grill-me</code>。AI側から質問を投げかけて要件をクリアにしてくれます。
+                </p>
+                <div class="relative group mb-2 max-w-full">
+                  <pre class="line-numbers text-xs overflow-x-auto max-w-full"><code class="language-markdown">/grill-me ユーザーのプロフィール編集ページを作りたいです。まだ細かい仕様が決まっていないので、必要な入力項目、バリデーション、UI設計について私に質問を投げかけて仕様を固めてください。</code></pre>
+                  <button aria-label="コードをコピー" class="copy-btn absolute top-2 right-2 z-10 px-2 py-1 bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-[11px] rounded border border-slate-600 transition shadow">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-700/60 flex items-center gap-1.5">
+                <i class="fa-solid fa-lightbulb text-amber-400 text-xs"></i>
+                <span>後から大幅な手戻りが発生するリスクを完全に防げます</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 0.3 -->
+        <div id="ch0-3" class="mb-12 sm:mb-16">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-arrows-spin text-emerald-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">0.3 最もよく使う</span><span class="inline-block">基本操作フロー</span><span class="inline-block">（人間とAIの役割分担）</span></span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            Antigravity をスムーズに使いこなす秘訣は、「人間がやること」と「AIに任せること」を整理することです。基本は次の5段階の役割分担でテンポよく進みます。
+          </p>
+
+          <!-- Interaction Loop Visualization -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-darkbg-800 border border-slate-700 mb-6 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 sm:gap-4 relative">
+              <!-- Human 1 -->
+              <div class="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">人間</span>
+                    <i class="fa-solid fa-user text-blue-400 text-xs"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-xs mb-1">① ゴールを指示</h4>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    やりたいことや完了条件をチャットで伝える。
+                  </p>
+                </div>
+                <div class="mt-2 text-[10px] text-blue-400 font-mono">所要: 30秒</div>
+              </div>
+
+              <!-- AI 1 -->
+              <div class="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">AI (自律)</span>
+                    <i class="fa-solid fa-robot text-purple-400 text-xs"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-xs mb-1">② 調査・計画立案</h4>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    コードを自動検索し、変更予定の計画書を作成。
+                  </p>
+                </div>
+                <div class="mt-2 text-[10px] text-purple-400 font-mono">完全自動</div>
+              </div>
+
+              <!-- Human 2 -->
+              <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/40 flex flex-col justify-between ring-2 ring-amber-500/30">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">人間 (承認)</span>
+                    <i class="fa-solid fa-hand text-amber-400 text-xs"></i>
+                  </div>
+                  <h4 class="font-bold text-amber-300 text-xs mb-1">③ Proceedを押す</h4>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    計画を確認し、OKならボタンをクリック。
+                  </p>
+                </div>
+                <div class="mt-2 text-[10px] text-amber-300 font-mono">ワンクリック</div>
+              </div>
+
+              <!-- AI 2 -->
+              <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">AI (自律完走)</span>
+                    <i class="fa-solid fa-gears text-emerald-400 text-xs"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-xs mb-1">④ 実装・検証</h4>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    コード変更・ビルド・テスト・自己修正を実行。
+                  </p>
+                </div>
+                <div class="mt-2 text-[10px] text-emerald-400 font-mono">完全自動</div>
+              </div>
+
+              <!-- Human 3 -->
+              <div class="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">人間</span>
+                    <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-xs mb-1">⑤ 成果を確認</h4>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    差分とサマリ（Walkthrough）を見て完了！
+                  </p>
+                </div>
+                <div class="mt-2 text-[10px] text-blue-400 font-mono">所要: 1分</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout-tip p-3.5 sm:p-4 rounded-xl bg-emerald-500/10 text-emerald-900 dark:text-emerald-200 text-xs leading-relaxed">
+            <strong>退屈な作業はすべてAIに任せてOK:</strong><br>
+            ターミナルコマンドを毎回コピーして手動実行したり、エラー文を何度もチャットに貼り直す必要はありません。人間は「指示」と「計画の承認」だけに専念し、実装・ビルド・テストの泥臭い作業はAIに完走させましょう。
+          </div>
+        </div>
+
+        <!-- 0.4 -->
+        <div id="ch0-4" class="mb-12 sm:mb-16">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 sm:mb-4 flex items-start gap-2.5 leading-snug">
+            <i class="fa-solid fa-shield-halved text-emerald-400 text-sm mt-1 sm:mt-1.5 shrink-0"></i>
+            <span><span class="inline-block">0.4 初心者が</span><span class="inline-block">最初につまずきやすい</span><span class="inline-block">3つの心得</span></span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-xs sm:text-sm">
+            初めてAntigravityを使う人が「あれ？動かない？」と戸惑いやすいポイントと、その簡単な対処法をまとめました。これらを押さえておけば迷うことはありません。
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6">
+            <!-- Tip 1 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-base mb-3">
+                  <i class="fa-solid fa-hand"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-2">
+                  心得①：「止まった？」と思ったら右上の『Proceed』を確認
+                </h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  「AIが止まって返事をしてこない」と感じたときの9割は、<strong>AIが計画（Plan）を提示してあなたの承認を待っている状態</strong>です。<br><br>
+                  プロジェクトを勝手に破壊しない安全仕様（RDD）なので、画面右上やアーティファクト上部の <strong class="text-amber-500">Proceed</strong> ボタンを押すか、チャットで「進めて」と入力すれば作業が再開されます。
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 text-[11px] text-amber-500 dark:text-amber-400 font-semibold">
+                ✓ 迷ったら「Proceed」を押せばOK
+              </div>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-base mb-3">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-2">
+                  心得②：指示は短くても「期待する完了状態」を一言添える
+                </h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  単に「ボタンを直して」と指示するよりも、<strong>「ボタンを押したらローディングが表示され、完了後に緑のバナーが出るようにして」</strong>と期待する結果を添えるだけで、AIの精度が格段に上がります。<br><br>
+                  完了条件が明確だと、AIは自分自身でテストや検証を行い、100%意図通りに仕上げてくれます。
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 text-[11px] text-blue-500 dark:text-blue-400 font-semibold">
+                ✓ 「何をしたら成功か」を伝える
+              </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-darkbg-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-9 h-9 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-base mb-3">
+                  <i class="fa-solid fa-comments"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-2">
+                  心得③：迷ったら『/grill-me』でAIに逆質問してもらう
+                </h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  「要件がぼんやりしていて、何から指示すればいいかわからない」という時は、無理に指示文を作らずプロンプトの先頭に <strong class="text-purple-400">/grill-me</strong> と書きましょう。<br><br>
+                  AIがインタビュアーとなり、必要な仕様や選択肢を質問してくれるので、それに答えるだけで完璧な要件定義が完成します。
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 text-[11px] text-purple-500 dark:text-purple-400 font-semibold">
+                ✓ 困ったらAIに質問させる
+              </div>
+            </div>
+          </div>
+
+          <!-- Step-Up Navigation to Next Chapters -->
+          <div class="p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-darkbg-800 dark:to-darkbg-900 border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fa-solid fa-compass text-emerald-500 dark:text-emerald-400 text-base"></i>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">基本がわかったら、目的に合わせて次の章へ進もう！</h4>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              基本操作を掴んだら、以下の各章でより深い知識や現場のノウハウをチェックできます。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <a href="#ch1" class="p-3 rounded-xl bg-white dark:bg-darkbg-700 border border-slate-200 dark:border-slate-600 hover:border-brand-500 transition group flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5 font-bold text-xs text-slate-900 dark:text-white mb-1 group-hover:text-brand-400 transition">
+                    <span>第1章：アーキテクチャ</span>
+                    <i class="fa-solid fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Agent-First思想や自律実行ループの仕組みを詳しく理解する</p>
+                </div>
+              </a>
+              <a href="#ch3" class="p-3 rounded-xl bg-white dark:bg-darkbg-700 border border-slate-200 dark:border-slate-600 hover:border-brand-500 transition group flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5 font-bold text-xs text-slate-900 dark:text-white mb-1 group-hover:text-brand-400 transition">
+                    <span>第3章：コマンド一覧</span>
+                    <i class="fa-solid fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">/goal, /browser, /schedule などの便利コマンドとショートカット集</p>
+                </div>
+              </a>
+              <a href="#ch6" class="p-3 rounded-xl bg-white dark:bg-darkbg-700 border border-slate-200 dark:border-slate-600 hover:border-brand-500 transition group flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5 font-bold text-xs text-slate-900 dark:text-white mb-1 group-hover:text-brand-400 transition">
+                    <span>第6章：実践プレイブック</span>
+                    <i class="fa-solid fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">新規開発や大規模リファクタリングなど現場のリアルな開発パターン</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
