@@ -1,6 +1,6 @@
 # 🚀 Google Antigravity 完全マスターズ・マニュアル
 
-> **日本で最も詳しく、正確で実践的な Google Antigravity 完全攻略オープンソースガイド**
+> **みんなで育てる Google Antigravity 実践オープンソースガイド**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
